@@ -25,7 +25,7 @@
   <link rel="stylesheet" type="text/css" href="/./style/main.css">
 	<link rel="shortcut icon" href="/favicon.ico" title="Favicon">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
-	<title>Welcome to NLP-2019-huanhuan-homework-4</title>
+	<title>Hexo+github 从windows到mac的迁移（超详细步骤及遇到问题解决）（特适合小白）</title>
   
   <script>var _hmt=_hmt||[];(function(){var hm=document.createElement("script");hm.src="https://hm.baidu.com/hm.js?awwssw1snsnsnn1ndndnndnd99j";var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(hm,s);})();
   </script>
@@ -48,7 +48,7 @@
     
   
   <h1 class="title">
-    Welcome to NLP-2019-huanhuan-homework-4
+    Hexo+github 从windows到mac的迁移（超详细步骤及遇到问题解决）（特适合小白）
   </h1>
   
 
@@ -56,11 +56,11 @@
     <ul class="article-info">
       <li>
         发布
-        <time datetime="2019-04-13T10:52:33.000Z" itemprop="datePublished">2019-04-13</time>
+        <time datetime="2019-04-10T13:55:27.000Z" itemprop="datePublished">2019-04-10</time>
       </li>
       <li>
         
-    更新 <time datetime="2019-04-15T14:19:44.000Z" itemprop="dateUpdated">2019-04-15</time>
+    更新 <time datetime="2019-09-13T07:45:24.848Z" itemprop="dateUpdated">2019-09-13</time>
 
       </li>
       <li id="busuanzi_container_page_pv">
@@ -76,25 +76,19 @@
           本文最后更新于$day天前，文中所描述的信息可能已发生改变。
         </div>
         
-        <h2 id="内容涵盖"><a href="#内容涵盖" class="headerlink" title="内容涵盖"></a>内容涵盖</h2><ul>
-<li><strong>TF-IDF原理</strong></li>
-<li><strong>文本矩阵化，使用词袋模型，以TF-IDF特征值为权重</strong>（可以使用Python中TfidfTransformer库）</li>
-<li><strong>互信息的原理</strong></li>
-<li><strong>使用第二步生成的特征矩阵，利用互信息进行特征筛选</strong></li>
+        <h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>2019的年5月在惠普笔记本搭建了个hexo+github版人博客就；<br>2019的6月刚入手了一个mac，于是乎各种东西都得由windows转移到mac;<br>hexo的搬家路：windows - &gt; MacBook Pro </p>
+<h2 id="总体思路"><a href="#总体思路" class="headerlink" title="总体思路"></a>总体思路</h2><p>理清思路真不难，过程要细心、耐心，大概分为以下三个模块：</p>
+<ul>
+<li>首先在mac电脑上安装好<code>hexo</code>，并初始化根目录;</li>
+<li>然后生成新的<code>SSH key</code>，并将其添加到<code>github</code>上;</li>
+<li>将旧电脑中的三个文件，直接粘贴覆盖在新电脑对应的目录。</li>
 </ul>
-<h2 id="1-TF-IDF原理"><a href="#1-TF-IDF原理" class="headerlink" title="1.TF-IDF原理"></a>1.TF-IDF原理</h2><p><strong>(1) 定义</strong><br>&ensp;&ensp;&ensp; TF-IDF(Term Frequency - Inverse Document Frequency)，即“词频-逆文本频率”。是一种用于资讯检索与资讯探勘的常用加权技术。TF-IDF是一种统计方法，用以评估一字词对于一个文件集或一个语料库中的其中一份文件的重要程度。<strong>字词的重要性随着它在文件中出现的次数成正比增加，但同时会随着它在语料库中出现的频率成反比下降.</strong>  </p>
-<p><strong>(2)思想</strong><br>&ensp;&ensp;&ensp;如果某个词或短语在一篇文章中出现的频率TF高，并且在其他文章中很少出现，则认为此词或者短语具有很好的类别区分能力，适合用来分类。<strong>TF-IDF实际上就是 TF X IDF，其中TF表示词条在文章Document 中出现的频率；IDF其主要思想就是，如果包含某个词 Word的文档越少，则这个词的区分度就越大，也就是 IDF 越大。</strong> 对于如何获取一篇文章的关键词，我们可以计算这边文章出现的所有名词的 TF-IDF，TF-IDF越大，则说明这个名词对这篇文章的区分度就越高，取 TF-IDF 值较大的几个词，就可以当做这篇文章的关键词。</p>
-<p><strong>(3) 计算步骤</strong><br><strong>a. 计算词频(TF)</strong>  </p>
-<p><strong><img src="http://latex.codecogs.com/gif.latex?tf_%7Bi,j%7D=%5Cfrac%7Bn_%7Bi,j%7D%7D%7B%5Csum_%7B0%7D%5E%7Bk%7Dn_%7Bk,j%7D%7D" alt></strong>    </p>
-<p>分子是该词在文件 dj 中的出现次数，而分母  则是在文件 dj 中所有字词的出现次数之和。</p>
-<p><strong>b. 计算逆文档频率（IDF）</strong>   </p>
-<h2 id="参考博客"><a href="#参考博客" class="headerlink" title="参考博客"></a>参考博客</h2><ol>
-<li><a href="https://www.cnblogs.com/pinard/p/6693230.html" target="_blank" rel="noopener"><strong>文本挖掘预处理之TF-IDF</strong></a></li>
-<li><a href="https://blog.csdn.net/lionel_fengj/article/details/53699903" target="_blank" rel="noopener"><strong>自然语言处理系列之TF-IDF算法</strong></a></li>
-<li><a href="http://www.cnblogs.com/biyeymyhjob/archive/2012/07/17/2595249.html" target="_blank" rel="noopener"><strong>TF-IDF及其算法</strong></a></li>
-<li><a href="https://www.jianshu.com/p/f3b92124cd2b" target="_blank" rel="noopener"><strong>使用不同的方法计算TF-IDF值</strong></a></li>
-<li><a href="https://blog.csdn.net/u013710265/article/details/72848755" target="_blank" rel="noopener"><strong>sklearn-点互信息和互信息</strong></a></li>
-<li><a href="https://baijiahao.baidu.com/s?id=1604074325918456186&wfr=spider&for=pc" target="_blank" rel="noopener"><strong>如何进行特征选择（理论篇）机器学习你会遇到的“坑”</strong></a></li>
+<h2 id="言归正传"><a href="#言归正传" class="headerlink" title="言归正传"></a>言归正传</h2><h2 id="1-安装hexo前奏"><a href="#1-安装hexo前奏" class="headerlink" title="1. 安装hexo前奏"></a>1. 安装hexo前奏</h2><h2 id="2-安装Hexo"><a href="#2-安装Hexo" class="headerlink" title="2. 安装Hexo"></a>2. 安装Hexo</h2><h2 id="3-mac生成SSH"><a href="#3-mac生成SSH" class="headerlink" title="3.mac生成SSH"></a>3.mac生成SSH</h2><h2 id="4-替换-config-yml-、thems、source-文件"><a href="#4-替换-config-yml-、thems、source-文件" class="headerlink" title="4. 替换_config.yml 、thems、source 文件"></a>4. 替换_config.yml 、thems、source 文件</h2><h2 id="更换主题专题"><a href="#更换主题专题" class="headerlink" title="更换主题专题"></a>更换主题专题</h2><h3 id="内心OS："><a href="#内心OS：" class="headerlink" title="内心OS："></a>内心OS：</h3><p><strong>对现有主题不满意, 缺失某种功能（eg. 评论、时间轴）</strong></p>
+<p><strong>我是代码小白，别人的博客太厉害！</strong> </p>
+<p><strong>别当心，其实都是纸老虎，这里啥都有～～</strong></p>
+<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><ol>
+<li><a href="[https://gjincai.github.io/2017/01/13/hexo-%E4%BB%8E-windows-%E8%BD%AC%E7%A7%BB%E8%87%B3-Mac/](https://gjincai.github.io/2017/01/13/hexo-从-windows-转移至-Mac/)">hexo从windows转移至Mac</a></li>
+<li><a href="https://blog.csdn.net/qq_39153421/article/details/89362432" target="_blank" rel="noopener">解决hexo -d 报错问题</a></li>
 </ol>
 
       </div>
