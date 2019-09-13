@@ -25,7 +25,7 @@
   <link rel="stylesheet" type="text/css" href="/./style/main.css">
 	<link rel="shortcut icon" href="/favicon.ico" title="Favicon">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
-	<title>焕小妹</title>
+	<title>Hexo+github 从windows到mac的迁移（超详细步骤及遇到问题解决）（特适合小白）</title>
   
   <script>var _hmt=_hmt||[];(function(){var hm=document.createElement("script");hm.src="https://hm.baidu.com/hm.js?awwssw1snsnsnn1ndndnndnd99j";var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(hm,s);})();
   </script>
@@ -46,15 +46,21 @@
 <main>
   <div class="article-title">
     
+  
+  <h1 class="title">
+    Hexo+github 从windows到mac的迁移（超详细步骤及遇到问题解决）（特适合小白）
+  </h1>
+  
+
 
     <ul class="article-info">
       <li>
         发布
-        <time datetime="2019-09-11T11:49:59.309Z" itemprop="datePublished">2019-09-11</time>
+        <time datetime="2019-09-10T13:55:27.000Z" itemprop="datePublished">2019-09-10</time>
       </li>
       <li>
         
-    更新 <time datetime="2019-09-11T11:59:54.183Z" itemprop="dateUpdated">2019-09-11</time>
+    更新 <time datetime="2019-09-13T10:13:31.455Z" itemprop="dateUpdated">2019-09-13</time>
 
       </li>
       <li id="busuanzi_container_page_pv">
@@ -70,8 +76,19 @@
           本文最后更新于$day天前，文中所描述的信息可能已发生改变。
         </div>
         
-        <h2 id="ubantu下常用的一些命令及快捷键"><a href="#ubantu下常用的一些命令及快捷键" class="headerlink" title="ubantu下常用的一些命令及快捷键"></a>ubantu下常用的一些命令及快捷键</h2><ol>
-<li>cd..      后退一步</li>
+        <h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>2019的年5月在惠普笔记本搭建了个hexo+github版人博客就；<br>2019的6月刚入手了一个mac，于是乎各种东西都得由windows转移到mac;<br>hexo的搬家路：windows - &gt; MacBook Pro </p>
+<h2 id="总体思路"><a href="#总体思路" class="headerlink" title="总体思路"></a>总体思路</h2><p>理清思路真不难，过程要细心、耐心，大概分为以下三个模块：</p>
+<ul>
+<li>首先在mac电脑上安装好<code>hexo</code>，并初始化根目录;</li>
+<li>然后生成新的<code>SSH key</code>，并将其添加到<code>github</code>上;</li>
+<li>将旧电脑中的三个文件，直接粘贴覆盖在新电脑对应的目录。</li>
+</ul>
+<h2 id="言归正传"><a href="#言归正传" class="headerlink" title="言归正传"></a>言归正传</h2><h2 id="1-安装hexo前奏"><a href="#1-安装hexo前奏" class="headerlink" title="1. 安装hexo前奏"></a>1. 安装hexo前奏</h2><h2 id="2-安装Hexo"><a href="#2-安装Hexo" class="headerlink" title="2. 安装Hexo"></a>2. 安装Hexo</h2><h2 id="3-mac生成SSH"><a href="#3-mac生成SSH" class="headerlink" title="3.mac生成SSH"></a>3.mac生成SSH</h2><h2 id="4-替换-config-yml-、thems、source-文件"><a href="#4-替换-config-yml-、thems、source-文件" class="headerlink" title="4. 替换_config.yml 、thems、source 文件"></a>4. 替换_config.yml 、thems、source 文件</h2><h2 id="更换主题专题"><a href="#更换主题专题" class="headerlink" title="更换主题专题"></a>更换主题专题</h2><h3 id="内心OS："><a href="#内心OS：" class="headerlink" title="内心OS："></a>内心OS：</h3><p><strong>对现有主题不满意, 缺失某种功能（eg. 评论、时间轴）</strong></p>
+<p><strong>我是代码小白，别人的博客太厉害！</strong> </p>
+<p><strong>别当心，其实都是纸老虎，这里啥都有～～</strong></p>
+<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><ol>
+<li><a href="[https://gjincai.github.io/2017/01/13/hexo-%E4%BB%8E-windows-%E8%BD%AC%E7%A7%BB%E8%87%B3-Mac/](https://gjincai.github.io/2017/01/13/hexo-从-windows-转移至-Mac/)">hexo从windows转移至Mac</a></li>
+<li><a href="https://blog.csdn.net/qq_39153421/article/details/89362432" target="_blank" rel="noopener">解决hexo -d 报错问题</a></li>
 </ol>
 
       </div>
