@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="朴素贝叶斯,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="内容涵盖 朴素贝叶斯的原理   朴素贝叶斯应用场景   朴素贝叶斯优缺点   朴素贝叶斯 sklearn 参数学习    利用朴素贝叶斯模型结合 Tf-idf 算法进行文本分类    0.知识回顾(1) 联合概率   &amp;ensp;&amp;ensp;&amp;ensp;P(x)表示x发生的概率，P(y)表示y发生的概率，则 x，y 同时发生的概率为：    &amp;ensp;&amp;ensp;&amp;ensp;特别的，当x，y独立">
+<meta name="keywords" content="朴素贝叶斯">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Welcome to NLP-2019-huanhuan-homework-5">
+<meta property="og:url" content="http://yoursite.com/2019/04/15/NLP-homework-5-Pushubeiyesi/index.html">
+<meta property="og:site_name" content="焕小妹">
+<meta property="og:description" content="内容涵盖 朴素贝叶斯的原理   朴素贝叶斯应用场景   朴素贝叶斯优缺点   朴素贝叶斯 sklearn 参数学习    利用朴素贝叶斯模型结合 Tf-idf 算法进行文本分类    0.知识回顾(1) 联合概率   &amp;ensp;&amp;ensp;&amp;ensp;P(x)表示x发生的概率，P(y)表示y发生的概率，则 x，y 同时发生的概率为：    &amp;ensp;&amp;ensp;&amp;ensp;特别的，当x，y独立">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://latex.codecogs.com/gif.latex?P(x,y)=P(x%7Cy)P(y)=P(y%7Cx)P(x)">
+<meta property="og:image" content="http://latex.codecogs.com/gif.latex?P(x,y)=P(x)P(y)">
+<meta property="og:image" content="http://latex.codecogs.com/gif.latex?P(x%7Cy)=%5Cfrac%7BP(x,y)%7D%7BP(y)%7D">
+<meta property="og:image" content="http://latex.codecogs.com/gif.latex?P(y%7Cx)=%5Cfrac%7BP(x,y)%7D%7BP(x)%7D">
+<meta property="og:image" content="http://latex.codecogs.com/gif.latex?P(x)=%5Csum_%7Bi=1%7D%5E%7BM%7DP(x%7Cy_%7Bi%7D)P(y_%7Bi%7D)">
+<meta property="og:image" content="http://latex.codecogs.com/gif.latex?%5Csum_%7Bi=1%7D%5E%7BM%7DP(y_%7Bi%7D)">
+<meta property="og:image" content="http://latex.codecogs.com/gif.latex?P(y_%7Bi%7D%7Cx)=%5Cfrac%7BP(y_%7Bi%7D)P(y_%7Bi%7D%7Cx)%7D%7B%5Csum_%7Bj=1%7D%5E%7Bn%7DP(y_%7Bj%7D)P(x%7Cy_%7Bj%7D)%7D">
+<meta property="og:image" content="http://latex.codecogs.com/gif.latex?P(Y%7CX)=%5Cfrac%7BP(X%7CY)P(Y)%7D%7BP(X)%7D">
+<meta property="og:updated_time" content="2019-04-15T14:19:42.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Welcome to NLP-2019-huanhuan-homework-5">
+<meta name="twitter:description" content="内容涵盖 朴素贝叶斯的原理   朴素贝叶斯应用场景   朴素贝叶斯优缺点   朴素贝叶斯 sklearn 参数学习    利用朴素贝叶斯模型结合 Tf-idf 算法进行文本分类    0.知识回顾(1) 联合概率   &amp;ensp;&amp;ensp;&amp;ensp;P(x)表示x发生的概率，P(y)表示y发生的概率，则 x，y 同时发生的概率为：    &amp;ensp;&amp;ensp;&amp;ensp;特别的，当x，y独立">
+<meta name="twitter:image" content="http://latex.codecogs.com/gif.latex?P(x,y)=P(x%7Cy)P(y)=P(y%7Cx)P(x)">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/04/15/NLP-homework-5-Pushubeiyesi/">
+
+
+
+
+
+  <title>Welcome to NLP-2019-huanhuan-homework-5 | 焕小妹</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">焕小妹</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">bug</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/15/NLP-homework-5-Pushubeiyesi/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="焕焕">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="焕小妹">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Welcome to NLP-2019-huanhuan-homework-5</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-04-15T19:00:35+08:00">
+                2019-04-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/NLP/" itemprop="url" rel="index">
+                    <span itemprop="name">NLP</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="内容涵盖"><a href="#内容涵盖" class="headerlink" title="内容涵盖"></a>内容涵盖</h2><ul>
+<li><strong>朴素贝叶斯的原理</strong>  </li>
+<li><strong>朴素贝叶斯应用场景</strong>  </li>
+<li><strong>朴素贝叶斯优缺点</strong>  </li>
+<li><strong>朴素贝叶斯 sklearn 参数学习</strong>   </li>
+<li><strong>利用朴素贝叶斯模型结合 Tf-idf 算法进行文本分类</strong>  </li>
+</ul>
+<h2 id="0-知识回顾"><a href="#0-知识回顾" class="headerlink" title="0.知识回顾"></a>0.知识回顾</h2><p><strong>(1) 联合概率</strong>  </p>
+<p>&ensp;&ensp;&ensp;P(x)表示x发生的概率，P(y)表示y发生的概率，则 x，y 同时发生的概率为：  </p>
+<p><img src="http://latex.codecogs.com/gif.latex?P(x,y)=P(x%7Cy)P(y)=P(y%7Cx)P(x)" alt></p>
+<p>&ensp;&ensp;&ensp;特别的，当x，y独立时，上式可以写作：   </p>
+<p><strong><img src="http://latex.codecogs.com/gif.latex?P(x,y)=P(x)P(y)" alt></strong>    </p>
+<p>&ensp;&ensp;&ensp;原因在于，当x，y独立时，即x的发生与y的发生不相关，因此就有p(x|y)=p(x)，同理p(y|x)=p(y)。</p>
+<p><strong>(2) 条件概率</strong> （是联合概率的变形，即把 条件事件 放在了等式左边）   </p>
+<p><strong><img src="http://latex.codecogs.com/gif.latex?P(x%7Cy)=%5Cfrac%7BP(x,y)%7D%7BP(y)%7D" alt></strong>    </p>
+<p> <strong><img src="http://latex.codecogs.com/gif.latex?P(y%7Cx)=%5Cfrac%7BP(x,y)%7D%7BP(x)%7D" alt></strong>    </p>
+<p><strong>(3) 全概率</strong>   </p>
+<p><strong><img src="http://latex.codecogs.com/gif.latex?P(x)=%5Csum_%7Bi=1%7D%5E%7BM%7DP(x%7Cy_%7Bi%7D)P(y_%7Bi%7D)" alt></strong>   </p>
+<p>其中，<strong><img src="http://latex.codecogs.com/gif.latex?%5Csum_%7Bi=1%7D%5E%7BM%7DP(y_%7Bi%7D)" alt> = 1</strong> ，也就是说对于y的M种（所有）情况都要考虑到。</p>
+<p><strong>(3) 贝叶斯</strong>   </p>
+<p>贝叶斯理论指的是，根据一个已发生事件的概率，计算另一个事件的发生概率,<strong>贝叶斯公式：</strong>   </p>
+<p><img src="http://latex.codecogs.com/gif.latex?P(y_%7Bi%7D%7Cx)=%5Cfrac%7BP(y_%7Bi%7D)P(y_%7Bi%7D%7Cx)%7D%7B%5Csum_%7Bj=1%7D%5E%7Bn%7DP(y_%7Bj%7D)P(x%7Cy_%7Bj%7D)%7D" alt></p>
+<p>等同于我们经常简略表达：</p>
+<p><strong><img src="http://latex.codecogs.com/gif.latex?P(Y%7CX)=%5Cfrac%7BP(X%7CY)P(Y)%7D%7BP(X)%7D" alt></strong></p>
+<p>其中，<strong>X</strong>: 特征向量 &ensp;&ensp;&ensp; <strong>Y</strong>：类别<br>&ensp;&ensp;&ensp;&ensp; <strong>先验概率P(X)</strong>：是指根据以往经验和分析得到的概率。<br>&ensp;&ensp;&ensp;&ensp;<strong>后验概率P(Y|X)</strong> ：事情已经发生，要求这件事情发生的原因是由某个因素引起的可能性的大小。<br>&ensp;&ensp;&ensp;&ensp;<strong>类条件概率P(X|Y)</strong>：在已知某类别的特征空间中，出现特征值 <strong>X</strong> 的概率密度。 </p>
+<h2 id="1-朴素贝叶斯原理"><a href="#1-朴素贝叶斯原理" class="headerlink" title="1.朴素贝叶斯原理"></a>1.朴素贝叶斯原理</h2><p>&ensp;&ensp;&ensp;贝叶斯分类是一类分类算法的总称，这类算法均以贝叶斯定理为基础，故统称为贝叶斯分类。而<strong>朴素贝叶斯分类是贝叶斯分类中最简单，也是常见的一种分类方法</strong>。</p>
+<p><strong>朴素贝叶斯（naïve beyes）</strong> 法是基于 <strong>贝叶斯定理</strong> 与 <strong>特征条件独立假设</strong>的分类方法。—by李航《统计学习》</p>
+<p>基于朴素贝叶斯公式，比较出后验概率的最大值来进行分类，后验概率的计算是由先验概率与类条件概率的乘积得出，先验概率和类条件概率要通过训练数据集得出，即为朴素贝叶斯分类模型，将其保存为中间结果，测试文档进行分类时调用这个中间结果得出后验概率。  </p>
+<p>&ensp;&ensp;&ensp;</p>
+<h2 id="2-朴素贝叶斯应用场景"><a href="#2-朴素贝叶斯应用场景" class="headerlink" title="2. 朴素贝叶斯应用场景"></a>2. 朴素贝叶斯应用场景</h2><h2 id="3-朴素贝叶斯优缺点"><a href="#3-朴素贝叶斯优缺点" class="headerlink" title="3.朴素贝叶斯优缺点"></a>3.朴素贝叶斯优缺点</h2><ul>
+<li><strong>优点</strong>  </li>
+</ul>
+<p>(1) 算法逻辑简单,易于实现；<br>(2) 分类过程中时空开销小（假设特征相互独立，只会涉及到二维存储）</p>
+<ul>
+<li><strong>缺点</strong>  </li>
+</ul>
+<p>&ensp;&ensp;&ensp;理论上，朴素贝叶斯模型与其他分类方法相比具有最小的误差率。但是实际上并非总是如此，这是因为朴素贝叶斯模型<strong>假设属性之间相互独立</strong>，这个假设在实际应用中往往是不成立的，在属性个数比较多或者属性之间相关性较大时，分类效果不好。  </p>
+<h2 id="4-朴素贝叶斯-sklearn-参数学习"><a href="#4-朴素贝叶斯-sklearn-参数学习" class="headerlink" title="4.朴素贝叶斯 sklearn 参数学习"></a>4.朴素贝叶斯 sklearn 参数学习</h2><h2 id="参考博客"><a href="#参考博客" class="headerlink" title="参考博客"></a>参考博客</h2><ol>
+<li><a href="https://www.cnblogs.com/pinard/p/6069267.html" target="_blank" rel="noopener"><strong>朴素贝叶斯相关的统计学知识</strong></a></li>
+<li><a href="https://blog.csdn.net/qq_35044025/article/details/79322169" target="_blank" rel="noopener"><strong>sklearn的机器学习之路：朴素贝叶斯</strong></a>  </li>
+<li><a href="http://www.52nlp.cn/%E7%90%86%E8%AE%BA-%E6%9C%B4%E7%B4%A0%E8%B4%9D%E5%8F%B6%E6%96%AF%E6%A8%A1%E5%9E%8B%E7%AE%97%E6%B3%95%E7%A0%94%E7%A9%B6%E4%B8%8E%E5%AE%9E%E4%BE%8B%E5%88%86%E6%9E%90#more-10451" target="_blank" rel="noopener"><strong>朴素贝叶斯模型算法研究与实例分析</strong></a></li>
+</ol>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/朴素贝叶斯/" rel="tag"># 朴素贝叶斯</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/04/13/NLP-homework-3/" rel="next" title="Welcome to NLP-2019-huanhuan-homework-4">
+                <i class="fa fa-chevron-left"></i> Welcome to NLP-2019-huanhuan-homework-4
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/04/16/Pujulei/" rel="prev" title="谱聚类（Spectral Clustering）算法概念及应用">
+                谱聚类（Spectral Clustering）算法概念及应用 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">焕焕</p>
+              <p class="site-description motion-element" itemprop="description">Bug多多  欢乐多多</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">categories</span>
+                
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-name">tags</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#内容涵盖"><span class="nav-number">1.</span> <span class="nav-text">内容涵盖</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0-知识回顾"><span class="nav-number">2.</span> <span class="nav-text">0.知识回顾</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-朴素贝叶斯原理"><span class="nav-number">3.</span> <span class="nav-text">1.朴素贝叶斯原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-朴素贝叶斯应用场景"><span class="nav-number">4.</span> <span class="nav-text">2. 朴素贝叶斯应用场景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-朴素贝叶斯优缺点"><span class="nav-number">5.</span> <span class="nav-text">3.朴素贝叶斯优缺点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-朴素贝叶斯-sklearn-参数学习"><span class="nav-number">6.</span> <span class="nav-text">4.朴素贝叶斯 sklearn 参数学习</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考博客"><span class="nav-number">7.</span> <span class="nav-text">参考博客</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">焕焕</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

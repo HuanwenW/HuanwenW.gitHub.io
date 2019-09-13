@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="软件安装,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="前奏：&amp;ensp;&amp;ensp;&amp;ensp;想要Markdown中图文并茂记录学习历程，偏偏却卡在了插图上，经过牛牛二虎之力，灰心丧气，终于得救~下面我来综合多篇博客，给入门的小白(git使用都包教)一条生路！  环境：基于github网页版Markdown图片插入记录   问题来源： MarkDown添加图片的三种方式无法满足我的需求，问题如下：     解决问题思路：  （截图中提到的方法1和2">
+<meta name="keywords" content="软件安装">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Markdown 插入图片不友好，如何解决？">
+<meta property="og:url" content="http://yoursite.com/2019/04/09/Markdown-Picture/index.html">
+<meta property="og:site_name" content="焕小妹">
+<meta property="og:description" content="前奏：&amp;ensp;&amp;ensp;&amp;ensp;想要Markdown中图文并茂记录学习历程，偏偏却卡在了插图上，经过牛牛二虎之力，灰心丧气，终于得救~下面我来综合多篇博客，给入门的小白(git使用都包教)一条生路！  环境：基于github网页版Markdown图片插入记录   问题来源： MarkDown添加图片的三种方式无法满足我的需求，问题如下：     解决问题思路：  （截图中提到的方法1和2">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://github.com/HuanwenW/MyPostImag/blob/master/007-picture/markD-%E6%8F%92%E5%9B%BE-1.jpg?raw=true">
+<meta property="og:image" content="https://github.com/HuanwenW/MyPostImag/blob/master/190406-markDown/MD-Pic-1.png?raw=true">
+<meta property="og:image" content="https://github.com/HuanwenW/MyPostImag/blob/master/190406-markDown/MD-Pic-2.jpg?raw=true">
+<meta property="og:image" content="https://github.com/HuanwenW/MyPostImag/blob/master/190406-markDown/MD-Pic-3.png?raw=true">
+<meta property="og:image" content="https://github.com/HuanwenW/MyPostImag/blob/master/190406-markDown/MD-Pic-4.png?raw=true">
+<meta property="og:image" content="https://github.com/HuanwenW/MyPostImag/blob/master/190406-markDown/MD-Pic-5.jpg?raw=true">
+<meta property="og:image" content="https://github.com/HuanwenW/MyPostImag/blob/master/190406-markDown/MD-Pic-6.jpg?raw=true">
+<meta property="og:image" content="https://github.com/HuanwenW/MyPostImag/blob/master/190406-markDown/MD-Pic-7.jpg?raw=true">
+<meta property="og:image" content="https://github.com/HuanwenW/MyPostImag/blob/master/190406-markDown/MD-Pic-8.png?raw=true">
+<meta property="og:image" content="https://github.com/HuanwenW/MyPostImag/blob/master/190406-markDown/MD-Pic-9.png?raw=true">
+<meta property="og:image" content="https://github.com/HuanwenW/MyPostImag/blob/master/190406-markDown/MD-Pic-10.png?raw=true">
+<meta property="og:image" content="https://github.com/HuanwenW/MyPostImag/blob/master/190406-markDown/MD-Pic-11.png?raw=true">
+<meta property="og:image" content="https://github.com/HuanwenW/MyPostImag/blob/master/190406-markDown/MD-Pic-12.png?raw=true">
+<meta property="og:image" content="https://github.com/HuanwenW/MyPostImag/blob/master/190406-markDown/MD-Pic-13.png?raw=true">
+<meta property="og:updated_time" content="2019-04-13T11:08:40.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Markdown 插入图片不友好，如何解决？">
+<meta name="twitter:description" content="前奏：&amp;ensp;&amp;ensp;&amp;ensp;想要Markdown中图文并茂记录学习历程，偏偏却卡在了插图上，经过牛牛二虎之力，灰心丧气，终于得救~下面我来综合多篇博客，给入门的小白(git使用都包教)一条生路！  环境：基于github网页版Markdown图片插入记录   问题来源： MarkDown添加图片的三种方式无法满足我的需求，问题如下：     解决问题思路：  （截图中提到的方法1和2">
+<meta name="twitter:image" content="https://github.com/HuanwenW/MyPostImag/blob/master/007-picture/markD-%E6%8F%92%E5%9B%BE-1.jpg?raw=true">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/04/09/Markdown-Picture/">
+
+
+
+
+
+  <title>Markdown 插入图片不友好，如何解决？ | 焕小妹</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">焕小妹</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">bug</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/09/Markdown-Picture/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="焕焕">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="焕小妹">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Markdown 插入图片不友好，如何解决？</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-04-09T21:55:27+08:00">
+                2019-04-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/技术篇/" itemprop="url" rel="index">
+                    <span itemprop="name">技术篇</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="前奏："><a href="#前奏：" class="headerlink" title="前奏："></a>前奏：</h3><p>&ensp;&ensp;&ensp;想要Markdown中图文并茂记录学习历程，偏偏却卡在了插图上，经过牛牛二虎之力，灰心丧气，终于得救<del>~</del>下面我来综合多篇博客，给入门的小白(git使用都包教)一条生路！</p>
+<ul>
+<li><strong>环境</strong>：基于github网页版Markdown图片插入记录  </li>
+<li><strong>问题来源：</strong> <a href="https://blog.csdn.net/slaughterdevil/article/details/79255933" target="_blank" rel="noopener">MarkDown添加图片的三种方式</a>无法满足我的需求，问题如下：<br><img src="https://github.com/HuanwenW/MyPostImag/blob/master/007-picture/markD-%E6%8F%92%E5%9B%BE-1.jpg?raw=true" alt="image">    </li>
+<li><strong>解决问题思路：</strong>  （截图中提到的方法1和2结合）即本地图片生成链接（保证图片何时何地都可以显示）+ 插入图片连接方法  </li>
+<li><strong>前方高能，提高注意力咯！！</strong>  </li>
+</ul>
+<h2 id="1-GitHub-建立仓库篇"><a href="#1-GitHub-建立仓库篇" class="headerlink" title="1. GitHub 建立仓库篇"></a>1. GitHub 建立仓库篇</h2><p><strong>第一步：</strong> 在GitHub上建立一个图片存储仓库<br>(1) 比如我建立的MyPostImage，用来存储需要的图片。<br><img src="https://github.com/HuanwenW/MyPostImag/blob/master/190406-markDown/MD-Pic-1.png?raw=true" alt="image"><br>(2) 复制项目地址：<br><img src="https://github.com/HuanwenW/MyPostImag/blob/master/190406-markDown/MD-Pic-2.jpg?raw=true" alt="image"><br><strong>第二步：</strong> 把Github项目-MyPostImage克隆到本地 ：<br>(1) 新建一个文件夹-githubPicture，在<strong>文件夹githubPicture内</strong>点击右键–选择Git Bash Here 打开终端，输入命令：<br><img src="https://github.com/HuanwenW/MyPostImag/blob/master/190406-markDown/MD-Pic-3.png?raw=true" alt="image"><br>(2) 克隆完成后结果如下：<br><img src="https://github.com/HuanwenW/MyPostImag/blob/master/190406-markDown/MD-Pic-4.png?raw=true" alt="image"><br>(3) 发现原来的文件中出现 <strong>MyPostImag</strong>文件夹<br><img src="https://github.com/HuanwenW/MyPostImag/blob/master/190406-markDown/MD-Pic-5.jpg?raw=true" alt="image"><br><strong>第三步：</strong> 在克隆到本地的文件夹中建立一个文件夹–<strong>190406-markDown</strong>(名字自己取) ：<br><img src="https://github.com/HuanwenW/MyPostImag/blob/master/190406-markDown/MD-Pic-6.jpg?raw=true" alt="image"><br><strong>第四步：</strong> 把你要用的图片存到文件夹<strong>190406-markDown</strong>里。<br><strong>第五步：</strong> 把更改push到Github仓库：<br> （1） 输入 “ git init “，作用是项目里面会创建一个隐藏的.git文件，执行结果如下：<br> <img src="https://github.com/HuanwenW/MyPostImag/blob/master/190406-markDown/MD-Pic-7.jpg?raw=true" alt="image"><br> （2） 输入 “ git add . “, 这个是将项目上所有的文件添加到仓库中的意思，如果想添加某个特定的文件，只需把’ . ‘换成这个特定的文件名即可。<br> <img src="https://github.com/HuanwenW/MyPostImag/blob/master/190406-markDown/MD-Pic-8.png?raw=true" alt="image"><br> （3） 输入 “ git commit -m “first commit “，表示你对这次提交的注释，双引号里面的内容可以根据个人的需要改。例如 “ git commit -m “第一次提交 “<br> <img src="https://github.com/HuanwenW/MyPostImag/blob/master/190406-markDown/MD-Pic-9.png?raw=true" alt="image"><br> （4） 输入 “git remote add origin https://刚才建立的仓库地址（第一步中提到的）”  将本地的仓库关联到github上。<br> <img src="https://github.com/HuanwenW/MyPostImag/blob/master/190406-markDown/MD-Pic-10.png?raw=true" alt="image"><br> （5） 输入 “git push -u origin master “，这是把代码上传到github仓库的意思。<br> <img src="https://github.com/HuanwenW/MyPostImag/blob/master/190406-markDown/MD-Pic-11.png?raw=true" alt="image"><br> （6） 刷新github页面，发现本地新建文件已经出现：<br> <img src="https://github.com/HuanwenW/MyPostImag/blob/master/190406-markDown/MD-Pic-12.png?raw=true" alt="image">   </p>
+<h2 id="2-图片生成URL篇"><a href="#2-图片生成URL篇" class="headerlink" title="2. 图片生成URL篇"></a>2. 图片生成URL篇</h2><p>（1）打开 <strong>190406-markDown</strong> 文件夹，双击你需要的图片进入到下面界面：<br><img src="https://github.com/HuanwenW/MyPostImag/blob/master/190406-markDown/MD-Pic-13.png?raw=true" alt="image"><br>（2）右键选择<strong>复制图片地址</strong>，然后按照 ![图片名称](复制好的图片地址） 格式，添加到Markdown博文中即可，比如：<br>我下面插入的图3的图片是这样实现的:  </p>
+<blockquote>
+<p>![MD-Pic-13.png]（<a href="https://github.com/HuanwenW/MyPostImag/blob/master/190406-markDown/MD-Pic-13.png?raw=true）" target="_blank" rel="noopener">https://github.com/HuanwenW/MyPostImag/blob/master/190406-markDown/MD-Pic-13.png?raw=true）</a>  </p>
+</blockquote>
+<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><ol>
+<li><a href="https://www.jianshu.com/p/e9f18be1295d" target="_blank" rel="noopener">简单三步在Markdown 中插入图片</a></li>
+<li><a href="https://blog.csdn.net/hustwayne/article/details/83014499" target="_blank" rel="noopener">Github项目（克隆，上传）简单git命令流程使用记录</a></li>
+<li><a href="https://blog.csdn.net/linton1/article/details/80320121" target="_blank" rel="noopener">GitHub上克隆项目到本地</a></li>
+</ol>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/软件安装/" rel="tag"># 软件安装</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/04/10/hexo-gitHub/" rel="prev" title="hexo+gitHub 个人博客搭建及更换主题历程（特适合入门小白）">
+                hexo+gitHub 个人博客搭建及更换主题历程（特适合入门小白） <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">焕焕</p>
+              <p class="site-description motion-element" itemprop="description">Bug多多  欢乐多多</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">categories</span>
+                
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-name">tags</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前奏："><span class="nav-number">1.</span> <span class="nav-text">前奏：</span></a></li></ol><li class="nav-item nav-level-2"><a class="nav-link" href="#1-GitHub-建立仓库篇"><span class="nav-number"></span> <span class="nav-text">1. GitHub 建立仓库篇</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-图片生成URL篇"><span class="nav-number"></span> <span class="nav-text">2. 图片生成URL篇</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考链接"><span class="nav-number"></span> <span class="nav-text">参考链接</span></a></li></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">焕焕</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
