@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-09-14T03:42:39.387Z</updated>
+  <updated>2019-09-14T11:41:46.433Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,9 +17,35 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Hexo+github 从windows到mac的迁移（小白水平）</title>
+    <link href="http://yoursite.com/2019/09/14/skill-based/Hexo+github%20%E4%BB%8Ewindows%E5%88%B0mac%E7%9A%84%E8%BF%81%E7%A7%BB%EF%BC%88%E8%B6%85%E8%AF%A6%E7%BB%86%E6%AD%A5%E9%AA%A4%E5%8F%8A%E9%81%87%E5%88%B0%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%EF%BC%89/"/>
+    <id>http://yoursite.com/2019/09/14/skill-based/Hexo+github 从windows到mac的迁移（超详细步骤及遇到问题解决）/</id>
+    <published>2019-09-14T13:55:27.000Z</published>
+    <updated>2019-09-14T11:41:46.433Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>2019的年5月在惠普笔记本搭建了个hexo+github版人博客就；<br>2019的6月刚入手了一个mac，于是乎各种东西都得由windows转移到mac;<br>hexo的搬家路：windows - &gt; MacBook Pro </p><h2 id="总体思路"><a href="#总体思路" class="headerlink" title="总体思路"></a>总体思路</h2><p>自己也算是摸爬滚打搭建迁移成功，把完整步骤分享给大家，同时最后有一些参考链接，如果我的步骤有问题，大家可以参考其他人的.</p><p>理清思路真不难，<strong>过程要细心、耐心</strong>，大概分为以下三个模块：</p><ul><li>首先在mac电脑上安装好<code>hexo</code>，并初始化根目录;</li><li>然后生成新的<code>SSH key</code>，并将其添加到<code>github</code>上;</li><li>将旧电脑中的三个文件，直接粘贴覆盖在新电脑对应的目录。</li></ul><h2 id="言归正传"><a href="#言归正传" class="headerlink" title="言归正传"></a>言归正传</h2><h2 id="一-安装hexo前奏"><a href="#一-安装hexo前奏" class="headerlink" title="一. 安装hexo前奏"></a>一. 安装hexo前奏</h2><h3 id="1-安装Homebrew（下载速度有点慢，耐心-）"><a href="#1-安装Homebrew（下载速度有点慢，耐心-）" class="headerlink" title="1. 安装Homebrew（下载速度有点慢，耐心~~）"></a>1. 安装Homebrew（下载速度有点慢，耐心~~）</h3><p>Homebrew安装过程很简单，直接打开mac电脑的<strong>Terminal</strong>命令窗口，把下面的代码粘贴一下，按回车键执行即可，安装过程中两次停顿，分别需要输入 y 和 电脑密码</p><table><tr><td bgcolor="black"> <font size="3" color="white">/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" </font></td></tr></table>  <p>查看安装是否成功命令：</p><table><tr><td bgcolor="black"> <font size="3" color="white"> brew --version </font></td></tr></table>  <p>安装成功提示版本号，如下图</p><p><img src="https://github.com/HuanwenW/MyPostImag/blob/master/190912-mac/Homebrewsuccessful.jpg?raw=true" alt="Homebrew安装成功！"><span class="img-alt">Homebrew安装成功！</span></p><h3 id="2-安装git"><a href="#2-安装git" class="headerlink" title="2. 安装git"></a>2. 安装git</h3><p>先检查下电脑是否已存在Git，若mac自带git，此步可以跳过，查看命令如下</p><table><tr><td bgcolor="black"> <font size="3" color="white"> git --version </font></td></tr></table>  <p>若不存在，使用brew安装Git，安装命令如下</p><table><tr><td bgcolor="black"> <font size="3" color="white"> brew install git </font></td></tr></table>  <p>同样，输入<strong>git –version</strong> 验证是否安装成功</p><p>安装成功提示版本号，如下图</p><p><img src="https://github.com/HuanwenW/MyPostImag/blob/master/190912-mac/gitSuccessful.jpg?raw=true" alt="git安装成功！"><span class="img-alt">git安装成功！</span></p><h3 id="3-安装node"><a href="#3-安装node" class="headerlink" title="3. 安装node"></a>3. 安装node</h3><p>输入命令如下</p><table><tr><td bgcolor="black"> <font size="3" color="white"> brew install node </font></td></tr></table> <p>检查安装是否成功，一定要安装成功，否者否许操作中会报错</p><table><tr><td bgcolor="black"> <font size="3" color="white"> node --version </font></td></tr></table> <p>安装成功提示版本号，如下图</p><p><img src="https://github.com/HuanwenW/MyPostImag/blob/master/190912-mac/nodeSuccessful.jpg?raw=true" alt="node安装成功！"><span class="img-alt">node安装成功！</span></p><h2 id="二-Hexo的安装及初始化"><a href="#二-Hexo的安装及初始化" class="headerlink" title="二. Hexo的安装及初始化"></a>二. Hexo的安装及初始化</h2><h3 id="1-用-node-的-npm-安装-hexo，命令如下（下载速度有点慢，耐心-）"><a href="#1-用-node-的-npm-安装-hexo，命令如下（下载速度有点慢，耐心-）" class="headerlink" title="1. 用 node 的 npm 安装 hexo，命令如下（下载速度有点慢，耐心~~）"></a>1. 用 node 的 npm 安装 hexo，命令如下（下载速度有点慢，耐心~~）</h3><table><tr><td bgcolor="black"> <font size="3" color="white"> sudo npm install --unsafe-perm=true -g hexo-cli </font></td></tr></table> <h3 id="2-初始化hexo"><a href="#2-初始化hexo" class="headerlink" title="2. 初始化hexo"></a>2. 初始化hexo</h3><p>创建HexoBlog（名字根据个人喜好自取）文件夹,输入下面命令：    </p><table><tr><td bgcolor="black"> <font size="3" color="white"> hexo init HexoBlog  </font></td></tr></table>  <p><strong>！！！报错提示及解决方案</strong></p><p><img src="https://github.com/HuanwenW/MyPostImag/blob/master/190912-mac/hexo%20erro.jpg?raw=true" alt="创建HexoBlog报错"><span class="img-alt">创建HexoBlog报错</span></p><p><img src="https://github.com/HuanwenW/MyPostImag/blob/master/190912-mac/hexo%20ok.jpg?raw=true" alt="npm权限问题解决方案"><span class="img-alt">npm权限问题解决方案</span></p><h3 id="3-体验hexo魅力"><a href="#3-体验hexo魅力" class="headerlink" title="3. 体验hexo魅力"></a>3. 体验hexo魅力</h3><p>​       由于初始化hexo 之后source目录下自带一篇hello world文章, 所以依次执行下方两个命令：<br><font color="#DC143C" size="3">&ensp;注意：执行下面命令前要先进入blog文件夹中重新打开git命令窗口！！！</font>  </p><table><tr><td bgcolor="black"> <font size="3" color="white">$ hexo generate </font></td></tr></table>  <p> 命令含义： 生成静态文件，等价于(可简写为)： <code>hexo  g</code>    </p><table><tr><td bgcolor="black"> <font size="3" color="white">$ hexo server  </font></td></tr></table>  <p> 命令含义： 启动本地服务器，等价于(可简写为)： <code>hexo  s</code></p><p>打开浏览器，输入网址： <a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a> ，即可看到网站初步的模样。<br><img src="https://github.com/HuanwenW/MyPostImag/blob/master/190410-boke/github-2.png?raw=true" alt="bendibokeliulan"><span class="img-alt">bendibokeliulan</span></p><h2 id="三-mac生成SSH及配置"><a href="#三-mac生成SSH及配置" class="headerlink" title="三. mac生成SSH及配置"></a>三. mac生成SSH及配置</h2><h3 id="1-先检查一下本机的-SSH-key是否已存在"><a href="#1-先检查一下本机的-SSH-key是否已存在" class="headerlink" title="1. 先检查一下本机的 SSH key是否已存在"></a>1. 先检查一下本机的 SSH key是否已存在</h3><table><tr><td bgcolor="black"> <font size="3" color="white">ls -a ~/.ssh  </font></td></tr></table><h3 id="2-若不存在，输入以下命令，生成ssh"><a href="#2-若不存在，输入以下命令，生成ssh" class="headerlink" title="2. 若不存在，输入以下命令，生成ssh"></a>2. 若不存在，输入以下命令，生成ssh</h3><table><tr><td bgcolor="black"> <font size="3" color="white">ssh -T git@github.com  </font></td></tr></table><p><img src="https://github.com/HuanwenW/MyPostImag/blob/master/190912-mac/ssh%20open%202.jpg?raw=true" alt="生成ssh"><span class="img-alt">生成ssh</span></p><h3 id="3-你可能找不命令窗口提示所生成的ssh在哪里，此时可直接用命令打开-ssh文件"><a href="#3-你可能找不命令窗口提示所生成的ssh在哪里，此时可直接用命令打开-ssh文件" class="headerlink" title="3. 你可能找不命令窗口提示所生成的ssh在哪里，此时可直接用命令打开.ssh文件"></a>3. 你可能找不命令窗口提示所生成的ssh在哪里，此时可直接用命令打开.ssh文件</h3><table><tr><td bgcolor="black"> <font size="3" color="white">open ~/.ssh </font></td></tr></table><h3 id="4-复制id-rsa-pub里面的所有内容"><a href="#4-复制id-rsa-pub里面的所有内容" class="headerlink" title="4. 复制id_rsa.pub里面的所有内容"></a>4. 复制id_rsa.pub里面的所有内容</h3><ul><li><p>手动打开id_rsa.pub文件，复制里面的所有内容</p></li><li><p>直接在终端打开文件，复制生成内容，打开文件命令如下</p></li></ul><table><tr><td bgcolor="black"> <font size="3" color="white">cat ~/.ssh/id_rsa.pub </font></td></tr></table><h3 id="5-进入github配置ssh"><a href="#5-进入github配置ssh" class="headerlink" title="5. 进入github配置ssh"></a>5. 进入github配置ssh</h3><p>然后进入进入自己的github页面，找到setting下的SSH：<a href="https://github.com/settings/ssh" target="_blank" rel="noopener">链接</a>  </p><p>依次执行下面步骤：点击 New SSH key —— Title：blog —— Key：输入刚才复制的内容 —— Add SSH key  </p><p><img src="https://github.com/HuanwenW/MyPostImag/blob/master/190912-mac/addSSH.jpg?raw=true" alt="添加ssh的配置"><span class="img-alt">添加ssh的配置</span></p><p><strong>d.</strong> 测试一下是否成功,输入下方命令：  </p><table><tr><td bgcolor="black"> <font size="3" color="white">$ ssh -T git@github.com   //Github的注册邮箱地址 </font></td></tr></table>  <p><img src="https://github.com/HuanwenW/MyPostImag/blob/master/190410-boke/github-3.png?raw=true" alt><br>&ensp;&ensp;&ensp;看到上面信息说明SSH已配置成功！  </p><h2 id="四-替换-config-yml-、thems、source-文件"><a href="#四-替换-config-yml-、thems、source-文件" class="headerlink" title="四. 替换_config.yml 、thems、source 文件"></a>四. 替换_config.yml 、thems、source 文件</h2><p>从<strong>windows</strong>电脑中复制_config.yml 、thems、source三个文件 ，替换<strong>mac</strong>下的_config.yml 、thems、source 三个文件，即可完成原主题的迁移</p><h2 id="五-主题相关设置专题"><a href="#五-主题相关设置专题" class="headerlink" title="五. 主题相关设置专题"></a>五. 主题相关设置专题</h2><p>此处不在啰嗦，完全参照<a href="https://github.com/Youthink/hexo-themes-yearn/wiki/主题使用教程-📖" target="_blank" rel="noopener">hexo搭建模版参照教程</a>的讲解</p><p>也可以参考我的<a href="https://huanwenw.github.io/2019/04/10/hexo-gitHub/" target="_blank" rel="noopener">window版本搭建hexo</a>中第四部分<strong>如何将github和hexo联系起来？</strong>的详细说明</p><h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><ol><li><a href="[http://gjincai.github.io/2017/01/13/hexo-%E4%BB%8E-windows-%E8%BD%AC%E7%A7%BB%E8%87%B3-Mac/](http://gjincai.github.io/2017/01/13/hexo-从-windows-转移至-Mac/)">hexo从windows转移至Mac</a></li><li><a href="https://hankliu62.github.io/2017/09/09/hexo-github-blog-guide/" target="_blank" rel="noopener">MAC搭建个人博客hexo+github详细完整步骤</a></li><li><a href="https://blog.csdn.net/xy371661665/article/details/77528132" target="_blank" rel="noopener">Mac系统下安装和卸载HomeBrew的方法</a></li><li><a href="https://blog.csdn.net/qq_41234116/article/details/79366454" target="_blank" rel="noopener">Mac安装，简单使用，卸载homebrew详细教程</a></li><li><a href="https://blog.csdn.net/qq_39153421/article/details/89362432" target="_blank" rel="noopener">解决hexo -d 报错问题</a></li><li><a href="https://www.jianshu.com/p/60b3d5584afe" target="_blank" rel="noopener">npm权限问题</a></li><li><a href="https://www.jianshu.com/p/e72e94952d76" target="_blank" rel="noopener">mac下 ssh key 的获取</a></li><li><a href="https://github.com/Youthink/hexo-themes-yearn/wiki/主题使用教程-📖" target="_blank" rel="noopener">hexo搭建模版参照教程</a></li><li><a href="https://github.com/adrai/flowchart.js" target="_blank" rel="noopener">用<strong>flowchart.js</strong>画流程图</a></li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;背景&quot;&gt;&lt;a href=&quot;#背景&quot; class=&quot;headerlink&quot; title=&quot;背景&quot;&gt;&lt;/a&gt;背景&lt;/h2&gt;&lt;p&gt;2019的年5月在惠普笔记本搭建了个hexo+github版人博客就；&lt;br&gt;2019的6月刚入手了一个mac，于是乎各种东西都得由wind
+      
+    
+    </summary>
+    
+    
+      <category term="技术篇" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF%E7%AF%87/"/>
+    
+    
+      <category term="软件安装" scheme="http://yoursite.com/tags/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/"/>
+    
+  </entry>
+  
+  <entry>
     <title>关于转载</title>
-    <link href="http://yoursite.com/2019/09/12/copyright-reprinted/"/>
-    <id>http://yoursite.com/2019/09/12/copyright-reprinted/</id>
+    <link href="http://yoursite.com/2019/09/12/skill-based/copyright-reprinted/"/>
+    <id>http://yoursite.com/2019/09/12/skill-based/copyright-reprinted/</id>
     <published>2019-09-12T13:55:27.000Z</published>
     <updated>2019-09-14T03:42:39.387Z</updated>
     
@@ -43,69 +69,20 @@
   </entry>
   
   <entry>
-    <title></title>
-    <link href="http://yoursite.com/2019/09/12/mac%E4%B8%8A%E4%BD%BF%E7%94%A8%E6%8D%B7%E5%B8%8C%E7%A7%BB%E5%8A%A8%E7%A1%AC%E7%9B%98/"/>
-    <id>http://yoursite.com/2019/09/12/mac上使用捷希移动硬盘/</id>
-    <published>2019-09-12T01:45:10.615Z</published>
-    <updated>2019-09-12T02:19:39.402Z</updated>
+    <title>MacBook Pro 识别希捷移动硬盘</title>
+    <link href="http://yoursite.com/2019/09/12/skill-based/mac+xijieHarddisk/"/>
+    <id>http://yoursite.com/2019/09/12/skill-based/mac+xijieHarddisk/</id>
+    <published>2019-09-12T07:55:27.000Z</published>
+    <updated>2019-09-14T08:33:11.005Z</updated>
     
-    <content type="html"><![CDATA[<p>内心OS：被困扰18个小时的question，终于解决，只因思路不清晰，太蠢！–20190912</p><h2 id="设备描述"><a href="#设备描述" class="headerlink" title="设备描述"></a>设备描述</h2><ul><li><p>MacBcook Pro -2018 version：10.14.3 </p></li><li><p>希捷硬盘购买信息：希捷(Seagate) 1TB USB3.0 移动硬盘 睿品新版铭 兼容Mac</p><p>## </p></li></ul><h2 id="问题解决步骤"><a href="#问题解决步骤" class="headerlink" title="问题解决步骤"></a>问题解决步骤</h2><ol><li><p><a href="https://www.seagate.com/cn/zh/support/downloads/" target="_blank" rel="noopener">捷希官网</a>下载 Paragon 驱动程序（注意mac版本）</p></li><li><p>下载完成后双击软件，按照提示步骤完成安装</p></li><li><p>重启Mac</p></li><li><p>捷希硬盘插入mac</p></li><li><p>打开 <strong>NTFS for Mac</strong> 软件，发现移动硬盘已显示，如下图</p><p><img src alt="image1"><span class="img-alt">image1</span></p></li><li><p>点击 右侧 磁盘名称（）即可正常访问磁盘</p></li></ol><h2 id="问题解答"><a href="#问题解答" class="headerlink" title="问题解答"></a>问题解答</h2><ol><li>如何修改硬盘名称？<ul><li>参见步骤6</li></ul></li></ol><h3 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h3><p>1.<a href="https://www.bilibili.com/video/av8611848/" target="_blank" rel="noopener">如何在Mac系统下正确使用硬盘-视频讲解</a></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;内心OS：被困扰18个小时的question，终于解决，只因思路不清晰，太蠢！–20190912&lt;/p&gt;
-&lt;h2 id=&quot;设备描述&quot;&gt;&lt;a href=&quot;#设备描述&quot; class=&quot;headerlink&quot; title=&quot;设备描述&quot;&gt;&lt;/a&gt;设备描述&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;
-      
-    
-    </summary>
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Hexo+github 从windows到mac的迁移（超详细步骤及遇到问题解决）（特适合小白）</title>
-    <link href="http://yoursite.com/2019/09/10/Hexo+github%20%E4%BB%8Ewindows%E5%88%B0mac%E7%9A%84%E8%BF%81%E7%A7%BB%EF%BC%88%E8%B6%85%E8%AF%A6%E7%BB%86%E6%AD%A5%E9%AA%A4%E5%8F%8A%E9%81%87%E5%88%B0%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%EF%BC%89/"/>
-    <id>http://yoursite.com/2019/09/10/Hexo+github 从windows到mac的迁移（超详细步骤及遇到问题解决）/</id>
-    <published>2019-09-10T13:55:27.000Z</published>
-    <updated>2019-09-14T04:00:20.422Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>2019的年5月在惠普笔记本搭建了个hexo+github版人博客就；<br>2019的6月刚入手了一个mac，于是乎各种东西都得由windows转移到mac;<br>hexo的搬家路：windows - &gt; MacBook Pro </p><h2 id="总体思路"><a href="#总体思路" class="headerlink" title="总体思路"></a>总体思路</h2><p>理清思路真不难，过程要细心、耐心，大概分为以下三个模块：</p><ul><li>首先在mac电脑上安装好<code>hexo</code>，并初始化根目录;</li><li>然后生成新的<code>SSH key</code>，并将其添加到<code>github</code>上;</li><li>将旧电脑中的三个文件，直接粘贴覆盖在新电脑对应的目录。</li></ul><h2 id="言归正传"><a href="#言归正传" class="headerlink" title="言归正传"></a>言归正传</h2><h2 id="1-安装hexo前奏"><a href="#1-安装hexo前奏" class="headerlink" title="1. 安装hexo前奏"></a>1. 安装hexo前奏</h2><h2 id="2-安装Hexo"><a href="#2-安装Hexo" class="headerlink" title="2. 安装Hexo"></a>2. 安装Hexo</h2><h2 id="3-mac生成SSH"><a href="#3-mac生成SSH" class="headerlink" title="3.mac生成SSH"></a>3.mac生成SSH</h2><h2 id="4-替换-config-yml-、thems、source-文件"><a href="#4-替换-config-yml-、thems、source-文件" class="headerlink" title="4. 替换_config.yml 、thems、source 文件"></a>4. 替换_config.yml 、thems、source 文件</h2><h2 id="更换主题专题"><a href="#更换主题专题" class="headerlink" title="更换主题专题"></a>更换主题专题</h2><h3 id="内心OS："><a href="#内心OS：" class="headerlink" title="内心OS："></a>内心OS：</h3><p><strong>对现有主题不满意, 缺失某种功能（eg. 评论、时间轴）</strong></p><p><strong>我是代码小白，别人的博客太厉害！</strong> </p><p><strong>别当心，其实都是纸老虎，这里啥都有～～</strong></p><h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><ol><li><a href="[https://gjincai.github.io/2017/01/13/hexo-%E4%BB%8E-windows-%E8%BD%AC%E7%A7%BB%E8%87%B3-Mac/](https://gjincai.github.io/2017/01/13/hexo-从-windows-转移至-Mac/)">hexo从windows转移至Mac</a></li><li><a href="https://blog.csdn.net/qq_39153421/article/details/89362432" target="_blank" rel="noopener">解决hexo -d 报错问题</a></li><li><a href="https://github.com/Youthink/hexo-themes-yearn/wiki/主题使用教程-📖" target="_blank" rel="noopener">hexo搭建模版参照教程</a></li><li><a href="https://github.com/adrai/flowchart.js" target="_blank" rel="noopener">用<strong>flowchart.js</strong>画流程图</a></li></ol>]]></content>
+    <content type="html"><![CDATA[<p>内心OS：被困扰18个小时的question，终于解决，只因思路不清晰，走了很多弯路，太蠢！–20190912</p><p><strong>悟！</strong>：很多博客只是针对自己电脑遇到的问题给出解决方案，官网是针对所有电脑给出的解决方案，而且官网给出的说明更简洁且可靠！</p><h2 id="设备描述"><a href="#设备描述" class="headerlink" title="设备描述"></a>设备描述</h2><ul><li><p>MacBcook Pro -2018 version：10.14.3 </p></li><li><p>希捷硬盘购买信息：希捷(Seagate) 1TB USB3.0 移动硬盘 睿品新版铭 兼容Mac</p></li></ul><h2 id="问题解决步骤"><a href="#问题解决步骤" class="headerlink" title="问题解决步骤"></a>问题解决步骤</h2><ol><li><p><a href="https://www.seagate.com/cn/zh/support/downloads/" target="_blank" rel="noopener">希捷官网</a>下载 Paragon 驱动程序（注意mac版本）</p><p><img src="https://github.com/HuanwenW/MyPostImag/blob/master/190912-mac/0-download%20driver.jpg?raw=true" alt="官网下载界面"><span class="img-alt">官网下载界面</span></p></li><li><p>下载完成后双击软件，按照提示步骤完成安装</p></li><li><p>重启Mac</p></li><li><p>将希捷硬盘插入mac</p></li><li><p>打开 <strong>NTFS for Mac</strong> 软件，发现移动硬盘已显示，操作如下图</p><p><img src="https://github.com/HuanwenW/MyPostImag/blob/master/190912-mac/2-disk%20installation.jpg?raw=true" alt="借助第三方软件安装硬盘"><span class="img-alt">借助第三方软件安装硬盘</span></p></li><li><p>修改移动硬盘名称（若不需要可以直接执行第7步）</p><p><img src="https://github.com/HuanwenW/MyPostImag/blob/master/190912-mac/4-rename.jpg?raw=true" alt="移动硬盘重命名"><span class="img-alt">移动硬盘重命名</span></p></li><li><p>点击 右侧 磁盘名称，即可正常访问磁盘</p><p><img src="https://github.com/HuanwenW/MyPostImag/blob/master/190912-mac/3-disk%20view.jpg?raw=true" alt="访问移动硬盘"><span class="img-alt">访问移动硬盘</span></p></li></ol><h2 id="问题解答"><a href="#问题解答" class="headerlink" title="问题解答"></a>问题解答</h2><ol><li><p>如何修改硬盘名称？</p><p>参见步骤6</p></li></ol><h3 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h3><p>1.<a href="https://www.bilibili.com/video/av8611848/" target="_blank" rel="noopener">如何在Mac系统下正确使用硬盘-视频讲解</a></p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;h2 id=&quot;背景&quot;&gt;&lt;a href=&quot;#背景&quot; class=&quot;headerlink&quot; title=&quot;背景&quot;&gt;&lt;/a&gt;背景&lt;/h2&gt;&lt;p&gt;2019的年5月在惠普笔记本搭建了个hexo+github版人博客就；&lt;br&gt;2019的6月刚入手了一个mac，于是乎各种东西都得由wind
-      
-    
-    </summary>
-    
-    
-      <category term="技术篇" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF%E7%AF%87/"/>
-    
-    
-      <category term="软件安装" scheme="http://yoursite.com/tags/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Typora（一款比Markdown更好用的软件编辑器）使用方法简介.md</title>
-    <link href="http://yoursite.com/2019/09/10/Typora%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%E7%AE%80%E4%BB%8B/"/>
-    <id>http://yoursite.com/2019/09/10/Typora使用方法简介/</id>
-    <published>2019-09-10T13:55:27.000Z</published>
-    <updated>2019-09-14T03:14:16.941Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="Typora编辑器使用方法–参考博客链接"><a href="#Typora编辑器使用方法–参考博客链接" class="headerlink" title="Typora编辑器使用方法–参考博客链接"></a><a href="https://blog.csdn.net/wirelessqa/article/details/70432631" target="_blank" rel="noopener">Typora编辑器使用方法–参考博客链接</a></h3><h2 id="格式"><a href="#格式" class="headerlink" title="格式"></a>格式</h2><p>  <strong>粗体</strong>、<em>斜体</em>、==高亮==、<del>删除线</del>、<u>下划线</u>、我是^上标^、我是 ~下标 ~、<a href="http://www.baidu.com" target="_blank" rel="noopener">超链接</a></p><p>  <img src="https://img3.doubanio.com/view/movie_poster_cover/lpst/public/p2411953504.jpg" alt="示例图片"><span class="img-alt">示例图片</span></p><h2 id="无序列表"><a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h2><ul><li><p>无序列表1</p></li><li><p>无序列表2</p><h2 id="有序列表"><a href="#有序列表" class="headerlink" title="有序列表"></a>有序列表</h2></li></ul><ol><li><p>有序列表</p></li><li><p>有序列表</p><h2 id="任务列表"><a href="#任务列表" class="headerlink" title="任务列表"></a>任务列表</h2></li></ol><ul><li><input disabled type="checkbox"> <p>看电影</p></li><li><input disabled type="checkbox"> <p>听音乐</p></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h3 id=&quot;Typora编辑器使用方法–参考博客链接&quot;&gt;&lt;a href=&quot;#Typora编辑器使用方法–参考博客链接&quot; class=&quot;headerlink&quot; title=&quot;Typora编辑器使用方法–参考博客链接&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://blog.csdn
+        &lt;p&gt;内心OS：被困扰18个小时的question，终于解决，只因思路不清晰，走了很多弯路，太蠢！–20190912&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;悟！&lt;/strong&gt;：很多博客只是针对自己电脑遇到的问题给出解决方案，官网是针对所有电脑给出的解决方案，而且官网给出的说明更简洁且
       
     
     </summary>
@@ -120,8 +97,8 @@
   
   <entry>
     <title>Skiil about ubantu</title>
-    <link href="http://yoursite.com/2019/09/10/Skiil%20about%20ubantu%20/"/>
-    <id>http://yoursite.com/2019/09/10/Skiil about ubantu /</id>
+    <link href="http://yoursite.com/2019/09/10/skill-based/Skiil%20about%20ubantu%20/"/>
+    <id>http://yoursite.com/2019/09/10/skill-based/Skiil about ubantu /</id>
     <published>2019-09-10T13:55:27.000Z</published>
     <updated>2019-09-13T10:14:43.230Z</updated>
     
@@ -146,9 +123,35 @@
   </entry>
   
   <entry>
+    <title>Typora（一款比Markdown更好用的软件编辑器）使用方法简介.md</title>
+    <link href="http://yoursite.com/2019/09/10/skill-based/Typora%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%E7%AE%80%E4%BB%8B/"/>
+    <id>http://yoursite.com/2019/09/10/skill-based/Typora使用方法简介/</id>
+    <published>2019-09-10T13:55:27.000Z</published>
+    <updated>2019-09-14T03:14:16.941Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="Typora编辑器使用方法–参考博客链接"><a href="#Typora编辑器使用方法–参考博客链接" class="headerlink" title="Typora编辑器使用方法–参考博客链接"></a><a href="https://blog.csdn.net/wirelessqa/article/details/70432631" target="_blank" rel="noopener">Typora编辑器使用方法–参考博客链接</a></h3><h2 id="格式"><a href="#格式" class="headerlink" title="格式"></a>格式</h2><p>  <strong>粗体</strong>、<em>斜体</em>、==高亮==、<del>删除线</del>、<u>下划线</u>、我是^上标^、我是 ~下标 ~、<a href="http://www.baidu.com" target="_blank" rel="noopener">超链接</a></p><p>  <img src="https://img3.doubanio.com/view/movie_poster_cover/lpst/public/p2411953504.jpg" alt="示例图片"><span class="img-alt">示例图片</span></p><h2 id="无序列表"><a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h2><ul><li><p>无序列表1</p></li><li><p>无序列表2</p><h2 id="有序列表"><a href="#有序列表" class="headerlink" title="有序列表"></a>有序列表</h2></li></ul><ol><li><p>有序列表</p></li><li><p>有序列表</p><h2 id="任务列表"><a href="#任务列表" class="headerlink" title="任务列表"></a>任务列表</h2></li></ol><ul><li><input disabled type="checkbox"> <p>看电影</p></li><li><input disabled type="checkbox"> <p>听音乐</p></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;Typora编辑器使用方法–参考博客链接&quot;&gt;&lt;a href=&quot;#Typora编辑器使用方法–参考博客链接&quot; class=&quot;headerlink&quot; title=&quot;Typora编辑器使用方法–参考博客链接&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://blog.csdn
+      
+    
+    </summary>
+    
+    
+      <category term="技术篇" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF%E7%AF%87/"/>
+    
+    
+      <category term="软件安装" scheme="http://yoursite.com/tags/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/"/>
+    
+  </entry>
+  
+  <entry>
     <title>softwaerVersion</title>
-    <link href="http://yoursite.com/2019/05/11/softwaerVersion/"/>
-    <id>http://yoursite.com/2019/05/11/softwaerVersion/</id>
+    <link href="http://yoursite.com/2019/05/11/skill-based/softwaerVersion/"/>
+    <id>http://yoursite.com/2019/05/11/skill-based/softwaerVersion/</id>
     <published>2019-05-11T03:57:15.000Z</published>
     <updated>2019-05-11T04:54:50.000Z</updated>
     
@@ -173,8 +176,8 @@
   
   <entry>
     <title>推荐系统评价--NDCG方法概述</title>
-    <link href="http://yoursite.com/2019/05/02/RSC-NDCG/"/>
-    <id>http://yoursite.com/2019/05/02/RSC-NDCG/</id>
+    <link href="http://yoursite.com/2019/05/02/MachineLearning/RSC-NDCG/"/>
+    <id>http://yoursite.com/2019/05/02/MachineLearning/RSC-NDCG/</id>
     <published>2019-05-02T07:48:25.000Z</published>
     <updated>2019-05-02T09:14:46.000Z</updated>
     
@@ -199,8 +202,8 @@
   
   <entry>
     <title>Welcome to NLP-2019-huanhuan-homework-11</title>
-    <link href="http://yoursite.com/2019/04/27/NLP-RNN-11/"/>
-    <id>http://yoursite.com/2019/04/27/NLP-RNN-11/</id>
+    <link href="http://yoursite.com/2019/04/27/NLP/NLP-RNN-11/"/>
+    <id>http://yoursite.com/2019/04/27/NLP/NLP-RNN-11/</id>
     <published>2019-04-27T12:00:57.000Z</published>
     <updated>2019-04-27T12:44:06.000Z</updated>
     
@@ -226,8 +229,8 @@
   
   <entry>
     <title>Welcome to NLP-2019-huanhuan-homework-10</title>
-    <link href="http://yoursite.com/2019/04/25/NLP-juanjishenjingwangluo-10/"/>
-    <id>http://yoursite.com/2019/04/25/NLP-juanjishenjingwangluo-10/</id>
+    <link href="http://yoursite.com/2019/04/25/NLP/NLP-juanjishenjingwangluo-10/"/>
+    <id>http://yoursite.com/2019/04/25/NLP/NLP-juanjishenjingwangluo-10/</id>
     <published>2019-04-25T08:00:35.000Z</published>
     <updated>2019-04-25T09:53:32.000Z</updated>
     
@@ -254,8 +257,8 @@
   
   <entry>
     <title>Welcome to NLP-2019-huanhuan-homework-9</title>
-    <link href="http://yoursite.com/2019/04/23/NLP-jiandanshenjingwangluo-9/"/>
-    <id>http://yoursite.com/2019/04/23/NLP-jiandanshenjingwangluo-9/</id>
+    <link href="http://yoursite.com/2019/04/23/NLP/NLP-jiandanshenjingwangluo-9/"/>
+    <id>http://yoursite.com/2019/04/23/NLP/NLP-jiandanshenjingwangluo-9/</id>
     <published>2019-04-23T13:34:24.000Z</published>
     <updated>2019-04-23T14:24:20.000Z</updated>
     
@@ -282,8 +285,8 @@
   
   <entry>
     <title>Welcome to NLP-2019-huanhuan-homework-8</title>
-    <link href="http://yoursite.com/2019/04/21/NLP-shenjingwangluojichu-8/"/>
-    <id>http://yoursite.com/2019/04/21/NLP-shenjingwangluojichu-8/</id>
+    <link href="http://yoursite.com/2019/04/21/NLP/NLP-shenjingwangluojichu-8/"/>
+    <id>http://yoursite.com/2019/04/21/NLP/NLP-shenjingwangluojichu-8/</id>
     <published>2019-04-21T10:52:33.000Z</published>
     <updated>2019-04-21T12:25:24.000Z</updated>
     
@@ -310,8 +313,8 @@
   
   <entry>
     <title>Welcome to NLP-2019-huanhuan-homework-7</title>
-    <link href="http://yoursite.com/2019/04/19/LDA/"/>
-    <id>http://yoursite.com/2019/04/19/LDA/</id>
+    <link href="http://yoursite.com/2019/04/19/NLP/LDA/"/>
+    <id>http://yoursite.com/2019/04/19/NLP/LDA/</id>
     <published>2019-04-19T08:52:33.000Z</published>
     <updated>2019-04-19T09:10:16.000Z</updated>
     
@@ -339,8 +342,8 @@
   
   <entry>
     <title>谱聚类（Spectral Clustering）算法概念及应用</title>
-    <link href="http://yoursite.com/2019/04/16/Pujulei/"/>
-    <id>http://yoursite.com/2019/04/16/Pujulei/</id>
+    <link href="http://yoursite.com/2019/04/16/MachineLearning/Pujulei/"/>
+    <id>http://yoursite.com/2019/04/16/MachineLearning/Pujulei/</id>
     <published>2019-04-16T07:42:53.000Z</published>
     <updated>2019-04-17T07:30:04.000Z</updated>
     
@@ -365,8 +368,8 @@
   
   <entry>
     <title>Welcome to NLP-2019-huanhuan-homework-5</title>
-    <link href="http://yoursite.com/2019/04/15/NLP-homework-5-Pushubeiyesi/"/>
-    <id>http://yoursite.com/2019/04/15/NLP-homework-5-Pushubeiyesi/</id>
+    <link href="http://yoursite.com/2019/04/15/NLP/NLP-homework-5-Pushubeiyesi/"/>
+    <id>http://yoursite.com/2019/04/15/NLP/NLP-homework-5-Pushubeiyesi/</id>
     <published>2019-04-15T11:00:35.000Z</published>
     <updated>2019-04-15T14:19:42.000Z</updated>
     
@@ -393,8 +396,8 @@
   
   <entry>
     <title>Welcome to NLP-2019-huanhuan-homework-6</title>
-    <link href="http://yoursite.com/2019/04/13/NLP-homework-6/"/>
-    <id>http://yoursite.com/2019/04/13/NLP-homework-6/</id>
+    <link href="http://yoursite.com/2019/04/13/NLP/NLP-homework-6/"/>
+    <id>http://yoursite.com/2019/04/13/NLP/NLP-homework-6/</id>
     <published>2019-04-13T10:52:33.000Z</published>
     <updated>2019-04-17T12:11:36.000Z</updated>
     
@@ -423,8 +426,8 @@
   
   <entry>
     <title>Welcome to NLP-2019-huanhuan-homework-4</title>
-    <link href="http://yoursite.com/2019/04/13/NLP-homework-3/"/>
-    <id>http://yoursite.com/2019/04/13/NLP-homework-3/</id>
+    <link href="http://yoursite.com/2019/04/13/NLP/NLP-homework-3/"/>
+    <id>http://yoursite.com/2019/04/13/NLP/NLP-homework-3/</id>
     <published>2019-04-13T10:52:33.000Z</published>
     <updated>2019-09-13T04:33:59.000Z</updated>
     
@@ -451,8 +454,8 @@
   
   <entry>
     <title>Welcome to NLP-2019-huanhuan-homework-3</title>
-    <link href="http://yoursite.com/2019/04/11/tezhentiqu/"/>
-    <id>http://yoursite.com/2019/04/11/tezhentiqu/</id>
+    <link href="http://yoursite.com/2019/04/11/MachineLearning/tezhentiqu/"/>
+    <id>http://yoursite.com/2019/04/11/MachineLearning/tezhentiqu/</id>
     <published>2019-04-11T12:44:17.000Z</published>
     <updated>2019-04-12T08:02:42.000Z</updated>
     
@@ -477,12 +480,12 @@
   
   <entry>
     <title>hexo+gitHub 个人博客搭建及更换主题历程--Windows版本（特适合入门小白）</title>
-    <link href="http://yoursite.com/2019/04/10/hexo-gitHub/"/>
-    <id>http://yoursite.com/2019/04/10/hexo-gitHub/</id>
+    <link href="http://yoursite.com/2019/04/10/skill-based/hexo-gitHub/"/>
+    <id>http://yoursite.com/2019/04/10/skill-based/hexo-gitHub/</id>
     <published>2019-04-10T13:55:27.000Z</published>
-    <updated>2019-09-13T07:04:21.199Z</updated>
+    <updated>2019-09-14T11:17:49.877Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="内容涵盖"><a href="#内容涵盖" class="headerlink" title="内容涵盖"></a>内容涵盖</h2><ul><li><strong>hexo+gitHub 个人博客搭建</strong></li><li><strong>搭建过程中遇到的问题及解决方案</strong>    </li><li><strong>更换主题</strong>  </li></ul><h2 id="1-gitHub-创建博客仓库"><a href="#1-gitHub-创建博客仓库" class="headerlink" title="1. gitHub 创建博客仓库"></a>1. gitHub 创建博客仓库</h2><p><strong>(1) 注册Github（如果已注册可以忽略次此步骤）</strong>   </p><p>&ensp;&ensp;&ensp; 详细注册步骤请参考： <a href="https://blog.csdn.net/NEET007/article/details/51510026" target="_blank" rel="noopener"><strong>GitHub网站注册与登陆</strong></a> </p><p><strong>(2) Github上新建自己的博客项目（即创建仓库）</strong>   </p><p><font color="#DC143C" size="3">&ensp;&ensp;注意：仓库名字要和(1)中注册的Github用户名一致！！！</font>  </p><p>&ensp;&ensp;&ensp;XXX.github.io就是你的博客域名咯~<br><img src="https://github.com/HuanwenW/MyPostImag/blob/master/190410-boke/github-1.jpg?raw=true" alt="chuangjianboke"><span class="img-alt">chuangjianboke</span> </p><h2 id="2-node-和git-安装"><a href="#2-node-和git-安装" class="headerlink" title="2. node 和git 安装"></a>2. node 和git 安装</h2><p><strong>(1) 安装 node.js</strong><br>&ensp;&ensp;&ensp;详细安装步骤请参考：<a href="https://blog.csdn.net/muzidigbig/article/details/80493880" target="_blank" rel="noopener">nodejs详细安装步骤</a><br><strong>(2) 安装 Git</strong><br>&ensp;&ensp;&ensp; 详细注册步骤请参考：<a href="https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000" target="_blank" rel="noopener">廖雪峰老师的git安装教程</a>  </p><h2 id="3-Hexo安装"><a href="#3-Hexo安装" class="headerlink" title="3. Hexo安装"></a>3. Hexo安装</h2><p><strong>(1) 打开cmd命令编辑器</strong>（键盘同时按window+R–输入cmd–回车）    </p><p><strong>(2) 输入全局安装hexo-cli指令</strong>  （下载速度有点慢，耐心~~）  </p><table><tr><td bgcolor="black"> <font size="3" color="white">$ npm  install  -g hexo-cli </font></td></tr></table>  **(3) 初始化hexo**(MyHexo文件夹名字自己取)  &ensp;&ensp;&ensp;某盘下新建一个MyHexo文件夹 --- 单机鼠标右键 --- 选择 Git Bash here-- 出现命令窗口，输入下面命令：    <table><tr><td bgcolor="black"> <font size="3" color="white">$ hexo init blog </font></td></tr></table>  &ensp;&ensp;&ensp;当出现`INFO  Start blogging with Hexo!`表示Hexo初始化安装成功。并且MyHexo文件夹中出现 blog 文件夹。  **(4) 初体验hexo魅力**  &ensp;&ensp;&ensp;由于初始化hexo 之后source目录下自带一篇hello world文章, 所以依次执行下方两个命令：  <font color="#DC143C" size="3">&ensp;注意：执行下面命令前要先进入blog文件夹中重新打开git命令窗口！！！</font>  <table><tr><td bgcolor="black"> <font size="3" color="white">$ hexo generate </font></td></tr></table>   命令含义： 生成静态文件，等价于(可简写为)： `hexo  g`    <table><tr><td bgcolor="black"> <font size="3" color="white">$ hexo server  </font></td></tr></table>   命令含义： 启动本地服务器，等价于(可简写为)： `hexo  s`<p>打开浏览器，输入网址： <a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a> ，即可看到网站初步的模样。<br><img src="https://github.com/HuanwenW/MyPostImag/blob/master/190410-boke/github-2.png?raw=true" alt="bendibokeliulan"><span class="img-alt">bendibokeliulan</span><br><font color="#8A2BE2" size="3">&ensp;&ensp;&ensp;若出错提示404等，请参考博客4 </font>   </p><h2 id="4-如何将github和hexo联系起来？"><a href="#4-如何将github和hexo联系起来？" class="headerlink" title="4. 如何将github和hexo联系起来？"></a>4. 如何将github和hexo联系起来？</h2><p><strong>(1) 配置SSH key</strong><br> &ensp;&ensp; &ensp;为什么要配置这个呢？因为你提交代码肯定要拥有你的github权限才可以，但是直接使用用户名和密码太不安全了，所以我们使用ssh key来解决本地和服务器的连接问题。<br><strong>a.</strong> 重新打开 Git 命令窗口，输入下面命令：  </p><table><tr><td bgcolor="black"> <font size="3" color="white">$ ssh-keygen -t rsa -C "git@github.com"    //Github的注册邮箱地址 </font></td></tr></table>  **b.** 一路Enter过来就好，得到的信息如下：  <table><tr><td bgcolor="black"> <font size="3" color="white">Your public key has been saved in /c/Users/user/.ssh/id_rsa.pub. </font></td></tr></table>   &ensp;&ensp;&ensp;找到该文件并打开，复制里面的所有内容，然后进入Sign in to GitHub：[https://github.com/settings/ssh](https://github.com/settings/ssh)  <p><strong>c.</strong> 依次执行下面步骤：<br>&ensp;&ensp;&ensp;&ensp;点击 New SSH key —— Title：blog —— Key：输入刚才复制的 —— Add SSH key  </p><p><strong>d.</strong> 测试一下是否成功,输入下方命令：  </p><table><tr><td bgcolor="black"> <font size="3" color="white">$ ssh -T git@github.com   //Github的注册邮箱地址 </font></td></tr></table>  ![SSH](https://github.com/HuanwenW/MyPostImag/blob/master/190410-boke/github-3.png?raw=true)  &ensp;&ensp;&ensp;看到上面信息说明SSH已配置成功！  <p><strong>(2) 设置Git的user name和email</strong><br> &ensp;&ensp;&ensp;blog文件夹下的Git命令窗口依次执行下方两个命令：  </p><table><tr><td bgcolor="black"> <font size="3" color="white"> $ git config --global user.name "liuxianan"   // 你的github用户名，非昵称 </font></td></tr></table>  <table><tr><td bgcolor="black"> <font size="3" color="white">$ git config --global user.email  "git@github.com"   // 填写你的github注册邮箱 </font></td></tr></table>&ensp;&ensp;&ensp;设置这个是为了便与之后上传到github的page上。  <p><strong>(3) 修改参数及配置deployment</strong><br>&ensp;&ensp;&ensp;在blog目录下，打开_config.yml文件。<br><strong>a.</strong> 修改网站相关参数信息<br><font color="#DC143C" size="3">&ensp;注意：在每个参数的：后都要加一个空格！！！</font>      </p><pre><code>title: 焕小妹博客               //博客名字subtitle: bug                  //博客副标题description: Bug多多，欢乐多多  //博客描述author: 焕焕                   //作者language: zh-CN               //zh-CN 表中文timezone: Asia/Shanghai       //时间</code></pre><p><strong>b.</strong> 设置deployment参数信息<br><font color="#DC143C" size="3">&ensp;注意：仓库地址后加 .git  结尾！！！</font>   </p><pre><code>deploy:type: gitrepository: git@github.com:saucxs/saucxs.github.io.git   //Github注册邮箱：Github用户名/Github用户名.github.io.gitbranch: master</code></pre><p><strong>c.</strong> 发布到网上,执行下面命令：</p><table><tr><td bgcolor="black"> <font size="3" color="white">$ hexo deploy  </font></td></tr></table>    命令含义： 部署，等价于(可简写为)： `hexo  d`   <font color="#8A2BE2" size="3">&ensp;&ensp;&ensp;若出错提示找不到git，请参考博客5 </font>  **d.** 测试是否发布成功  &ensp;&ensp;&ensp;打开浏览器，输入网址： https://你的Github名.github.io ，即可看到部署好的网站，别人也可以访问。    ## 5. 主题不喜欢，换！  hexo默认的主题是landscape，可以根据自己的喜好，换你喜欢的主题。  **(1) 进入github官方主题界面，选择你喜欢的主题！**  &ensp;&ensp;&ensp;Hexo主题网站地址：[https://hexo.io/themes/](https://hexo.io/themes/)  **(2) 复制主题地址**  &ensp;&ensp;&ensp;假如你喜欢的主题是：Anatole   **a.** 点击进入主题拥有者的博客：  ![zhutirukou](https://github.com/HuanwenW/MyPostImag/blob/master/190410-boke/github-4.jpg?raw=true)  **b.** 找到博主仓库入口进入(一般会有github图标)  **c.** 搜索栏中搜索刚才那个主题的名字     ![zhuti](https://github.com/HuanwenW/MyPostImag/blob/master/190410-boke/github-5.jpg?raw=true)  **d.** 点进去这篇博客，复制下载地址     ![address](https://github.com/HuanwenW/MyPostImag/blob/master/190410-boke/github-6.jpg?raw=true)  **(3) 下载主题**   &ensp;&ensp;&ensp;打开本地博客文件夹(这里对应上文的blog文件夹) —— 打开git命令窗口 —— 输入下面命令：  <font color="#DC143C" size="3">&ensp;注意：仓库地址后加 .themes/Anatole  结尾！！！</font>   <table><tr><td bgcolor="black"> <font size="3" color="white">$ git clone https://github.com/gaussic/hexo-theme-Anatole.git.themes/Anatole  </font></td></tr></table>    &ensp;&ensp;&ensp;下载完之后会在themes 目录下生成一个名为Anatole文件  **(4) 更改配置文件**  &ensp;&ensp;&ensp;更改一下blog工程(文件夹)目录下的配置文件_config.yml，主题名修改一下即可  ![theme](https://github.com/HuanwenW/MyPostImag/blob/master/190410-boke/github-7.jpg?raw=true)  **(5) 更新并发布新主题**&ensp;&ensp;&ensp;依次执行下方命令：  (每一步作用及执行后界面，可参考上文)  <table><tr><td bgcolor="black"> <font size="3" color="white">$ hexo clean </font></td></tr></table>  <table><tr><td bgcolor="black"> <font size="3" color="white">$ hexo g  </font></td></tr></table>  <table><tr><td bgcolor="black"> <font size="3" color="white">$ hexo s  </font></td></tr></table>  <table><tr><td bgcolor="black"> <font size="3" color="white">$ hexo d  </font></td></tr></table>  **(6) 测试新主题**  &ensp;&ensp;&ensp;打开浏览器，输入网址： https://你的Github名.github.io ，即可看到更新后的主题网站。  ## 6. 创建新的博客及上传！  **(1) 创建新的博客**     &ensp;&ensp;&ensp;打开git命令窗口，输入下方命令：<table><tr><td bgcolor="black"> <font size="3" color="white">$ hexo new '博客文章名字' </font></td></tr></table>  &ensp;&ensp;&ensp;在目录..\blog\source\_posts下即可看到新建的.md文件  **(2) 遵循Markdown语法书写博客**  <font color="#DC143C" size="3">&ensp;友情链接：</font>**a.** [Markdowen介绍及语法](https://www.jianshu.com/p/7771794c88a1)&ensp;&ensp;&ensp;**b.** [MarkdownPad2安装教程](https://www.jianshu.com/p/5604996dcdbb)  <p><strong>(3) 提交博客到GitHub仓库</strong><br>&ensp;&ensp;&ensp;打开本地博客文件夹(这里对应上文的blog文件夹) —— 打开git命令窗口 —— 输入以下命令：<br><strong>a.</strong> 清空:</p><table><tr><td bgcolor="black"> <font size="3" color="white">$  hexo clean </font></td></tr></table>  **b.** 生成静态文件:<table><tr><td bgcolor="black"> <font size="3" color="white">$  hexo g </font></td></tr></table>   **c.** 将本地运行:<table><tr><td bgcolor="black"> <font size="3" color="white">$  hexo s </font></td></tr></table>   **d.** 发布到github的page上 <table><tr><td bgcolor="black"> <font size="3" color="white">$  hexo d </font></td></tr></table>  **e.** 查看更新   &ensp;&ensp;&ensp;打开浏览器，输入网址： https://你的Github名.github.io ，即可看到更新的博客。<h2 id="参考博客"><a href="#参考博客" class="headerlink" title="参考博客"></a>参考博客</h2><ol><li><a href="https://zhangslob.github.io/2017/02/28/%E6%95%99%E4%BD%A0%E5%85%8D%E8%B4%B9%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%EF%BC%8CHexo-Github/" target="_blank" rel="noopener"><strong>教你免费搭建个人博客，Hexo&amp;Github</strong></a></li><li><a href="https://www.cnblogs.com/chengxs/p/7430283.html" target="_blank" rel="noopener">github+hexo搭建自己的博客网站（二）<strong>更换主题yilia</strong></a></li><li><a href="https://blog.csdn.net/weixin_42419856/article/details/81141546" target="_blank" rel="noopener"><strong>如何更改使用hexo-github搭建博客的主题 theme</strong></a></li><li><a href="https://blog.csdn.net/qq32933432/article/details/87955133" target="_blank" rel="noopener"><strong>hexo搭建Github博客上传后，访问网页显示404问题解决方案</strong></a></li><li><a href="https://blog.csdn.net/weixin_36401046/article/details/52940313" target="_blank" rel="noopener"><strong>hexo d后 ERROR Deployer not found: git</strong></a></li></ol>]]></content>
+    <content type="html"><![CDATA[<h2 id="内容涵盖"><a href="#内容涵盖" class="headerlink" title="内容涵盖"></a>内容涵盖</h2><ul><li><strong>hexo+gitHub 个人博客搭建</strong></li><li><strong>搭建过程中遇到的问题及解决方案</strong>    </li><li><strong>更换主题</strong>  </li></ul><h2 id="1-gitHub-创建博客仓库"><a href="#1-gitHub-创建博客仓库" class="headerlink" title="1. gitHub 创建博客仓库"></a>1. gitHub 创建博客仓库</h2><p><strong>(1) 注册Github（如果已注册可以忽略次此步骤）</strong>   </p><p>&ensp;&ensp;&ensp; 详细注册步骤请参考： <a href="https://blog.csdn.net/NEET007/article/details/51510026" target="_blank" rel="noopener"><strong>GitHub网站注册与登陆</strong></a> </p><p><strong>(2) Github上新建自己的博客项目（即创建仓库）</strong>   </p><p><font color="#DC143C" size="3">&ensp;&ensp;注意：仓库名字要和(1)中注册的Github用户名一致！！！</font>  </p><p>&ensp;&ensp;&ensp;XXX.github.io就是你的博客域名咯~<br><img src="https://github.com/HuanwenW/MyPostImag/blob/master/190410-boke/github-1.jpg?raw=true" alt="chuangjianboke"><span class="img-alt">chuangjianboke</span> </p><h2 id="2-node-和git-安装"><a href="#2-node-和git-安装" class="headerlink" title="2. node 和git 安装"></a>2. node 和git 安装</h2><p><strong>(1) 安装 node.js</strong><br>&ensp;&ensp;&ensp;详细安装步骤请参考：<a href="https://blog.csdn.net/muzidigbig/article/details/80493880" target="_blank" rel="noopener">nodejs详细安装步骤</a><br><strong>(2) 安装 Git</strong><br>&ensp;&ensp;&ensp; 详细注册步骤请参考：<a href="https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000" target="_blank" rel="noopener">廖雪峰老师的git安装教程</a>  </p><h2 id="3-Hexo安装"><a href="#3-Hexo安装" class="headerlink" title="3. Hexo安装"></a>3. Hexo安装</h2><p><strong>(1) 打开cmd命令编辑器</strong>（键盘同时按window+R–输入cmd–回车）    </p><p><strong>(2) 输入全局安装hexo-cli指令</strong>  （下载速度有点慢，耐心~~）  </p><table><tr><td bgcolor="black"> <font size="3" color="white">$ npm  install  -g hexo-cli </font></td></tr></table>  **(3) 初始化hexo**(MyHexo文件夹名字自己取) <p>某盘下新建一个MyHexo文件夹 — 单机鼠标右键 — 选择 Git Bash here– 出现命令窗口，输入下面命令：    </p><table><tr><td bgcolor="black"> <font size="3" color="white">$ hexo init blog </font></td></tr></table>  &ensp;&ensp;&ensp;当出现`INFO  Start blogging with Hexo!`表示Hexo初始化安装成功。并且MyHexo文件夹中出现 blog 文件夹。<p><strong>(4) 初体验hexo魅力</strong></p><p>​       由于初始化hexo 之后source目录下自带一篇hello world文章, 所以依次执行下方两个命令：<br><font color="#DC143C" size="3">&ensp;注意：执行下面命令前要先进入blog文件夹中重新打开git命令窗口！！！</font>  </p><table><tr><td bgcolor="black"> <font size="3" color="white">$ hexo generate </font></td></tr></table>   命令含义： 生成静态文件，等价于(可简写为)： `hexo  g`    <table><tr><td bgcolor="black"> <font size="3" color="white">$ hexo server  </font></td></tr></table>   命令含义： 启动本地服务器，等价于(可简写为)： `hexo  s`<p>打开浏览器，输入网址： <a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a> ，即可看到网站初步的模样。<br><img src="https://github.com/HuanwenW/MyPostImag/blob/master/190410-boke/github-2.png?raw=true" alt="bendibokeliulan"><span class="img-alt">bendibokeliulan</span><br><font color="#8A2BE2" size="3">&ensp;&ensp;&ensp;若出错提示404等，请参考博客4 </font>   </p><h2 id="4-如何将github和hexo联系起来？"><a href="#4-如何将github和hexo联系起来？" class="headerlink" title="4. 如何将github和hexo联系起来？"></a>4. 如何将github和hexo联系起来？</h2><p><strong>(1) 配置SSH key</strong></p><p> &ensp;&ensp; &ensp;为什么要配置这个呢？因为你提交代码肯定要拥有你的github权限才可以，但是直接使用用户名和密码太不安全了，所以我们使用ssh key来解决本地和服务器的连接问题。</p><p><strong>a.</strong> 重新打开 Git 命令窗口，输入下面命令：  </p><table><tr><td bgcolor="black"> <font size="3" color="white">$ ssh-keygen -t rsa -C "git@github.com"    //Github的注册邮箱地址 </font></td></tr></table>  **b.** 一路Enter过来就好，得到的信息如下：  <table><tr><td bgcolor="black"> <font size="3" color="white">Your public key has been saved in /c/Users/user/.ssh/id_rsa.pub. </font></td></tr></table>   &ensp;&ensp;&ensp;找到该文件并打开，复制里面的所有内容，然后进入Sign in to GitHub：[自己的github设置ssh下](https://github.com/settings/ssh)  <p><strong>c.</strong> 依次执行下面步骤：</p><p>点击 New SSH key —— Title：blog —— Key：输入刚才复制的 —— Add SSH key  </p><p><strong>d.</strong> 测试一下是否成功,输入下方命令：  </p><table><tr><td bgcolor="black"> <font size="3" color="white">$ ssh -T git@github.com   //Github的注册邮箱地址 </font></td></tr></table>  ![SSH](https://github.com/HuanwenW/MyPostImag/blob/master/190410-boke/github-3.png?raw=true) &ensp;&ensp;&ensp;看到上面信息说明SSH已配置成功！  <p><strong>(2) 设置Git的user name和email</strong><br> &ensp;&ensp;&ensp;blog文件夹下的Git命令窗口依次执行下方两个命令：  </p><table><tr><td bgcolor="black"> <font size="3" color="white"> $ git config --global user.name "liuxianan"   // 你的github用户名，非昵称 </font></td></tr></table>  <table><tr><td bgcolor="black"> <font size="3" color="white">$ git config --global user.email  "git@github.com"   // 填写你的github注册邮箱 </font></td></tr></table>&ensp;&ensp;&ensp;设置这个是为了便与之后上传到github的page上。  <p><strong>(3) 修改参数及配置deployment</strong><br>&ensp;&ensp;&ensp;在blog目录下，打开_config.yml文件。<br><strong>a.</strong> 修改网站相关参数信息<br><font color="#DC143C" size="3">&ensp;注意：在每个参数的：后都要加一个空格！！！</font>      </p><pre><code>title: 焕小妹博客               //博客名字subtitle: bug                  //博客副标题description: Bug多多，欢乐多多  //博客描述author: 焕焕                   //作者language: zh-CN               //zh-CN 表中文timezone: Asia/Shanghai       //时间</code></pre><p><strong>b.</strong> 设置deployment参数信息<br><font color="#DC143C" size="3">&ensp;注意：仓库地址后加 .git  结尾！！！</font>   </p><pre><code>deploy:type: gitrepository: git@github.com:saucxs/saucxs.github.io.git   //Github注册邮箱：Github用户名/Github用户名.github.io.gitbranch: master</code></pre><p><strong>c.</strong> 发布到网上,执行下面命令：</p><table><tr><td bgcolor="black"> <font size="3" color="white">$ hexo deploy  </font></td></tr></table>    命令含义： 部署，等价于(可简写为)： `hexo  d` <font color="#8A2BE2" size="3">&ensp;&ensp;&ensp;若出错提示找不到git，请参考博客5 </font> **d.** 测试是否发布成功 &ensp;&ensp;&ensp;打开浏览器，输入网址： https://你的Github名.github.io ，即可看到部署好的网站，别人也可以访问。    <h2 id="5-主题不喜欢，换！"><a href="#5-主题不喜欢，换！" class="headerlink" title="5. 主题不喜欢，换！"></a>5. 主题不喜欢，换！</h2><p>hexo默认的主题是landscape，可以根据自己的喜好，换你喜欢的主题。<br><strong>(1) 进入github官方主题界面，选择你喜欢的主题！</strong><br>&ensp;&ensp;&ensp;Hexo主题网站地址：<a href="https://hexo.io/themes/" target="_blank" rel="noopener">https://hexo.io/themes/</a><br><strong>(2) 复制主题地址</strong><br>&ensp;&ensp;&ensp;假如你喜欢的主题是：Anatole<br><strong>a.</strong> 点击进入主题拥有者的博客：<br><img src="https://github.com/HuanwenW/MyPostImag/blob/master/190410-boke/github-4.jpg?raw=true" alt="zhutirukou"><span class="img-alt">zhutirukou</span><br><strong>b.</strong> 找到博主仓库入口进入(一般会有github图标)<br><strong>c.</strong> 搜索栏中搜索刚才那个主题的名字<br><img src="https://github.com/HuanwenW/MyPostImag/blob/master/190410-boke/github-5.jpg?raw=true" alt="zhuti"><span class="img-alt">zhuti</span><br><strong>d.</strong> 点进去这篇博客，复制下载地址<br><img src="https://github.com/HuanwenW/MyPostImag/blob/master/190410-boke/github-6.jpg?raw=true" alt="address"><span class="img-alt">address</span><br><strong>(3) 下载主题</strong><br>&ensp;&ensp;&ensp;打开本地博客文件夹(这里对应上文的blog文件夹) —— 打开git命令窗口 —— 输入下面命令：<br><font color="#DC143C" size="3">&ensp;注意：仓库地址后加 .themes/Anatole  结尾！！！</font>   </p><table><tr><td bgcolor="black"> <font size="3" color="white">$ git clone https://github.com/gaussic/hexo-theme-Anatole.git.themes/Anatole  </font></td></tr></table>    &ensp;&ensp;&ensp;下载完之后会在themes 目录下生成一个名为Anatole文件  **(4) 更改配置文件**  &ensp;&ensp;&ensp;更改一下blog工程(文件夹)目录下的配置文件_config.yml，主题名修改一下即可  ![theme](https://github.com/HuanwenW/MyPostImag/blob/master/190410-boke/github-7.jpg?raw=true)  **(5) 更新并发布新主题**&ensp;&ensp;&ensp;依次执行下方命令：  (每一步作用及执行后界面，可参考上文)  <table><tr><td bgcolor="black"> <font size="3" color="white">$ hexo clean </font></td></tr></table>  <table><tr><td bgcolor="black"> <font size="3" color="white">$ hexo g  </font></td></tr></table>  <table><tr><td bgcolor="black"> <font size="3" color="white">$ hexo s  </font></td></tr></table>  <table><tr><td bgcolor="black"> <font size="3" color="white">$ hexo d  </font></td></tr></table>  **(6) 测试新主题**  &ensp;&ensp;&ensp;打开浏览器，输入网址： https://你的Github名.github.io ，即可看到更新后的主题网站。  ## 6. 创建新的博客及上传！  **(1) 创建新的博客**     &ensp;&ensp;&ensp;打开git命令窗口，输入下方命令：<table><tr><td bgcolor="black"> <font size="3" color="white">$ hexo new '博客文章名字' </font></td></tr></table>  &ensp;&ensp;&ensp;在目录..\blog\source\_posts下即可看到新建的.md文件  **(2) 遵循Markdown语法书写博客**  <font color="#DC143C" size="3">&ensp;友情链接：</font>**a.** [Markdowen介绍及语法](https://www.jianshu.com/p/7771794c88a1)&ensp;&ensp;&ensp;**b.** [MarkdownPad2安装教程](https://www.jianshu.com/p/5604996dcdbb)  <p><strong>(3) 提交博客到GitHub仓库</strong><br>&ensp;&ensp;&ensp;打开本地博客文件夹(这里对应上文的blog文件夹) —— 打开git命令窗口 —— 输入以下命令：<br><strong>a.</strong> 清空:</p><table><tr><td bgcolor="black"> <font size="3" color="white">$  hexo clean </font></td></tr></table>  **b.** 生成静态文件:<table><tr><td bgcolor="black"> <font size="3" color="white">$  hexo g </font></td></tr></table>   **c.** 将本地运行:<table><tr><td bgcolor="black"> <font size="3" color="white">$  hexo s </font></td></tr></table>   **d.** 发布到github的page上 <table><tr><td bgcolor="black"> <font size="3" color="white">$  hexo d </font></td></tr></table>  **e.** 查看更新   &ensp;&ensp;&ensp;打开浏览器，输入网址： https://你的Github名.github.io ，即可看到更新的博客。<h2 id="参考博客"><a href="#参考博客" class="headerlink" title="参考博客"></a>参考博客</h2><ol><li><a href="https://zhangslob.github.io/2017/02/28/%E6%95%99%E4%BD%A0%E5%85%8D%E8%B4%B9%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%EF%BC%8CHexo-Github/" target="_blank" rel="noopener"><strong>教你免费搭建个人博客，Hexo&amp;Github</strong></a></li><li><a href="https://www.cnblogs.com/chengxs/p/7430283.html" target="_blank" rel="noopener">github+hexo搭建自己的博客网站（二）<strong>更换主题yilia</strong></a></li><li><a href="https://blog.csdn.net/weixin_42419856/article/details/81141546" target="_blank" rel="noopener"><strong>如何更改使用hexo-github搭建博客的主题 theme</strong></a></li><li><a href="https://blog.csdn.net/qq32933432/article/details/87955133" target="_blank" rel="noopener"><strong>hexo搭建Github博客上传后，访问网页显示404问题解决方案</strong></a></li><li><a href="https://blog.csdn.net/weixin_36401046/article/details/52940313" target="_blank" rel="noopener"><strong>hexo d后 ERROR Deployer not found: git</strong></a></li><li><a href="https://github.com/Youthink/hexo-themes-yearn/wiki/主题使用教程-📖" target="_blank" rel="noopener">hexo搭建模版参照教程</a></li></ol>]]></content>
     
     <summary type="html">
     
@@ -505,8 +508,8 @@
   
   <entry>
     <title>Markdown 插入图片不友好，如何解决？</title>
-    <link href="http://yoursite.com/2019/04/09/Markdown-Picture/"/>
-    <id>http://yoursite.com/2019/04/09/Markdown-Picture/</id>
+    <link href="http://yoursite.com/2019/04/09/skill-based/Markdown-Picture/"/>
+    <id>http://yoursite.com/2019/04/09/skill-based/Markdown-Picture/</id>
     <published>2019-04-09T13:55:27.000Z</published>
     <updated>2019-04-13T11:08:40.000Z</updated>
     

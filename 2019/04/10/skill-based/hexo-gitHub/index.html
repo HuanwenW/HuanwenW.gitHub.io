@@ -60,7 +60,7 @@
       </li>
       <li>
         
-    更新 <time datetime="2019-09-13T07:04:21.199Z" itemprop="dateUpdated">2019-09-13</time>
+    更新 <time datetime="2019-09-14T11:17:49.877Z" itemprop="dateUpdated">2019-09-14</time>
 
       </li>
       <li id="busuanzi_container_page_pv">
@@ -90,29 +90,34 @@
 <h2 id="3-Hexo安装"><a href="#3-Hexo安装" class="headerlink" title="3. Hexo安装"></a>3. Hexo安装</h2><p><strong>(1) 打开cmd命令编辑器</strong>（键盘同时按window+R–输入cmd–回车）    </p>
 <p><strong>(2) 输入全局安装hexo-cli指令</strong>  （下载速度有点慢，耐心~~）  </p>
 <table><tr><td bgcolor="black"> <font size="3" color="white">$ npm  install  -g hexo-cli </font></td></tr></table>  
-**(3) 初始化hexo**(MyHexo文件夹名字自己取)  
-&ensp;&ensp;&ensp;某盘下新建一个MyHexo文件夹 --- 单机鼠标右键 --- 选择 Git Bash here-- 出现命令窗口，输入下面命令：    
+**(3) 初始化hexo**(MyHexo文件夹名字自己取) 
+
+<p>某盘下新建一个MyHexo文件夹 — 单机鼠标右键 — 选择 Git Bash here– 出现命令窗口，输入下面命令：    </p>
 <table><tr><td bgcolor="black"> <font size="3" color="white">$ hexo init blog </font></td></tr></table>  
-&ensp;&ensp;&ensp;当出现`INFO  Start blogging with Hexo!`表示Hexo初始化安装成功。并且MyHexo文件夹中出现 blog 文件夹。  
-**(4) 初体验hexo魅力**  
-&ensp;&ensp;&ensp;由于初始化hexo 之后source目录下自带一篇hello world文章, 所以依次执行下方两个命令：  
-<font color="#DC143C" size="3">&ensp;注意：执行下面命令前要先进入blog文件夹中重新打开git命令窗口！！！</font>  
+&ensp;&ensp;&ensp;当出现`INFO  Start blogging with Hexo!`表示Hexo初始化安装成功。并且MyHexo文件夹中出现 blog 文件夹。
+
+<p><strong>(4) 初体验hexo魅力</strong></p>
+<p>​       由于初始化hexo 之后source目录下自带一篇hello world文章, 所以依次执行下方两个命令：<br><font color="#DC143C" size="3">&ensp;注意：执行下面命令前要先进入blog文件夹中重新打开git命令窗口！！！</font>  </p>
 <table><tr><td bgcolor="black"> <font size="3" color="white">$ hexo generate </font></td></tr></table>  
  命令含义： 生成静态文件，等价于(可简写为)： `hexo  g`    
 <table><tr><td bgcolor="black"> <font size="3" color="white">$ hexo server  </font></td></tr></table>  
  命令含义： 启动本地服务器，等价于(可简写为)： `hexo  s`
 
 <p>打开浏览器，输入网址： <a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a> ，即可看到网站初步的模样。<br><img src="https://github.com/HuanwenW/MyPostImag/blob/master/190410-boke/github-2.png?raw=true" alt="bendibokeliulan"><span class="img-alt">bendibokeliulan</span><br><font color="#8A2BE2" size="3">&ensp;&ensp;&ensp;若出错提示404等，请参考博客4 </font>   </p>
-<h2 id="4-如何将github和hexo联系起来？"><a href="#4-如何将github和hexo联系起来？" class="headerlink" title="4. 如何将github和hexo联系起来？"></a>4. 如何将github和hexo联系起来？</h2><p><strong>(1) 配置SSH key</strong><br> &ensp;&ensp; &ensp;为什么要配置这个呢？因为你提交代码肯定要拥有你的github权限才可以，但是直接使用用户名和密码太不安全了，所以我们使用ssh key来解决本地和服务器的连接问题。<br><strong>a.</strong> 重新打开 Git 命令窗口，输入下面命令：  </p>
+<h2 id="4-如何将github和hexo联系起来？"><a href="#4-如何将github和hexo联系起来？" class="headerlink" title="4. 如何将github和hexo联系起来？"></a>4. 如何将github和hexo联系起来？</h2><p><strong>(1) 配置SSH key</strong></p>
+<p> &ensp;&ensp; &ensp;为什么要配置这个呢？因为你提交代码肯定要拥有你的github权限才可以，但是直接使用用户名和密码太不安全了，所以我们使用ssh key来解决本地和服务器的连接问题。</p>
+<p><strong>a.</strong> 重新打开 Git 命令窗口，输入下面命令：  </p>
 <table><tr><td bgcolor="black"> <font size="3" color="white">$ ssh-keygen -t rsa -C "git@github.com"    //Github的注册邮箱地址 </font></td></tr></table>  
 **b.** 一路Enter过来就好，得到的信息如下：  
-<table><tr><td bgcolor="black"> <font size="3" color="white">Your public key has been saved in /c/Users/user/.ssh/id_rsa.pub. </font></td></tr></table>   
-&ensp;&ensp;&ensp;找到该文件并打开，复制里面的所有内容，然后进入Sign in to GitHub：[https://github.com/settings/ssh](https://github.com/settings/ssh)  
 
-<p><strong>c.</strong> 依次执行下面步骤：<br>&ensp;&ensp;&ensp;&ensp;点击 New SSH key —— Title：blog —— Key：输入刚才复制的 —— Add SSH key  </p>
+<table><tr><td bgcolor="black"> <font size="3" color="white">Your public key has been saved in /c/Users/user/.ssh/id_rsa.pub. </font></td></tr></table>   
+&ensp;&ensp;&ensp;找到该文件并打开，复制里面的所有内容，然后进入Sign in to GitHub：[自己的github设置ssh下](https://github.com/settings/ssh)  
+
+<p><strong>c.</strong> 依次执行下面步骤：</p>
+<p>点击 New SSH key —— Title：blog —— Key：输入刚才复制的 —— Add SSH key  </p>
 <p><strong>d.</strong> 测试一下是否成功,输入下方命令：  </p>
 <table><tr><td bgcolor="black"> <font size="3" color="white">$ ssh -T git@github.com   //Github的注册邮箱地址 </font></td></tr></table>  
-![SSH](https://github.com/HuanwenW/MyPostImag/blob/master/190410-boke/github-3.png?raw=true)  
+![SSH](https://github.com/HuanwenW/MyPostImag/blob/master/190410-boke/github-3.png?raw=true) 
 &ensp;&ensp;&ensp;看到上面信息说明SSH已配置成功！  
 
 <p><strong>(2) 设置Git的user name和email</strong><br> &ensp;&ensp;&ensp;blog文件夹下的Git命令窗口依次执行下方两个命令：  </p>
@@ -132,26 +137,12 @@ type: git
 repository: git@github.com:saucxs/saucxs.github.io.git   //Github注册邮箱：Github用户名/Github用户名.github.io.git
 branch: master</code></pre><p><strong>c.</strong> 发布到网上,执行下面命令：</p>
 <table><tr><td bgcolor="black"> <font size="3" color="white">$ hexo deploy  </font></td></tr></table>   
- 命令含义： 部署，等价于(可简写为)： `hexo  d`   
-<font color="#8A2BE2" size="3">&ensp;&ensp;&ensp;若出错提示找不到git，请参考博客5 </font>  
-**d.** 测试是否发布成功  
+ 命令含义： 部署，等价于(可简写为)： `hexo  d` 
+<font color="#8A2BE2" size="3">&ensp;&ensp;&ensp;若出错提示找不到git，请参考博客5 </font> 
+**d.** 测试是否发布成功 
 &ensp;&ensp;&ensp;打开浏览器，输入网址： https://你的Github名.github.io ，即可看到部署好的网站，别人也可以访问。    
-## 5. 主题不喜欢，换！  
-hexo默认的主题是landscape，可以根据自己的喜好，换你喜欢的主题。  
-**(1) 进入github官方主题界面，选择你喜欢的主题！**  
-&ensp;&ensp;&ensp;Hexo主题网站地址：[https://hexo.io/themes/](https://hexo.io/themes/)  
-**(2) 复制主题地址**  
-&ensp;&ensp;&ensp;假如你喜欢的主题是：Anatole   
-**a.** 点击进入主题拥有者的博客：  
-![zhutirukou](https://github.com/HuanwenW/MyPostImag/blob/master/190410-boke/github-4.jpg?raw=true)  
-**b.** 找到博主仓库入口进入(一般会有github图标)  
-**c.** 搜索栏中搜索刚才那个主题的名字     
-![zhuti](https://github.com/HuanwenW/MyPostImag/blob/master/190410-boke/github-5.jpg?raw=true)  
-**d.** 点进去这篇博客，复制下载地址     
-![address](https://github.com/HuanwenW/MyPostImag/blob/master/190410-boke/github-6.jpg?raw=true)  
-**(3) 下载主题**   
-&ensp;&ensp;&ensp;打开本地博客文件夹(这里对应上文的blog文件夹) —— 打开git命令窗口 —— 输入下面命令：  
-<font color="#DC143C" size="3">&ensp;注意：仓库地址后加 .themes/Anatole  结尾！！！</font>   
+
+<h2 id="5-主题不喜欢，换！"><a href="#5-主题不喜欢，换！" class="headerlink" title="5. 主题不喜欢，换！"></a>5. 主题不喜欢，换！</h2><p>hexo默认的主题是landscape，可以根据自己的喜好，换你喜欢的主题。<br><strong>(1) 进入github官方主题界面，选择你喜欢的主题！</strong><br>&ensp;&ensp;&ensp;Hexo主题网站地址：<a href="https://hexo.io/themes/" target="_blank" rel="noopener">https://hexo.io/themes/</a><br><strong>(2) 复制主题地址</strong><br>&ensp;&ensp;&ensp;假如你喜欢的主题是：Anatole<br><strong>a.</strong> 点击进入主题拥有者的博客：<br><img src="https://github.com/HuanwenW/MyPostImag/blob/master/190410-boke/github-4.jpg?raw=true" alt="zhutirukou"><span class="img-alt">zhutirukou</span><br><strong>b.</strong> 找到博主仓库入口进入(一般会有github图标)<br><strong>c.</strong> 搜索栏中搜索刚才那个主题的名字<br><img src="https://github.com/HuanwenW/MyPostImag/blob/master/190410-boke/github-5.jpg?raw=true" alt="zhuti"><span class="img-alt">zhuti</span><br><strong>d.</strong> 点进去这篇博客，复制下载地址<br><img src="https://github.com/HuanwenW/MyPostImag/blob/master/190410-boke/github-6.jpg?raw=true" alt="address"><span class="img-alt">address</span><br><strong>(3) 下载主题</strong><br>&ensp;&ensp;&ensp;打开本地博客文件夹(这里对应上文的blog文件夹) —— 打开git命令窗口 —— 输入下面命令：<br><font color="#DC143C" size="3">&ensp;注意：仓库地址后加 .themes/Anatole  结尾！！！</font>   </p>
 <table><tr><td bgcolor="black"> <font size="3" color="white">$ git clone https://github.com/gaussic/hexo-theme-Anatole.git.themes/Anatole  </font></td></tr></table>    
 &ensp;&ensp;&ensp;下载完之后会在themes 目录下生成一个名为Anatole文件  
 **(4) 更改配置文件**  
@@ -190,6 +181,7 @@ hexo默认的主题是landscape，可以根据自己的喜好，换你喜欢的�
 <li><a href="https://blog.csdn.net/weixin_42419856/article/details/81141546" target="_blank" rel="noopener"><strong>如何更改使用hexo-github搭建博客的主题 theme</strong></a></li>
 <li><a href="https://blog.csdn.net/qq32933432/article/details/87955133" target="_blank" rel="noopener"><strong>hexo搭建Github博客上传后，访问网页显示404问题解决方案</strong></a></li>
 <li><a href="https://blog.csdn.net/weixin_36401046/article/details/52940313" target="_blank" rel="noopener"><strong>hexo d后 ERROR Deployer not found: git</strong></a></li>
+<li><a href="https://github.com/Youthink/hexo-themes-yearn/wiki/主题使用教程-📖" target="_blank" rel="noopener">hexo搭建模版参照教程</a></li>
 </ol>
 
       </div>
