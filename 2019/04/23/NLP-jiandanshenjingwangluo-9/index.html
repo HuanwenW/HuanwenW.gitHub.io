@@ -84,8 +84,8 @@
 <h2 id="1-文本表示"><a href="#1-文本表示" class="headerlink" title="1.文本表示"></a>1.文本表示</h2><p>&ensp;&ensp;&ensp;词向量的意思就是通过一个数字组成的向量来表示一个词，这个向量的构成有很多种方法，如one-hot编码、基于共现矩阵的方式、word2vec、动态词向量ELMo等。  </p>
 <p><strong>(1)one-hot编码</strong><br>&ensp;&ensp;&ensp;one-hot编码又称独热编码、一位有效编码。其方法是使用N位状态寄存器来对N个状态进行编码，每个状态都有它独立的寄存器位，并且在任意时候，其中只有一位有效。<br>假设在一个语料集合中，一共有n个不同的词，则可以使用一个长度为n的向量，对于第i个词（i=0….n-1）,向量index=i处的值为1外，向量其他位置的值都为0，这样就可以唯一的通过[0,0,0,1….0,0]形式的向量表示一个词。one-hot向量比较简单也容易理解，但是有很多问题。比如，加入新词时，整个向量的长度会改变，并且存在维数过高难以计算的问题，以及向量的表示方法很难体现两个词之间的关系，因此一般情况下one-hot向量较少使用。<br><strong>优势：</strong>简单易懂<br><strong>不足：</strong> 维度灾难、词汇鸿沟（向量之间都是孤立的）  </p>
 <p><strong>（2）基于贡献矩阵的方式</strong>    </p>
-<p><img src="https://github.com/HuanwenW/MyPostImag/blob/master/190408-NLP-gainian/gongxiangjuzheng.png?raw=true" alt="gongxiangjuzheng">  </p>
-<p><img src="https://github.com/HuanwenW/MyPostImag/blob/master/190408-NLP-gainian/gongxiangjuzheng-1.png?raw=true" alt="juli"></p>
+<p><img src="https://github.com/HuanwenW/MyPostImag/blob/master/190408-NLP-gainian/gongxiangjuzheng.png?raw=true" alt="gongxiangjuzheng"><span class="img-alt">gongxiangjuzheng</span>  </p>
+<p><img src="https://github.com/HuanwenW/MyPostImag/blob/master/190408-NLP-gainian/gongxiangjuzheng-1.png?raw=true" alt="juli"><span class="img-alt">juli</span></p>
 <p>上述矩阵是一个n*n的对称矩阵X，矩阵维数随着词典数量n的增大而增大，可以使用奇异值分解SVD将矩阵维度降低。但是仍存在问题：</p>
 <ol>
 <li>矩阵X的维度经常改</li>

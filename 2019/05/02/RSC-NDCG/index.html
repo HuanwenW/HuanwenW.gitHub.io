@@ -76,15 +76,15 @@
           本文最后更新于$day天前，文中所描述的信息可能已发生改变。
         </div>
         
-        <h2 id="NDCG方法概述"><a href="#NDCG方法概述" class="headerlink" title="NDCG方法概述"></a>NDCG方法概述</h2><p><strong>NDCG(Normalized Discounted Cumulative Gain)</strong>：计算相对复杂。对于排在结位置n处的NDCG的计算公式如下图所示：<br><img src="https://github.com/HuanwenW/MyPostImag/blob/master/190502-Res/NDCG.png?raw=true" alt="NDCG公式">  </p>
+        <h2 id="NDCG方法概述"><a href="#NDCG方法概述" class="headerlink" title="NDCG方法概述"></a>NDCG方法概述</h2><p><strong>NDCG(Normalized Discounted Cumulative Gain)</strong>：计算相对复杂。对于排在结位置n处的NDCG的计算公式如下图所示：<br><img src="https://github.com/HuanwenW/MyPostImag/blob/master/190502-Res/NDCG.png?raw=true" alt="NDCG公式"><span class="img-alt">NDCG公式</span>  </p>
 <p>&ensp;&ensp;&ensp;一个推荐系统返回一些项并形成一个列表，我们想要计算这个列表有多好。每一项都有一个相关的评分值，通常这些评分值是一个非负数。这就是<strong>gain（增益）</strong>。此外，对于这些没有用户反馈的项，我们通常设置其增益为0。 </p>
 <p><strong>例如：假设有两个主题，主题1有4个相关网页，主题2有5个相关网页。</strong>  </p>
 <p>(1) 相关度分成从0到r的r+1的等级(r可设定)。当取r=5时，等级设定如下图所示：</p>
-<p><img src="https://github.com/HuanwenW/MyPostImag/blob/master/190502-Res/NDCG-gain.png?raw=true" alt="NDCG-增益"><br>(应该还有r=1那一级，原文档有误，不过这里不影响理解)   </p>
-<p>(2) 例如现在有一个query={abc}，返回下图左列的Ranked List(URL)，当假设用户的选择与排序结果无关(即每一级都等概率被选中)，则生成的累计增益值如下图最右列所示：<br><img src="https://github.com/HuanwenW/MyPostImag/blob/master/190502-Res/NDCG-CumulativeGain.png?raw=true" alt="NDCG-累计增益"><br>&ensp;&ensp;&ensp;我们把这些分数相加，也就是<strong>Cumulative Gain（累积增益）</strong>。我们更愿意看那些位于列表前面的最相关的项，因此，在把这些分数相加之前，我们将每项除以一个递增的数（通常是该项位置的对数值），也就是折损值，并得到DCG。 </p>
-<p>(3) 考虑到一般情况下用户会优先点选排在前面的搜索结果，所以应该引入一个折算因子(discounting factor): log(2)/log(1+rank)。这时将获得DCG值(Discounted Cumulative Gain)如下如所示：<br><img src="https://github.com/HuanwenW/MyPostImag/blob/master/190502-Res/NDCG-gain.png?raw=true" alt="NDCG-折算因子">    </p>
-<p>(4) &ensp;&ensp;&ensp;在用户与用户之间，DCGs没有直接的可比性，所以我们要对它们进行归一化处理。即为了使不同等级上的搜索结果的得分值容易比较，需要将DCG值归一化的到NDCG值。操作如下图所示，首先计算理想返回结果List的DCG值：<br><img src="https://github.com/HuanwenW/MyPostImag/blob/master/190502-Res/NDCG-Normalized.png?raw=true" alt="NDCG-归一化">  </p>
-<p>(5) 然后用DCG/MaxDCG就得到NDCG值，如下图所示：<br><img src="https://github.com/HuanwenW/MyPostImag/blob/master/190502-Res/NDCG-gain.png?raw=true" alt="NDCG-比值">    </p>
+<p><img src="https://github.com/HuanwenW/MyPostImag/blob/master/190502-Res/NDCG-gain.png?raw=true" alt="NDCG-增益"><span class="img-alt">NDCG-增益</span><br>(应该还有r=1那一级，原文档有误，不过这里不影响理解)   </p>
+<p>(2) 例如现在有一个query={abc}，返回下图左列的Ranked List(URL)，当假设用户的选择与排序结果无关(即每一级都等概率被选中)，则生成的累计增益值如下图最右列所示：<br><img src="https://github.com/HuanwenW/MyPostImag/blob/master/190502-Res/NDCG-CumulativeGain.png?raw=true" alt="NDCG-累计增益"><span class="img-alt">NDCG-累计增益</span><br>&ensp;&ensp;&ensp;我们把这些分数相加，也就是<strong>Cumulative Gain（累积增益）</strong>。我们更愿意看那些位于列表前面的最相关的项，因此，在把这些分数相加之前，我们将每项除以一个递增的数（通常是该项位置的对数值），也就是折损值，并得到DCG。 </p>
+<p>(3) 考虑到一般情况下用户会优先点选排在前面的搜索结果，所以应该引入一个折算因子(discounting factor): log(2)/log(1+rank)。这时将获得DCG值(Discounted Cumulative Gain)如下如所示：<br><img src="https://github.com/HuanwenW/MyPostImag/blob/master/190502-Res/NDCG-gain.png?raw=true" alt="NDCG-折算因子"><span class="img-alt">NDCG-折算因子</span>    </p>
+<p>(4) &ensp;&ensp;&ensp;在用户与用户之间，DCGs没有直接的可比性，所以我们要对它们进行归一化处理。即为了使不同等级上的搜索结果的得分值容易比较，需要将DCG值归一化的到NDCG值。操作如下图所示，首先计算理想返回结果List的DCG值：<br><img src="https://github.com/HuanwenW/MyPostImag/blob/master/190502-Res/NDCG-Normalized.png?raw=true" alt="NDCG-归一化"><span class="img-alt">NDCG-归一化</span>  </p>
+<p>(5) 然后用DCG/MaxDCG就得到NDCG值，如下图所示：<br><img src="https://github.com/HuanwenW/MyPostImag/blob/master/190502-Res/NDCG-gain.png?raw=true" alt="NDCG-比值"><span class="img-alt">NDCG-比值</span>    </p>
 <p>&ensp;&ensp;&ensp; 最糟糕的情况是，当使用非负相关评分时DCG为0。为了得到最好的，我们把测试集中所有的条目置放在理想的次序下，采取的是前K项并计算它们的DCG。然后将原DCG除以理想状态下的DCG并得到<strong>NDCG@K</strong>，它是一个0到1之间的数。<br>&ensp;&ensp;&ensp;你可能已经注意到，我们使用K表示推荐列表的长度。这个数由专业人员指定。你可以把它想像成是一个用户可能会注意到的多少个项的一个估计值，如10或50这些比较常见的值。</p>
 <h2 id="参考博客"><a href="#参考博客" class="headerlink" title="参考博客"></a>参考博客</h2><ol>
 <li><a href="https://blog.csdn.net/u010670689/article/details/73196054" target="_blank" rel="noopener"><strong>推荐系统评价：NDCG方法概述</strong></a>  </li>

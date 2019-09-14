@@ -85,7 +85,7 @@
 <p>&ensp;&ensp;&ensp; 详细注册步骤请参考： <a href="https://blog.csdn.net/NEET007/article/details/51510026" target="_blank" rel="noopener"><strong>GitHub网站注册与登陆</strong></a> </p>
 <p><strong>(2) Github上新建自己的博客项目（即创建仓库）</strong>   </p>
 <p><font color="#DC143C" size="3">&ensp;&ensp;注意：仓库名字要和(1)中注册的Github用户名一致！！！</font>  </p>
-<p>&ensp;&ensp;&ensp;XXX.github.io就是你的博客域名咯~<br><img src="https://github.com/HuanwenW/MyPostImag/blob/master/190410-boke/github-1.jpg?raw=true" alt="chuangjianboke"> </p>
+<p>&ensp;&ensp;&ensp;XXX.github.io就是你的博客域名咯~<br><img src="https://github.com/HuanwenW/MyPostImag/blob/master/190410-boke/github-1.jpg?raw=true" alt="chuangjianboke"><span class="img-alt">chuangjianboke</span> </p>
 <h2 id="2-node-和git-安装"><a href="#2-node-和git-安装" class="headerlink" title="2. node 和git 安装"></a>2. node 和git 安装</h2><p><strong>(1) 安装 node.js</strong><br>&ensp;&ensp;&ensp;详细安装步骤请参考：<a href="https://blog.csdn.net/muzidigbig/article/details/80493880" target="_blank" rel="noopener">nodejs详细安装步骤</a><br><strong>(2) 安装 Git</strong><br>&ensp;&ensp;&ensp; 详细注册步骤请参考：<a href="https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000" target="_blank" rel="noopener">廖雪峰老师的git安装教程</a>  </p>
 <h2 id="3-Hexo安装"><a href="#3-Hexo安装" class="headerlink" title="3. Hexo安装"></a>3. Hexo安装</h2><p><strong>(1) 打开cmd命令编辑器</strong>（键盘同时按window+R–输入cmd–回车）    </p>
 <p><strong>(2) 输入全局安装hexo-cli指令</strong>  （下载速度有点慢，耐心~~）  </p>
@@ -102,7 +102,7 @@
 <table><tr><td bgcolor="black"> <font size="3" color="white">$ hexo server  </font></td></tr></table>  
  命令含义： 启动本地服务器，等价于(可简写为)： `hexo  s`
 
-<p>打开浏览器，输入网址： <a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a> ，即可看到网站初步的模样。<br><img src="https://github.com/HuanwenW/MyPostImag/blob/master/190410-boke/github-2.png?raw=true" alt="bendibokeliulan"><br><font color="#8A2BE2" size="3">&ensp;&ensp;&ensp;若出错提示404等，请参考博客4 </font>   </p>
+<p>打开浏览器，输入网址： <a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a> ，即可看到网站初步的模样。<br><img src="https://github.com/HuanwenW/MyPostImag/blob/master/190410-boke/github-2.png?raw=true" alt="bendibokeliulan"><span class="img-alt">bendibokeliulan</span><br><font color="#8A2BE2" size="3">&ensp;&ensp;&ensp;若出错提示404等，请参考博客4 </font>   </p>
 <h2 id="4-如何将github和hexo联系起来？"><a href="#4-如何将github和hexo联系起来？" class="headerlink" title="4. 如何将github和hexo联系起来？"></a>4. 如何将github和hexo联系起来？</h2><p><strong>(1) 配置SSH key</strong><br> &ensp;&ensp; &ensp;为什么要配置这个呢？因为你提交代码肯定要拥有你的github权限才可以，但是直接使用用户名和密码太不安全了，所以我们使用ssh key来解决本地和服务器的连接问题。<br><strong>a.</strong> 重新打开 Git 命令窗口，输入下面命令：  </p>
 <table><tr><td bgcolor="black"> <font size="3" color="white">$ ssh-keygen -t rsa -C "git@github.com"    //Github的注册邮箱地址 </font></td></tr></table>  
 **b.** 一路Enter过来就好，得到的信息如下：  

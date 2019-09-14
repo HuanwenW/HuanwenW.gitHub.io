@@ -84,7 +84,7 @@
 <li>Text-RNN的原理。</li>
 <li>利用Text-RNN模型来进行文本分类。<h2 id="RNN-基础"><a href="#RNN-基础" class="headerlink" title="RNN 基础"></a>RNN 基础</h2>&ensp;&ensp;&ensp;RNN（Recurrent Neural Network）是一类用于处理序列数据的神经网络。首先我们要明确什么是序列数据，摘取百度百科词条：时间序列数据是指在不同时间点上收集到的数据，这类数据反映了某一事物、现象等随时间的变化状态或程度。这是时间序列数据的定义，当然这里也可以不是时间，比如文字序列，但总归序列数据有一个特点——后面的数据跟前面的数据有关系。  </li>
 </ul>
-<p><strong>(1)  RNN的结构及变体</strong><br>&ensp;&ensp;&ensp;我们从基础的神经网络中知道，神经网络包含输入层、隐层、输出层，通过激活函数控制输出，层与层之间通过权值连接。激活函数是事先确定好的，那么神经网络模型通过训练“学“到的东西就蕴含在“权值“中。<br>&ensp;&ensp;&ensp;基础的神经网络只在层与层之间建立了权连接，RNN最大的不同之处就是在层之间的神经元之间也建立的权连接。如图<br><img src="https://github.com/HuanwenW/MyPostImag/blob/master/190408-NLP-gainian/RNN-1.png?raw=true" alt="Rnn">  </p>
+<p><strong>(1)  RNN的结构及变体</strong><br>&ensp;&ensp;&ensp;我们从基础的神经网络中知道，神经网络包含输入层、隐层、输出层，通过激活函数控制输出，层与层之间通过权值连接。激活函数是事先确定好的，那么神经网络模型通过训练“学“到的东西就蕴含在“权值“中。<br>&ensp;&ensp;&ensp;基础的神经网络只在层与层之间建立了权连接，RNN最大的不同之处就是在层之间的神经元之间也建立的权连接。如图<br><img src="https://github.com/HuanwenW/MyPostImag/blob/master/190408-NLP-gainian/RNN-1.png?raw=true" alt="Rnn"><span class="img-alt">Rnn</span>  </p>
 <p>&ensp;&ensp;&ensp;这是一个标准的RNN结构图，图中每个箭头代表做一次变换，也就是说箭头连接带有权值。左侧是折叠起来的样子，右侧是展开的样子，左侧中h旁边的箭头代表此结构中的“循环“体现在隐层。<br>在展开结构中我们可以观察到，在标准的RNN结构中，隐层的神经元之间也是带有权值的。也就是说，随着序列的不断推进，前面的隐层将会影响后面的隐层。图中O代表输出，y代表样本给出的确定值，L代表损失函数，我们可以看到，“损失“也是随着序列的推荐而不断积累的。<br>除上述特点之外，标准RNN的还有以下特点：<br>1、权值共享，图中的W全是相同的，U和V也一样。<br>2、每一个输入值都只与它本身的那条路线建立权连接，不会和别的神经元连接。  </p>
 <h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ol>
 <li><a href="https://www.atyun.com/30234.html" target="_blank" rel="noopener">一份详细的LSTM和GRU图解</a>  </li>
