@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-09-12T02:19:39.402Z</updated>
+  <updated>2019-09-14T03:21:22.699Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>关于转载</title>
+    <link href="http://yoursite.com/2019/09/12/copyright-reprinted/"/>
+    <id>http://yoursite.com/2019/09/12/copyright-reprinted/</id>
+    <published>2019-09-12T13:55:27.000Z</published>
+    <updated>2019-09-14T03:21:22.699Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="我希望的转载方式-✅"><a href="#我希望的转载方式-✅" class="headerlink" title="我希望的转载方式 ✅"></a>我希望的转载方式 ✅</h2><p><strong>分享链接转载，指向我的博文。</strong> 我觉的这是最好的转载方式，互赢。</p><h2 id="使用别人的原创"><a href="#使用别人的原创" class="headerlink" title="使用别人的原创"></a>使用别人的原创</h2><p>换位思考，以后我使用别人的图片和摘选的内容时，我会带上来源地址和作者署名，尊重原创。💪</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;我希望的转载方式-✅&quot;&gt;&lt;a href=&quot;#我希望的转载方式-✅&quot; class=&quot;headerlink&quot; title=&quot;我希望的转载方式 ✅&quot;&gt;&lt;/a&gt;我希望的转载方式 ✅&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;分享链接转载，指向我的博文。&lt;/strong&gt; 我觉的这是最
+      
+    
+    </summary>
+    
+    
+      <category term="版权声明" scheme="http://yoursite.com/categories/%E7%89%88%E6%9D%83%E5%A3%B0%E6%98%8E/"/>
+    
+    
+      <category term="软件安装" scheme="http://yoursite.com/tags/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/"/>
+    
+  </entry>
   
   <entry>
     <title></title>
@@ -67,32 +93,6 @@
   </entry>
   
   <entry>
-    <title>Typora（一款比Markdown更好用的软件编辑器）使用方法简介.md</title>
-    <link href="http://yoursite.com/2019/09/10/Typora%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%E7%AE%80%E4%BB%8B/"/>
-    <id>http://yoursite.com/2019/09/10/Typora使用方法简介/</id>
-    <published>2019-09-10T13:55:27.000Z</published>
-    <updated>2019-09-14T03:14:16.941Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="Typora编辑器使用方法–参考博客链接"><a href="#Typora编辑器使用方法–参考博客链接" class="headerlink" title="Typora编辑器使用方法–参考博客链接"></a><a href="https://blog.csdn.net/wirelessqa/article/details/70432631" target="_blank" rel="noopener">Typora编辑器使用方法–参考博客链接</a></h3><h2 id="格式"><a href="#格式" class="headerlink" title="格式"></a>格式</h2><p>  <strong>粗体</strong>、<em>斜体</em>、==高亮==、<del>删除线</del>、<u>下划线</u>、我是^上标^、我是 ~下标 ~、<a href="http://www.baidu.com" target="_blank" rel="noopener">超链接</a></p><p>  <img src="https://img3.doubanio.com/view/movie_poster_cover/lpst/public/p2411953504.jpg" alt="示例图片"><span class="img-alt">示例图片</span></p><h2 id="无序列表"><a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h2><ul><li><p>无序列表1</p></li><li><p>无序列表2</p><h2 id="有序列表"><a href="#有序列表" class="headerlink" title="有序列表"></a>有序列表</h2></li></ul><ol><li><p>有序列表</p></li><li><p>有序列表</p><h2 id="任务列表"><a href="#任务列表" class="headerlink" title="任务列表"></a>任务列表</h2></li></ol><ul><li><input disabled type="checkbox"> <p>看电影</p></li><li><input disabled type="checkbox"> <p>听音乐</p></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h3 id=&quot;Typora编辑器使用方法–参考博客链接&quot;&gt;&lt;a href=&quot;#Typora编辑器使用方法–参考博客链接&quot; class=&quot;headerlink&quot; title=&quot;Typora编辑器使用方法–参考博客链接&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://blog.csdn
-      
-    
-    </summary>
-    
-    
-      <category term="技术篇" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF%E7%AF%87/"/>
-    
-    
-      <category term="软件安装" scheme="http://yoursite.com/tags/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Skiil about ubantu</title>
     <link href="http://yoursite.com/2019/09/10/Skiil%20about%20ubantu%20/"/>
     <id>http://yoursite.com/2019/09/10/Skiil about ubantu /</id>
@@ -116,6 +116,32 @@
     
     
       <category term="快捷键使用" scheme="http://yoursite.com/tags/%E5%BF%AB%E6%8D%B7%E9%94%AE%E4%BD%BF%E7%94%A8/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Typora（一款比Markdown更好用的软件编辑器）使用方法简介.md</title>
+    <link href="http://yoursite.com/2019/09/10/Typora%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%E7%AE%80%E4%BB%8B/"/>
+    <id>http://yoursite.com/2019/09/10/Typora使用方法简介/</id>
+    <published>2019-09-10T13:55:27.000Z</published>
+    <updated>2019-09-14T03:14:16.941Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="Typora编辑器使用方法–参考博客链接"><a href="#Typora编辑器使用方法–参考博客链接" class="headerlink" title="Typora编辑器使用方法–参考博客链接"></a><a href="https://blog.csdn.net/wirelessqa/article/details/70432631" target="_blank" rel="noopener">Typora编辑器使用方法–参考博客链接</a></h3><h2 id="格式"><a href="#格式" class="headerlink" title="格式"></a>格式</h2><p>  <strong>粗体</strong>、<em>斜体</em>、==高亮==、<del>删除线</del>、<u>下划线</u>、我是^上标^、我是 ~下标 ~、<a href="http://www.baidu.com" target="_blank" rel="noopener">超链接</a></p><p>  <img src="https://img3.doubanio.com/view/movie_poster_cover/lpst/public/p2411953504.jpg" alt="示例图片"><span class="img-alt">示例图片</span></p><h2 id="无序列表"><a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h2><ul><li><p>无序列表1</p></li><li><p>无序列表2</p><h2 id="有序列表"><a href="#有序列表" class="headerlink" title="有序列表"></a>有序列表</h2></li></ul><ol><li><p>有序列表</p></li><li><p>有序列表</p><h2 id="任务列表"><a href="#任务列表" class="headerlink" title="任务列表"></a>任务列表</h2></li></ol><ul><li><input disabled type="checkbox"> <p>看电影</p></li><li><input disabled type="checkbox"> <p>听音乐</p></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;Typora编辑器使用方法–参考博客链接&quot;&gt;&lt;a href=&quot;#Typora编辑器使用方法–参考博客链接&quot; class=&quot;headerlink&quot; title=&quot;Typora编辑器使用方法–参考博客链接&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://blog.csdn
+      
+    
+    </summary>
+    
+    
+      <category term="技术篇" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF%E7%AF%87/"/>
+    
+    
+      <category term="软件安装" scheme="http://yoursite.com/tags/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/"/>
     
   </entry>
   
