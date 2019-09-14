@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-09-14T11:41:46.433Z</updated>
+  <updated>2019-09-14T13:23:43.154Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,11 +17,36 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>ubantu系统中的anaconda3下安装anaconda2</title>
+    <link href="http://yoursite.com/2019/09/14/skill-based/Annaconda3withAnaconda2/"/>
+    <id>http://yoursite.com/2019/09/14/skill-based/Annaconda3withAnaconda2/</id>
+    <published>2019-09-14T13:55:27.000Z</published>
+    <updated>2019-09-14T13:23:43.154Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>ubantu系统已经安装有anaconda3，但是要跑的实验使用的是python2.7，需要更换为anaconda2的环境</p><p><strong>注意：anaconda3下对应python3以上的版本，且无法降级python版本！</strong></p><h2 id="具体实现步骤"><a href="#具体实现步骤" class="headerlink" title="具体实现步骤"></a>具体实现步骤</h2><h2 id="1-下载anaconda2系列的安装包"><a href="#1-下载anaconda2系列的安装包" class="headerlink" title="1. 下载anaconda2系列的安装包"></a>1. 下载anaconda2系列的安装包</h2><p>​        <a href="https://repo.continuum.io/archive/" target="_blank" rel="noopener">下载地址</a> （我下载的：  Anaconda2-5.0.1-Linux-x86_64.sh）</p><h2 id="2-在软件所在位置的文件夹内打开终端"><a href="#2-在软件所在位置的文件夹内打开终端" class="headerlink" title="2. 在软件所在位置的文件夹内打开终端"></a>2. <strong>在软件所在位置的文件夹内打开终端</strong></h2><p>Terminal窗口切换到刚刚下载好的（Anaconda2-5.0.1-Linux-x86_64.sh）所在位置</p><h2 id="3-逐条执行以下9条命令-报错可能是权限问题，前面加sudo"><a href="#3-逐条执行以下9条命令-报错可能是权限问题，前面加sudo" class="headerlink" title="3. 逐条执行以下9条命令**(报错可能是权限问题，前面加sudo)**"></a>3. <strong>逐条执行以下9条命令**</strong>(报错可能是权限问题，前面加sudo)**</h2><table><tr><td bgcolor="black"> <font size="3" color="white">0. $ bash Anaconda2-5.0.1-Linux-x86_64.sh -b -p $ HOME / anaconda3 / envs / py2  (Anaconda2-5.0.1-Linux-x86_64.sh为所下载的anaconda2软件名，如果不一致需要替换；py2 为环境名称)</font></td></tr></table> <table><tr><td bgcolor="black"> <font size="3" color="white">1. $ rm -f $ HOME / anaconda3 / envs / py2 / bin / conda *  </font></td></tr></table>  <table><tr><td bgcolor="black"> <font size="3" color="white"> 2. $ rm -f $ HOME / anaconda3 / envs / py2 / conda-meta / conda- * </font></td></tr></table>  <table><tr><td bgcolor="black"> <font size="3" color="white">3. $ rm -f $ HOME / anaconda3 / envs / py2 / bin / activate</font></td></tr></table>  <table><tr><td bgcolor="black"> <font size="3" color="white"> 4. $ rm -f $ HOME / anaconda3 / envs / py2 / bin / deactivate </font></td></tr></table>  <table><tr><td bgcolor="black"> <font size="3" color="white">5. $ cd $ HOME / anaconda3 / envs / py2 / bin</font></td></tr></table>  <table><tr><td bgcolor="black"> <font size="3" color="white">6. $ ln -s ../../../bin/conda.</font></td></tr></table>  <table><tr><td bgcolor="black"> <font size="3" color="white">7. $ ln -s ../../../bin/activate.</font></td></tr></table>  <table><tr><td bgcolor="black"> <font size="3" color="white">8. $ ln -s ../../../bin/deactivate.</font></td></tr></table>  <h2 id="4-通过命令switch-python来查看当前Python的版本"><a href="#4-通过命令switch-python来查看当前Python的版本" class="headerlink" title="4. 通过命令switch python来查看当前Python的版本"></a>4. 通过命令switch python来查看当前Python的版本</h2><h2 id="5-通过命令source-activate-py2-来激活anaconda2的环境"><a href="#5-通过命令source-activate-py2-来激活anaconda2的环境" class="headerlink" title="5.通过命令source activate py2 来激活anaconda2的环境"></a>5.通过命令source activate py2 来激活anaconda2的环境</h2><table><tr><td bgcolor="black"> <font size="3" color="white">source activate py2</font></td></tr></table>  <h2 id="6-通过命令source-deactivate-py2来返回anaconda3的环境"><a href="#6-通过命令source-deactivate-py2来返回anaconda3的环境" class="headerlink" title="6. 通过命令source deactivate py2来返回anaconda3的环境"></a>6. 通过命令source deactivate py2来返回anaconda3的环境</h2><table><tr><td bgcolor="black"> <font size="3" color="white">source deactivate py2</font></td></tr></table>  <h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><p><a href="[https://github.com/maquanyu/Sunflower-Collection/blob/master/anaconda2%E5%92%8Canaconda3%E5%85%B1%E5%AD%98](https://github.com/maquanyu/Sunflower-Collection/blob/master/anaconda2和anaconda3共存)">anaconda3下安装anaconda2</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;背景&quot;&gt;&lt;a href=&quot;#背景&quot; class=&quot;headerlink&quot; title=&quot;背景&quot;&gt;&lt;/a&gt;背景&lt;/h2&gt;&lt;p&gt;ubantu系统已经安装有anaconda3，但是要跑的实验使用的是python2.7，需要更换为anaconda2的环境&lt;/p&gt;
+&lt;p&gt;&lt;
+      
+    
+    </summary>
+    
+    
+      <category term="技术篇" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF%E7%AF%87/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>Hexo+github 从windows到mac的迁移（小白水平）</title>
     <link href="http://yoursite.com/2019/09/14/skill-based/Hexo+github%20%E4%BB%8Ewindows%E5%88%B0mac%E7%9A%84%E8%BF%81%E7%A7%BB%EF%BC%88%E8%B6%85%E8%AF%A6%E7%BB%86%E6%AD%A5%E9%AA%A4%E5%8F%8A%E9%81%87%E5%88%B0%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%EF%BC%89/"/>
     <id>http://yoursite.com/2019/09/14/skill-based/Hexo+github 从windows到mac的迁移（超详细步骤及遇到问题解决）/</id>
     <published>2019-09-14T13:55:27.000Z</published>
-    <updated>2019-09-14T11:41:46.433Z</updated>
+    <updated>2019-09-14T12:19:50.953Z</updated>
     
     <content type="html"><![CDATA[<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>2019的年5月在惠普笔记本搭建了个hexo+github版人博客就；<br>2019的6月刚入手了一个mac，于是乎各种东西都得由windows转移到mac;<br>hexo的搬家路：windows - &gt; MacBook Pro </p><h2 id="总体思路"><a href="#总体思路" class="headerlink" title="总体思路"></a>总体思路</h2><p>自己也算是摸爬滚打搭建迁移成功，把完整步骤分享给大家，同时最后有一些参考链接，如果我的步骤有问题，大家可以参考其他人的.</p><p>理清思路真不难，<strong>过程要细心、耐心</strong>，大概分为以下三个模块：</p><ul><li>首先在mac电脑上安装好<code>hexo</code>，并初始化根目录;</li><li>然后生成新的<code>SSH key</code>，并将其添加到<code>github</code>上;</li><li>将旧电脑中的三个文件，直接粘贴覆盖在新电脑对应的目录。</li></ul><h2 id="言归正传"><a href="#言归正传" class="headerlink" title="言归正传"></a>言归正传</h2><h2 id="一-安装hexo前奏"><a href="#一-安装hexo前奏" class="headerlink" title="一. 安装hexo前奏"></a>一. 安装hexo前奏</h2><h3 id="1-安装Homebrew（下载速度有点慢，耐心-）"><a href="#1-安装Homebrew（下载速度有点慢，耐心-）" class="headerlink" title="1. 安装Homebrew（下载速度有点慢，耐心~~）"></a>1. 安装Homebrew（下载速度有点慢，耐心~~）</h3><p>Homebrew安装过程很简单，直接打开mac电脑的<strong>Terminal</strong>命令窗口，把下面的代码粘贴一下，按回车键执行即可，安装过程中两次停顿，分别需要输入 y 和 电脑密码</p><table><tr><td bgcolor="black"> <font size="3" color="white">/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" </font></td></tr></table>  <p>查看安装是否成功命令：</p><table><tr><td bgcolor="black"> <font size="3" color="white"> brew --version </font></td></tr></table>  <p>安装成功提示版本号，如下图</p><p><img src="https://github.com/HuanwenW/MyPostImag/blob/master/190912-mac/Homebrewsuccessful.jpg?raw=true" alt="Homebrew安装成功！"><span class="img-alt">Homebrew安装成功！</span></p><h3 id="2-安装git"><a href="#2-安装git" class="headerlink" title="2. 安装git"></a>2. 安装git</h3><p>先检查下电脑是否已存在Git，若mac自带git，此步可以跳过，查看命令如下</p><table><tr><td bgcolor="black"> <font size="3" color="white"> git --version </font></td></tr></table>  <p>若不存在，使用brew安装Git，安装命令如下</p><table><tr><td bgcolor="black"> <font size="3" color="white"> brew install git </font></td></tr></table>  <p>同样，输入<strong>git –version</strong> 验证是否安装成功</p><p>安装成功提示版本号，如下图</p><p><img src="https://github.com/HuanwenW/MyPostImag/blob/master/190912-mac/gitSuccessful.jpg?raw=true" alt="git安装成功！"><span class="img-alt">git安装成功！</span></p><h3 id="3-安装node"><a href="#3-安装node" class="headerlink" title="3. 安装node"></a>3. 安装node</h3><p>输入命令如下</p><table><tr><td bgcolor="black"> <font size="3" color="white"> brew install node </font></td></tr></table> <p>检查安装是否成功，一定要安装成功，否者否许操作中会报错</p><table><tr><td bgcolor="black"> <font size="3" color="white"> node --version </font></td></tr></table> <p>安装成功提示版本号，如下图</p><p><img src="https://github.com/HuanwenW/MyPostImag/blob/master/190912-mac/nodeSuccessful.jpg?raw=true" alt="node安装成功！"><span class="img-alt">node安装成功！</span></p><h2 id="二-Hexo的安装及初始化"><a href="#二-Hexo的安装及初始化" class="headerlink" title="二. Hexo的安装及初始化"></a>二. Hexo的安装及初始化</h2><h3 id="1-用-node-的-npm-安装-hexo，命令如下（下载速度有点慢，耐心-）"><a href="#1-用-node-的-npm-安装-hexo，命令如下（下载速度有点慢，耐心-）" class="headerlink" title="1. 用 node 的 npm 安装 hexo，命令如下（下载速度有点慢，耐心~~）"></a>1. 用 node 的 npm 安装 hexo，命令如下（下载速度有点慢，耐心~~）</h3><table><tr><td bgcolor="black"> <font size="3" color="white"> sudo npm install --unsafe-perm=true -g hexo-cli </font></td></tr></table> <h3 id="2-初始化hexo"><a href="#2-初始化hexo" class="headerlink" title="2. 初始化hexo"></a>2. 初始化hexo</h3><p>创建HexoBlog（名字根据个人喜好自取）文件夹,输入下面命令：    </p><table><tr><td bgcolor="black"> <font size="3" color="white"> hexo init HexoBlog  </font></td></tr></table>  <p><strong>！！！报错提示及解决方案</strong></p><p><img src="https://github.com/HuanwenW/MyPostImag/blob/master/190912-mac/hexo%20erro.jpg?raw=true" alt="创建HexoBlog报错"><span class="img-alt">创建HexoBlog报错</span></p><p><img src="https://github.com/HuanwenW/MyPostImag/blob/master/190912-mac/hexo%20ok.jpg?raw=true" alt="npm权限问题解决方案"><span class="img-alt">npm权限问题解决方案</span></p><h3 id="3-体验hexo魅力"><a href="#3-体验hexo魅力" class="headerlink" title="3. 体验hexo魅力"></a>3. 体验hexo魅力</h3><p>​       由于初始化hexo 之后source目录下自带一篇hello world文章, 所以依次执行下方两个命令：<br><font color="#DC143C" size="3">&ensp;注意：执行下面命令前要先进入blog文件夹中重新打开git命令窗口！！！</font>  </p><table><tr><td bgcolor="black"> <font size="3" color="white">$ hexo generate </font></td></tr></table>  <p> 命令含义： 生成静态文件，等价于(可简写为)： <code>hexo  g</code>    </p><table><tr><td bgcolor="black"> <font size="3" color="white">$ hexo server  </font></td></tr></table>  <p> 命令含义： 启动本地服务器，等价于(可简写为)： <code>hexo  s</code></p><p>打开浏览器，输入网址： <a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a> ，即可看到网站初步的模样。<br><img src="https://github.com/HuanwenW/MyPostImag/blob/master/190410-boke/github-2.png?raw=true" alt="bendibokeliulan"><span class="img-alt">bendibokeliulan</span></p><h2 id="三-mac生成SSH及配置"><a href="#三-mac生成SSH及配置" class="headerlink" title="三. mac生成SSH及配置"></a>三. mac生成SSH及配置</h2><h3 id="1-先检查一下本机的-SSH-key是否已存在"><a href="#1-先检查一下本机的-SSH-key是否已存在" class="headerlink" title="1. 先检查一下本机的 SSH key是否已存在"></a>1. 先检查一下本机的 SSH key是否已存在</h3><table><tr><td bgcolor="black"> <font size="3" color="white">ls -a ~/.ssh  </font></td></tr></table><h3 id="2-若不存在，输入以下命令，生成ssh"><a href="#2-若不存在，输入以下命令，生成ssh" class="headerlink" title="2. 若不存在，输入以下命令，生成ssh"></a>2. 若不存在，输入以下命令，生成ssh</h3><table><tr><td bgcolor="black"> <font size="3" color="white">ssh -T git@github.com  </font></td></tr></table><p><img src="https://github.com/HuanwenW/MyPostImag/blob/master/190912-mac/ssh%20open%202.jpg?raw=true" alt="生成ssh"><span class="img-alt">生成ssh</span></p><h3 id="3-你可能找不命令窗口提示所生成的ssh在哪里，此时可直接用命令打开-ssh文件"><a href="#3-你可能找不命令窗口提示所生成的ssh在哪里，此时可直接用命令打开-ssh文件" class="headerlink" title="3. 你可能找不命令窗口提示所生成的ssh在哪里，此时可直接用命令打开.ssh文件"></a>3. 你可能找不命令窗口提示所生成的ssh在哪里，此时可直接用命令打开.ssh文件</h3><table><tr><td bgcolor="black"> <font size="3" color="white">open ~/.ssh </font></td></tr></table><h3 id="4-复制id-rsa-pub里面的所有内容"><a href="#4-复制id-rsa-pub里面的所有内容" class="headerlink" title="4. 复制id_rsa.pub里面的所有内容"></a>4. 复制id_rsa.pub里面的所有内容</h3><ul><li><p>手动打开id_rsa.pub文件，复制里面的所有内容</p></li><li><p>直接在终端打开文件，复制生成内容，打开文件命令如下</p></li></ul><table><tr><td bgcolor="black"> <font size="3" color="white">cat ~/.ssh/id_rsa.pub </font></td></tr></table><h3 id="5-进入github配置ssh"><a href="#5-进入github配置ssh" class="headerlink" title="5. 进入github配置ssh"></a>5. 进入github配置ssh</h3><p>然后进入进入自己的github页面，找到setting下的SSH：<a href="https://github.com/settings/ssh" target="_blank" rel="noopener">链接</a>  </p><p>依次执行下面步骤：点击 New SSH key —— Title：blog —— Key：输入刚才复制的内容 —— Add SSH key  </p><p><img src="https://github.com/HuanwenW/MyPostImag/blob/master/190912-mac/addSSH.jpg?raw=true" alt="添加ssh的配置"><span class="img-alt">添加ssh的配置</span></p><p><strong>d.</strong> 测试一下是否成功,输入下方命令：  </p><table><tr><td bgcolor="black"> <font size="3" color="white">$ ssh -T git@github.com   //Github的注册邮箱地址 </font></td></tr></table>  <p><img src="https://github.com/HuanwenW/MyPostImag/blob/master/190410-boke/github-3.png?raw=true" alt><br>&ensp;&ensp;&ensp;看到上面信息说明SSH已配置成功！  </p><h2 id="四-替换-config-yml-、thems、source-文件"><a href="#四-替换-config-yml-、thems、source-文件" class="headerlink" title="四. 替换_config.yml 、thems、source 文件"></a>四. 替换_config.yml 、thems、source 文件</h2><p>从<strong>windows</strong>电脑中复制_config.yml 、thems、source三个文件 ，替换<strong>mac</strong>下的_config.yml 、thems、source 三个文件，即可完成原主题的迁移</p><h2 id="五-主题相关设置专题"><a href="#五-主题相关设置专题" class="headerlink" title="五. 主题相关设置专题"></a>五. 主题相关设置专题</h2><p>此处不在啰嗦，完全参照<a href="https://github.com/Youthink/hexo-themes-yearn/wiki/主题使用教程-📖" target="_blank" rel="noopener">hexo搭建模版参照教程</a>的讲解</p><p>也可以参考我的<a href="https://huanwenw.github.io/2019/04/10/hexo-gitHub/" target="_blank" rel="noopener">window版本搭建hexo</a>中第四部分<strong>如何将github和hexo联系起来？</strong>的详细说明</p><h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><ol><li><a href="[http://gjincai.github.io/2017/01/13/hexo-%E4%BB%8E-windows-%E8%BD%AC%E7%A7%BB%E8%87%B3-Mac/](http://gjincai.github.io/2017/01/13/hexo-从-windows-转移至-Mac/)">hexo从windows转移至Mac</a></li><li><a href="https://hankliu62.github.io/2017/09/09/hexo-github-blog-guide/" target="_blank" rel="noopener">MAC搭建个人博客hexo+github详细完整步骤</a></li><li><a href="https://blog.csdn.net/xy371661665/article/details/77528132" target="_blank" rel="noopener">Mac系统下安装和卸载HomeBrew的方法</a></li><li><a href="https://blog.csdn.net/qq_41234116/article/details/79366454" target="_blank" rel="noopener">Mac安装，简单使用，卸载homebrew详细教程</a></li><li><a href="https://blog.csdn.net/qq_39153421/article/details/89362432" target="_blank" rel="noopener">解决hexo -d 报错问题</a></li><li><a href="https://www.jianshu.com/p/60b3d5584afe" target="_blank" rel="noopener">npm权限问题</a></li><li><a href="https://www.jianshu.com/p/e72e94952d76" target="_blank" rel="noopener">mac下 ssh key 的获取</a></li><li><a href="https://github.com/Youthink/hexo-themes-yearn/wiki/主题使用教程-📖" target="_blank" rel="noopener">hexo搭建模版参照教程</a></li><li><a href="https://github.com/adrai/flowchart.js" target="_blank" rel="noopener">用<strong>flowchart.js</strong>画流程图</a></li></ol>]]></content>
     
@@ -39,6 +64,30 @@
     
     
       <category term="软件安装" scheme="http://yoursite.com/tags/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ubantu 虚拟环境创建</title>
+    <link href="http://yoursite.com/2019/09/14/skill-based/Create%20a%20virtual%20environment/"/>
+    <id>http://yoursite.com/2019/09/14/skill-based/Create a virtual environment/</id>
+    <published>2019-09-14T12:55:27.000Z</published>
+    <updated>2019-09-14T12:45:03.157Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>在配置别人的实验环境时，根据作者提供的环境条件逐条安装往往太慢….通常作者会在实验中给requirements.txt文件（里面为实验环境版本配置信息），以下方法介绍如何一次性安装实验所依赖的各种包！</p><h2 id="0-打开Terminal（pycharm下）"><a href="#0-打开Terminal（pycharm下）" class="headerlink" title="0. 打开Terminal（pycharm下）"></a>0. 打开<strong>Terminal</strong>（pycharm下）</h2><p>先在pycharm所打开的项目，下方菜单切换到项目的Terminal中进行，这样就是对当前项目配备环境。</p><h2 id="1-创建虚拟环境"><a href="#1-创建虚拟环境" class="headerlink" title="1.创建虚拟环境"></a>1.创建虚拟环境</h2><table><tr><td bgcolor="black"> <font size="3" color="white"> conda  create  -n  自己虚拟环境的名字 python=3.6（3.6是当前版本号，版本号也可省略） </font></td></tr></table>  <p>执行过程中，需要输入 y</p><h2 id="2-激活虚拟环境–2种方式"><a href="#2-激活虚拟环境–2种方式" class="headerlink" title="2. 激活虚拟环境–2种方式"></a>2. 激活虚拟环境–2种方式</h2><table><tr><td bgcolor="black"> <font size="3" color="white"> source activate + 自己虚拟环境的名字（方法1） </font></td></tr></table>  <table><tr><td bgcolor="black"> <font size="3" color="white"> conda activate + 自己虚拟环境的名字（方法 2） </font></td></tr></table>  <h2 id="3-安装所需环境（一般作者把需要的环境写在requirements-txt中-）"><a href="#3-安装所需环境（一般作者把需要的环境写在requirements-txt中-）" class="headerlink" title="3.安装所需环境（一般作者把需要的环境写在requirements.txt中 ）"></a>3.安装所需环境（一般作者把需要的环境写在requirements.txt中 ）</h2><table><tr><td bgcolor="black"> <font size="3" color="white"> pip install  -r  requirements.txt </font></td></tr></table> <p>即使requirements.txt中所需的环境<strong>已安装也没关系</strong>，系统会自动解决</p><h2 id="4-查看是否安装成功"><a href="#4-查看是否安装成功" class="headerlink" title="4.查看是否安装成功"></a>4.查看是否安装成功</h2><p>打开电脑的Terminals窗口 ，输入以下命令，会显示电脑中所有的虚拟环境，确认刚刚创建的虚拟环境是否包含在里面。</p><table><tr><td bgcolor="black"> <font size="3" color="white"> conda env list </font></td></tr></table> <h2 id="5-配置实验环境"><a href="#5-配置实验环境" class="headerlink" title="5. 配置实验环境"></a>5. 配置实验环境</h2><p>依次点击pycharm下的Project–seeting–add（而不是show all）–切换conda环境–自动检测出刚安装的环境—项目设置</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;背景&quot;&gt;&lt;a href=&quot;#背景&quot; class=&quot;headerlink&quot; title=&quot;背景&quot;&gt;&lt;/a&gt;背景&lt;/h2&gt;&lt;p&gt;在配置别人的实验环境时，根据作者提供的环境条件逐条安装往往太慢….通常作者会在实验中给requirements.txt文件（里面为实验环境版
+      
+    
+    </summary>
+    
+    
+      <category term="技术篇" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF%E7%AF%87/"/>
+    
     
   </entry>
   
@@ -92,33 +141,6 @@
     
     
       <category term="软件安装" scheme="http://yoursite.com/tags/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Skiil about ubantu</title>
-    <link href="http://yoursite.com/2019/09/10/skill-based/Skiil%20about%20ubantu%20/"/>
-    <id>http://yoursite.com/2019/09/10/skill-based/Skiil about ubantu /</id>
-    <published>2019-09-10T13:55:27.000Z</published>
-    <updated>2019-09-13T10:14:43.230Z</updated>
-    
-    <content type="html"><![CDATA[<p>## </p><h2 id="ubantu下常用的一些命令及快捷键"><a href="#ubantu下常用的一些命令及快捷键" class="headerlink" title="ubantu下常用的一些命令及快捷键"></a>ubantu下常用的一些命令及快捷键</h2><ol><li>cd..      后退一步</li></ol>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;## &lt;/p&gt;
-&lt;h2 id=&quot;ubantu下常用的一些命令及快捷键&quot;&gt;&lt;a href=&quot;#ubantu下常用的一些命令及快捷键&quot; class=&quot;headerlink&quot; title=&quot;ubantu下常用的一些命令及快捷键&quot;&gt;&lt;/a&gt;ubantu下常用的一些命令及快捷键&lt;/h
-      
-    
-    </summary>
-    
-    
-      <category term="技术篇" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF%E7%AF%87/"/>
-    
-    
-      <category term="快捷键使用" scheme="http://yoursite.com/tags/%E5%BF%AB%E6%8D%B7%E9%94%AE%E4%BD%BF%E7%94%A8/"/>
     
   </entry>
   
@@ -395,6 +417,34 @@
   </entry>
   
   <entry>
+    <title>Welcome to NLP-2019-huanhuan-homework-4</title>
+    <link href="http://yoursite.com/2019/04/13/NLP/NLP-homework-3/"/>
+    <id>http://yoursite.com/2019/04/13/NLP/NLP-homework-3/</id>
+    <published>2019-04-13T10:52:33.000Z</published>
+    <updated>2019-09-13T04:33:59.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="内容涵盖"><a href="#内容涵盖" class="headerlink" title="内容涵盖"></a>内容涵盖</h2><ul><li><strong>TF-IDF原理</strong></li><li><strong>文本矩阵化，使用词袋模型，以TF-IDF特征值为权重</strong>（可以使用Python中TfidfTransformer库）</li><li><strong>互信息的原理</strong></li><li><strong>使用第二步生成的特征矩阵，利用互信息进行特征筛选</strong></li></ul><h2 id="1-TF-IDF原理"><a href="#1-TF-IDF原理" class="headerlink" title="1.TF-IDF原理"></a>1.TF-IDF原理</h2><p><strong>(1) 定义</strong><br>&ensp;&ensp;&ensp; TF-IDF(Term Frequency - Inverse Document Frequency)，即“词频-逆文本频率”。是一种用于资讯检索与资讯探勘的常用加权技术。TF-IDF是一种统计方法，用以评估一字词对于一个文件集或一个语料库中的其中一份文件的重要程度。<strong>字词的重要性随着它在文件中出现的次数成正比增加，但同时会随着它在语料库中出现的频率成反比下降.</strong>  </p><p><strong>(2)思想</strong><br>&ensp;&ensp;&ensp;如果某个词或短语在一篇文章中出现的频率TF高，并且在其他文章中很少出现，则认为此词或者短语具有很好的类别区分能力，适合用来分类。<strong>TF-IDF实际上就是 TF X IDF，其中TF表示词条在文章Document 中出现的频率；IDF其主要思想就是，如果包含某个词 Word的文档越少，则这个词的区分度就越大，也就是 IDF 越大。</strong> 对于如何获取一篇文章的关键词，我们可以计算这边文章出现的所有名词的 TF-IDF，TF-IDF越大，则说明这个名词对这篇文章的区分度就越高，取 TF-IDF 值较大的几个词，就可以当做这篇文章的关键词。</p><p><strong>(3) 计算步骤</strong><br><strong>a. 计算词频(TF)</strong>  </p><p><strong><img src="http://latex.codecogs.com/gif.latex?tf_%7Bi,j%7D=%5Cfrac%7Bn_%7Bi,j%7D%7D%7B%5Csum_%7B0%7D%5E%7Bk%7Dn_%7Bk,j%7D%7D" alt></strong>    </p><p>分子是该词在文件 dj 中的出现次数，而分母  则是在文件 dj 中所有字词的出现次数之和。</p><p><strong>b. 计算逆文档频率（IDF）</strong>   </p><h2 id="参考博客"><a href="#参考博客" class="headerlink" title="参考博客"></a>参考博客</h2><ol><li><a href="https://www.cnblogs.com/pinard/p/6693230.html" target="_blank" rel="noopener"><strong>文本挖掘预处理之TF-IDF</strong></a></li><li><a href="https://blog.csdn.net/lionel_fengj/article/details/53699903" target="_blank" rel="noopener"><strong>自然语言处理系列之TF-IDF算法</strong></a></li><li><a href="http://www.cnblogs.com/biyeymyhjob/archive/2012/07/17/2595249.html" target="_blank" rel="noopener"><strong>TF-IDF及其算法</strong></a></li><li><a href="https://www.jianshu.com/p/f3b92124cd2b" target="_blank" rel="noopener"><strong>使用不同的方法计算TF-IDF值</strong></a></li><li><a href="https://blog.csdn.net/u013710265/article/details/72848755" target="_blank" rel="noopener"><strong>sklearn-点互信息和互信息</strong></a></li><li><a href="https://baijiahao.baidu.com/s?id=1604074325918456186&wfr=spider&for=pc" target="_blank" rel="noopener"><strong>如何进行特征选择（理论篇）机器学习你会遇到的“坑”</strong></a></li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;内容涵盖&quot;&gt;&lt;a href=&quot;#内容涵盖&quot; class=&quot;headerlink&quot; title=&quot;内容涵盖&quot;&gt;&lt;/a&gt;内容涵盖&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;TF-IDF原理&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;文本矩阵化，使用词袋模型，
+      
+    
+    </summary>
+    
+    
+      <category term="NLP" scheme="http://yoursite.com/categories/NLP/"/>
+    
+    
+      <category term="TF-IDF" scheme="http://yoursite.com/tags/TF-IDF/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Welcome to NLP-2019-huanhuan-homework-6</title>
     <link href="http://yoursite.com/2019/04/13/NLP/NLP-homework-6/"/>
     <id>http://yoursite.com/2019/04/13/NLP/NLP-homework-6/</id>
@@ -421,34 +471,6 @@
     
     
       <category term="SVM" scheme="http://yoursite.com/tags/SVM/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Welcome to NLP-2019-huanhuan-homework-4</title>
-    <link href="http://yoursite.com/2019/04/13/NLP/NLP-homework-3/"/>
-    <id>http://yoursite.com/2019/04/13/NLP/NLP-homework-3/</id>
-    <published>2019-04-13T10:52:33.000Z</published>
-    <updated>2019-09-13T04:33:59.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="内容涵盖"><a href="#内容涵盖" class="headerlink" title="内容涵盖"></a>内容涵盖</h2><ul><li><strong>TF-IDF原理</strong></li><li><strong>文本矩阵化，使用词袋模型，以TF-IDF特征值为权重</strong>（可以使用Python中TfidfTransformer库）</li><li><strong>互信息的原理</strong></li><li><strong>使用第二步生成的特征矩阵，利用互信息进行特征筛选</strong></li></ul><h2 id="1-TF-IDF原理"><a href="#1-TF-IDF原理" class="headerlink" title="1.TF-IDF原理"></a>1.TF-IDF原理</h2><p><strong>(1) 定义</strong><br>&ensp;&ensp;&ensp; TF-IDF(Term Frequency - Inverse Document Frequency)，即“词频-逆文本频率”。是一种用于资讯检索与资讯探勘的常用加权技术。TF-IDF是一种统计方法，用以评估一字词对于一个文件集或一个语料库中的其中一份文件的重要程度。<strong>字词的重要性随着它在文件中出现的次数成正比增加，但同时会随着它在语料库中出现的频率成反比下降.</strong>  </p><p><strong>(2)思想</strong><br>&ensp;&ensp;&ensp;如果某个词或短语在一篇文章中出现的频率TF高，并且在其他文章中很少出现，则认为此词或者短语具有很好的类别区分能力，适合用来分类。<strong>TF-IDF实际上就是 TF X IDF，其中TF表示词条在文章Document 中出现的频率；IDF其主要思想就是，如果包含某个词 Word的文档越少，则这个词的区分度就越大，也就是 IDF 越大。</strong> 对于如何获取一篇文章的关键词，我们可以计算这边文章出现的所有名词的 TF-IDF，TF-IDF越大，则说明这个名词对这篇文章的区分度就越高，取 TF-IDF 值较大的几个词，就可以当做这篇文章的关键词。</p><p><strong>(3) 计算步骤</strong><br><strong>a. 计算词频(TF)</strong>  </p><p><strong><img src="http://latex.codecogs.com/gif.latex?tf_%7Bi,j%7D=%5Cfrac%7Bn_%7Bi,j%7D%7D%7B%5Csum_%7B0%7D%5E%7Bk%7Dn_%7Bk,j%7D%7D" alt></strong>    </p><p>分子是该词在文件 dj 中的出现次数，而分母  则是在文件 dj 中所有字词的出现次数之和。</p><p><strong>b. 计算逆文档频率（IDF）</strong>   </p><h2 id="参考博客"><a href="#参考博客" class="headerlink" title="参考博客"></a>参考博客</h2><ol><li><a href="https://www.cnblogs.com/pinard/p/6693230.html" target="_blank" rel="noopener"><strong>文本挖掘预处理之TF-IDF</strong></a></li><li><a href="https://blog.csdn.net/lionel_fengj/article/details/53699903" target="_blank" rel="noopener"><strong>自然语言处理系列之TF-IDF算法</strong></a></li><li><a href="http://www.cnblogs.com/biyeymyhjob/archive/2012/07/17/2595249.html" target="_blank" rel="noopener"><strong>TF-IDF及其算法</strong></a></li><li><a href="https://www.jianshu.com/p/f3b92124cd2b" target="_blank" rel="noopener"><strong>使用不同的方法计算TF-IDF值</strong></a></li><li><a href="https://blog.csdn.net/u013710265/article/details/72848755" target="_blank" rel="noopener"><strong>sklearn-点互信息和互信息</strong></a></li><li><a href="https://baijiahao.baidu.com/s?id=1604074325918456186&wfr=spider&for=pc" target="_blank" rel="noopener"><strong>如何进行特征选择（理论篇）机器学习你会遇到的“坑”</strong></a></li></ol>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;内容涵盖&quot;&gt;&lt;a href=&quot;#内容涵盖&quot; class=&quot;headerlink&quot; title=&quot;内容涵盖&quot;&gt;&lt;/a&gt;内容涵盖&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;TF-IDF原理&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;文本矩阵化，使用词袋模型，
-      
-    
-    </summary>
-    
-    
-      <category term="NLP" scheme="http://yoursite.com/categories/NLP/"/>
-    
-    
-      <category term="TF-IDF" scheme="http://yoursite.com/tags/TF-IDF/"/>
     
   </entry>
   

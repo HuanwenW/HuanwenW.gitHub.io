@@ -25,7 +25,7 @@
   <link rel="stylesheet" type="text/css" href="/./style/main.css">
 	<link rel="shortcut icon" href="/favicon.ico" title="Favicon">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
-	<title>Skiil about ubantu</title>
+	<title>ubantu系统中的anaconda3下安装anaconda2</title>
   
   <script>var _hmt=_hmt||[];(function(){var hm=document.createElement("script");hm.src="https://hm.baidu.com/hm.js?be13bf98b13bee6a1fc89b6ae36a8ffb";var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(hm,s);})();
   </script>
@@ -48,7 +48,7 @@
     
   
   <h1 class="title">
-    Skiil about ubantu
+    ubantu系统中的anaconda3下安装anaconda2
   </h1>
   
 
@@ -56,11 +56,11 @@
     <ul class="article-info">
       <li>
         发布
-        <time datetime="2019-09-10T13:55:27.000Z" itemprop="datePublished">2019-09-10</time>
+        <time datetime="2019-09-14T13:55:27.000Z" itemprop="datePublished">2019-09-14</time>
       </li>
       <li>
         
-    更新 <time datetime="2019-09-13T10:14:43.230Z" itemprop="dateUpdated">2019-09-13</time>
+    更新 <time datetime="2019-09-14T13:23:43.154Z" itemprop="dateUpdated">2019-09-14</time>
 
       </li>
       <li id="busuanzi_container_page_pv">
@@ -76,10 +76,36 @@
           本文最后更新于$day天前，文中所描述的信息可能已发生改变。
         </div>
         
-        <p>## </p>
-<h2 id="ubantu下常用的一些命令及快捷键"><a href="#ubantu下常用的一些命令及快捷键" class="headerlink" title="ubantu下常用的一些命令及快捷键"></a>ubantu下常用的一些命令及快捷键</h2><ol>
-<li>cd..      后退一步</li>
-</ol>
+        <h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>ubantu系统已经安装有anaconda3，但是要跑的实验使用的是python2.7，需要更换为anaconda2的环境</p>
+<p><strong>注意：anaconda3下对应python3以上的版本，且无法降级python版本！</strong></p>
+<h2 id="具体实现步骤"><a href="#具体实现步骤" class="headerlink" title="具体实现步骤"></a>具体实现步骤</h2><h2 id="1-下载anaconda2系列的安装包"><a href="#1-下载anaconda2系列的安装包" class="headerlink" title="1. 下载anaconda2系列的安装包"></a>1. 下载anaconda2系列的安装包</h2><p>​        <a href="https://repo.continuum.io/archive/" target="_blank" rel="noopener">下载地址</a> （我下载的：  Anaconda2-5.0.1-Linux-x86_64.sh）</p>
+<h2 id="2-在软件所在位置的文件夹内打开终端"><a href="#2-在软件所在位置的文件夹内打开终端" class="headerlink" title="2. 在软件所在位置的文件夹内打开终端"></a>2. <strong>在软件所在位置的文件夹内打开终端</strong></h2><p>Terminal窗口切换到刚刚下载好的（Anaconda2-5.0.1-Linux-x86_64.sh）所在位置</p>
+<h2 id="3-逐条执行以下9条命令-报错可能是权限问题，前面加sudo"><a href="#3-逐条执行以下9条命令-报错可能是权限问题，前面加sudo" class="headerlink" title="3. 逐条执行以下9条命令**(报错可能是权限问题，前面加sudo)**"></a>3. <strong>逐条执行以下9条命令**</strong>(报错可能是权限问题，前面加sudo)**</h2><table><tr><td bgcolor="black"> <font size="3" color="white">0. $ bash Anaconda2-5.0.1-Linux-x86_64.sh -b -p $ HOME / anaconda3 / envs / py2  (Anaconda2-5.0.1-Linux-x86_64.sh为所下载的anaconda2软件名，如果不一致需要替换；py2 为环境名称)
+</font></td></tr></table> 
+
+<table><tr><td bgcolor="black"> <font size="3" color="white">1. $ rm -f $ HOME / anaconda3 / envs / py2 / bin / conda * 
+ </font></td></tr></table>  
+
+<table><tr><td bgcolor="black"> <font size="3" color="white"> 2. $ rm -f $ HOME / anaconda3 / envs / py2 / conda-meta / conda- * </font></td></tr></table>  
+
+<table><tr><td bgcolor="black"> <font size="3" color="white">3. $ rm -f $ HOME / anaconda3 / envs / py2 / bin / activate</font></td></tr></table>  
+
+<table><tr><td bgcolor="black"> <font size="3" color="white"> 4. $ rm -f $ HOME / anaconda3 / envs / py2 / bin / deactivate
+ </font></td></tr></table>  
+
+<table><tr><td bgcolor="black"> <font size="3" color="white">5. $ cd $ HOME / anaconda3 / envs / py2 / bin</font></td></tr></table>  
+
+<table><tr><td bgcolor="black"> <font size="3" color="white">6. $ ln -s ../../../bin/conda.</font></td></tr></table>  
+
+<table><tr><td bgcolor="black"> <font size="3" color="white">7. $ ln -s ../../../bin/activate.</font></td></tr></table>  
+
+<table><tr><td bgcolor="black"> <font size="3" color="white">8. $ ln -s ../../../bin/deactivate.</font></td></tr></table>  
+
+<h2 id="4-通过命令switch-python来查看当前Python的版本"><a href="#4-通过命令switch-python来查看当前Python的版本" class="headerlink" title="4. 通过命令switch python来查看当前Python的版本"></a>4. 通过命令switch python来查看当前Python的版本</h2><h2 id="5-通过命令source-activate-py2-来激活anaconda2的环境"><a href="#5-通过命令source-activate-py2-来激活anaconda2的环境" class="headerlink" title="5.通过命令source activate py2 来激活anaconda2的环境"></a>5.通过命令source activate py2 来激活anaconda2的环境</h2><table><tr><td bgcolor="black"> <font size="3" color="white">source activate py2</font></td></tr></table>  
+
+<h2 id="6-通过命令source-deactivate-py2来返回anaconda3的环境"><a href="#6-通过命令source-deactivate-py2来返回anaconda3的环境" class="headerlink" title="6. 通过命令source deactivate py2来返回anaconda3的环境"></a>6. 通过命令source deactivate py2来返回anaconda3的环境</h2><table><tr><td bgcolor="black"> <font size="3" color="white">source deactivate py2</font></td></tr></table>  
+
+<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><p><a href="[https://github.com/maquanyu/Sunflower-Collection/blob/master/anaconda2%E5%92%8Canaconda3%E5%85%B1%E5%AD%98](https://github.com/maquanyu/Sunflower-Collection/blob/master/anaconda2和anaconda3共存)">anaconda3下安装anaconda2</a></p>
 
       </div>
         <div class="support-author">

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="keywords" content="hexo,个人博客,blog">
+  <meta name="description" content="焕小妹的个人博客">
+  <meta http-equiv="x-dns-prefetch-control" content="on">
+  <link rel="dns-prefetch" href="https://busuanzi.ibruce.info">
+  <link rel="dns-prefetch" href="https://at.alicdn.com">
+  
+  <link rel="dns-prefetch" href="https://widget.daovoice.io">
+  <link rel="dns-prefetch" href="https://widget-static-cdn.daovoice.io">
+  <link rel="dns-prefetch" href="https://im.daovoice.io">
+  
+  
+  <link rel="dns-prefetch" href="https://hm.baidu.com/">
+  
+  
+  <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+  <link rel="dns-prefetch" href="https://api.github.com">
+  <link rel="dns-prefetch" href="https://avatars3.githubusercontent.com">
+  
+  <link rel="stylesheet" type="text/css" href="/./style/main.css">
+	<link rel="shortcut icon" href="/favicon.ico" title="Favicon">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+	<title>ubantu 虚拟环境创建</title>
+  
+  <script>var _hmt=_hmt||[];(function(){var hm=document.createElement("script");hm.src="https://hm.baidu.com/hm.js?be13bf98b13bee6a1fc89b6ae36a8ffb";var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(hm,s);})();
+  </script>
+  
+  
+    <script>(function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/a1aef33b.js","daovoice");daovoice('init',{app_id: "a1aef33b"});daovoice('update');
+  </script>
+  
+</head>
+<body>
+  <canvas id="pattern-placeholder" height="230"></canvas>
+<div class="navbar-header">
+  <a class="blog-title" href="/">焕小妹的博客</a>
+  <a class="face-img" href="/">
+    <img src="https://github.com/HuanwenW/MyPostImag/blob/master/190410-boke/touxiang-1.jpg?raw=true">
+  </a>
+</div>
+<main>
+  <div class="article-title">
+    
+  
+  <h1 class="title">
+    ubantu 虚拟环境创建
+  </h1>
+  
+
+
+    <ul class="article-info">
+      <li>
+        发布
+        <time datetime="2019-09-14T12:55:27.000Z" itemprop="datePublished">2019-09-14</time>
+      </li>
+      <li>
+        
+    更新 <time datetime="2019-09-14T12:45:03.157Z" itemprop="dateUpdated">2019-09-14</time>
+
+      </li>
+      <li id="busuanzi_container_page_pv">
+        阅读 <span id="busuanzi_value_page_pv"></span>
+      </li>
+    </ul>
+  </div>
+  <div class="container">
+    <div class="article">
+      <div class="content">
+        
+        <div class="overdue-remind">
+          本文最后更新于$day天前，文中所描述的信息可能已发生改变。
+        </div>
+        
+        <h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>在配置别人的实验环境时，根据作者提供的环境条件逐条安装往往太慢….通常作者会在实验中给requirements.txt文件（里面为实验环境版本配置信息），以下方法介绍如何一次性安装实验所依赖的各种包！</p>
+<h2 id="0-打开Terminal（pycharm下）"><a href="#0-打开Terminal（pycharm下）" class="headerlink" title="0. 打开Terminal（pycharm下）"></a>0. 打开<strong>Terminal</strong>（pycharm下）</h2><p>先在pycharm所打开的项目，下方菜单切换到项目的Terminal中进行，这样就是对当前项目配备环境。</p>
+<h2 id="1-创建虚拟环境"><a href="#1-创建虚拟环境" class="headerlink" title="1.创建虚拟环境"></a>1.创建虚拟环境</h2><table><tr><td bgcolor="black"> <font size="3" color="white"> conda  create  -n  自己虚拟环境的名字 python=3.6（3.6是当前版本号，版本号也可省略） </font></td></tr></table>  
+
+<p>执行过程中，需要输入 y</p>
+<h2 id="2-激活虚拟环境–2种方式"><a href="#2-激活虚拟环境–2种方式" class="headerlink" title="2. 激活虚拟环境–2种方式"></a>2. 激活虚拟环境–2种方式</h2><table><tr><td bgcolor="black"> <font size="3" color="white"> source activate + 自己虚拟环境的名字（方法1） </font></td></tr></table>  
+
+<table><tr><td bgcolor="black"> <font size="3" color="white"> conda activate + 自己虚拟环境的名字（方法 2） </font></td></tr></table>  
+
+<h2 id="3-安装所需环境（一般作者把需要的环境写在requirements-txt中-）"><a href="#3-安装所需环境（一般作者把需要的环境写在requirements-txt中-）" class="headerlink" title="3.安装所需环境（一般作者把需要的环境写在requirements.txt中 ）"></a>3.安装所需环境（一般作者把需要的环境写在requirements.txt中 ）</h2><table><tr><td bgcolor="black"> <font size="3" color="white"> pip install  -r  requirements.txt </font></td></tr></table> 
+
+<p>即使requirements.txt中所需的环境<strong>已安装也没关系</strong>，系统会自动解决</p>
+<h2 id="4-查看是否安装成功"><a href="#4-查看是否安装成功" class="headerlink" title="4.查看是否安装成功"></a>4.查看是否安装成功</h2><p>打开电脑的Terminals窗口 ，输入以下命令，会显示电脑中所有的虚拟环境，确认刚刚创建的虚拟环境是否包含在里面。</p>
+<table><tr><td bgcolor="black"> <font size="3" color="white"> conda env list </font></td></tr></table> 
+
+<h2 id="5-配置实验环境"><a href="#5-配置实验环境" class="headerlink" title="5. 配置实验环境"></a>5. 配置实验环境</h2><p>依次点击pycharm下的Project–seeting–add（而不是show all）–切换conda环境–自动检测出刚安装的环境—项目设置</p>
+
+      </div>
+        <div class="support-author">
+          <p>感谢您的阅读。 🙏
+          <a href="https://huanwenw.github.io/2019/09/12/copyright-reprinted/" target="_blank">关于转载请看这里</a>
+            <!--<a class="btn-pay"  href="#pay-modal">¥ 打赏支持</a>-->
+          </p>
+        </div>
+        <!--
+            <div class="like ">
+              <div class="like-button">
+                <a id="like-note" href="">
+                  <i class="icon-heart"></i>喜欢
+                </a>
+              </div>
+              <span id="likes-count">256</span>
+            </div>
+        -->
+        <div class="otherLink">
+          <div class="previous">
+          </div>
+          <div class="next">
+          </div>
+        </div>
+        <div class="comments" id="comments">
+          
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script type="text/javascript">
+  const gitalk = new Gitalk({
+    clientID: '90a1036ad9349c8b0510',
+    clientSecret: '5d7693cc0914fa1b34f43bebc0eb1384f2614759',
+    repo: 'https://github.com/HuanwenW/HuanwenW.gitHub.io',
+    owner: 'HuanwenW',
+    admin: ['HuanwenW'],
+    id: location.pathname,      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false
+  })
+
+  gitalk.render('comments');
+</script>
+
+
+        </div>
+      </div>
+    </div>
+   
+</main>
+<div class="footer">
+  <div class="info">
+    <p>
+    <a href="https://hexo.io"> Hexo </a> 强力驱动 |
+      <a href="https://github.com/Youthink/hexo-themes-yearn"> Yearn </a>
+      主题
+    </p>
+    <p>&copy;2019-2021 焕小妹的博客 豫ICP备1023号</p>
+  </div>
+</div>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<script>//console
+  var consoleConfig = '\n欢迎访问 https://huanwenw.github.io ，围观小猿大圣的博客(づ｡◕‿‿◕｡)づ！\n,\n本博客使用 %cHexo%c 搭建，博客主题为小猿大圣开发的 %chexo-themes-yearn%c ~~~ 🎉🎉🎉 \n\n源码 https://github.com/Youthink/hexo-themes-yearn \n\n如果喜欢可以 star 支持一下 ❤️~\n,\n扫描下面的二维码，在手机上查看博客！\n,https://static.hufangyun.com/blog-url-qrcode-180-180.png,\n 想知道这个效果如何实现的？博客内搜索 console 彩蛋 🚀 ！\n'.split(',');
+  var canConsole = true;
+  var consoleInfo = (function(consoleConfig) {
+  if (!canConsole || !consoleConfig || consoleConfig.length < 1) {
+    return;
+  }
+  var consoleColor = '#6190e8';
+  var _console;
+  var backgroundTextStyle = 'padding: 1px 5px;color: #fff;background: ' + consoleColor + ';'
+  var textStyle = 'color: ' + consoleColor + ';';
+
+  consoleConfig.map(o => {
+    var num = (o.match(/%c/g) || []).length;
+    if(/^http(s)?:\/\//.test(o)) {
+      console.log('%c     ', 'background: url(' + o + ') no-repeat left center;font-size: 180px;');
+      return;
+    }
+    if (num > 0) {
+      var logArguments = [];
+      for (var i = 0; i < num; i++) {
+        if (i % 2 === 0) {
+          logArguments.push(backgroundTextStyle);
+        } else {
+          logArguments.push(textStyle);
+        }
+      }
+      (_console = console).log.apply(_console, ['%c' + o, textStyle].concat(logArguments));
+      return;
+    }
+    console.log('%c' + o, textStyle);
+  });
+}(consoleConfig));</script><script type="text/javascript" src="/./js/main.js"></script>
+
+  <script src="//at.alicdn.com/t/font_159214_mvtxvg9me9.js"></script>
+</body>
+</html>
