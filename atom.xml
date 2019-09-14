@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-09-14T03:21:22.699Z</updated>
+  <updated>2019-09-14T03:42:39.387Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,15 +21,15 @@
     <link href="http://yoursite.com/2019/09/12/copyright-reprinted/"/>
     <id>http://yoursite.com/2019/09/12/copyright-reprinted/</id>
     <published>2019-09-12T13:55:27.000Z</published>
-    <updated>2019-09-14T03:21:22.699Z</updated>
+    <updated>2019-09-14T03:42:39.387Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="我希望的转载方式-✅"><a href="#我希望的转载方式-✅" class="headerlink" title="我希望的转载方式 ✅"></a>我希望的转载方式 ✅</h2><p><strong>分享链接转载，指向我的博文。</strong> 我觉的这是最好的转载方式，互赢。</p><h2 id="使用别人的原创"><a href="#使用别人的原创" class="headerlink" title="使用别人的原创"></a>使用别人的原创</h2><p>换位思考，以后我使用别人的图片和摘选的内容时，我会带上来源地址和作者署名，尊重原创。💪</p>]]></content>
+    <content type="html"><![CDATA[<h2 id="我希望的转载方式"><a href="#我希望的转载方式" class="headerlink" title="我希望的转载方式"></a>我希望的转载方式</h2><p><strong>分享链接转载，指向我的博文。</strong> 我觉的这是最好的转载方式，互赢。</p><h2 id="使用别人的原创"><a href="#使用别人的原创" class="headerlink" title="使用别人的原创"></a>使用别人的原创</h2><p>换位思考，以后我使用别人的图片和摘选的内容时，我会带上来源地址和作者署名，尊重原创</p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;h2 id=&quot;我希望的转载方式-✅&quot;&gt;&lt;a href=&quot;#我希望的转载方式-✅&quot; class=&quot;headerlink&quot; title=&quot;我希望的转载方式 ✅&quot;&gt;&lt;/a&gt;我希望的转载方式 ✅&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;分享链接转载，指向我的博文。&lt;/strong&gt; 我觉的这是最
+        &lt;h2 id=&quot;我希望的转载方式&quot;&gt;&lt;a href=&quot;#我希望的转载方式&quot; class=&quot;headerlink&quot; title=&quot;我希望的转载方式&quot;&gt;&lt;/a&gt;我希望的转载方式&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;分享链接转载，指向我的博文。&lt;/strong&gt; 我觉的这是最好的转载方式，互
       
     
     </summary>
@@ -392,6 +392,34 @@
   </entry>
   
   <entry>
+    <title>Welcome to NLP-2019-huanhuan-homework-4</title>
+    <link href="http://yoursite.com/2019/04/13/NLP-homework-3/"/>
+    <id>http://yoursite.com/2019/04/13/NLP-homework-3/</id>
+    <published>2019-04-13T10:52:33.000Z</published>
+    <updated>2019-09-13T04:33:59.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="内容涵盖"><a href="#内容涵盖" class="headerlink" title="内容涵盖"></a>内容涵盖</h2><ul><li><strong>TF-IDF原理</strong></li><li><strong>文本矩阵化，使用词袋模型，以TF-IDF特征值为权重</strong>（可以使用Python中TfidfTransformer库）</li><li><strong>互信息的原理</strong></li><li><strong>使用第二步生成的特征矩阵，利用互信息进行特征筛选</strong></li></ul><h2 id="1-TF-IDF原理"><a href="#1-TF-IDF原理" class="headerlink" title="1.TF-IDF原理"></a>1.TF-IDF原理</h2><p><strong>(1) 定义</strong><br>&ensp;&ensp;&ensp; TF-IDF(Term Frequency - Inverse Document Frequency)，即“词频-逆文本频率”。是一种用于资讯检索与资讯探勘的常用加权技术。TF-IDF是一种统计方法，用以评估一字词对于一个文件集或一个语料库中的其中一份文件的重要程度。<strong>字词的重要性随着它在文件中出现的次数成正比增加，但同时会随着它在语料库中出现的频率成反比下降.</strong>  </p><p><strong>(2)思想</strong><br>&ensp;&ensp;&ensp;如果某个词或短语在一篇文章中出现的频率TF高，并且在其他文章中很少出现，则认为此词或者短语具有很好的类别区分能力，适合用来分类。<strong>TF-IDF实际上就是 TF X IDF，其中TF表示词条在文章Document 中出现的频率；IDF其主要思想就是，如果包含某个词 Word的文档越少，则这个词的区分度就越大，也就是 IDF 越大。</strong> 对于如何获取一篇文章的关键词，我们可以计算这边文章出现的所有名词的 TF-IDF，TF-IDF越大，则说明这个名词对这篇文章的区分度就越高，取 TF-IDF 值较大的几个词，就可以当做这篇文章的关键词。</p><p><strong>(3) 计算步骤</strong><br><strong>a. 计算词频(TF)</strong>  </p><p><strong><img src="http://latex.codecogs.com/gif.latex?tf_%7Bi,j%7D=%5Cfrac%7Bn_%7Bi,j%7D%7D%7B%5Csum_%7B0%7D%5E%7Bk%7Dn_%7Bk,j%7D%7D" alt></strong>    </p><p>分子是该词在文件 dj 中的出现次数，而分母  则是在文件 dj 中所有字词的出现次数之和。</p><p><strong>b. 计算逆文档频率（IDF）</strong>   </p><h2 id="参考博客"><a href="#参考博客" class="headerlink" title="参考博客"></a>参考博客</h2><ol><li><a href="https://www.cnblogs.com/pinard/p/6693230.html" target="_blank" rel="noopener"><strong>文本挖掘预处理之TF-IDF</strong></a></li><li><a href="https://blog.csdn.net/lionel_fengj/article/details/53699903" target="_blank" rel="noopener"><strong>自然语言处理系列之TF-IDF算法</strong></a></li><li><a href="http://www.cnblogs.com/biyeymyhjob/archive/2012/07/17/2595249.html" target="_blank" rel="noopener"><strong>TF-IDF及其算法</strong></a></li><li><a href="https://www.jianshu.com/p/f3b92124cd2b" target="_blank" rel="noopener"><strong>使用不同的方法计算TF-IDF值</strong></a></li><li><a href="https://blog.csdn.net/u013710265/article/details/72848755" target="_blank" rel="noopener"><strong>sklearn-点互信息和互信息</strong></a></li><li><a href="https://baijiahao.baidu.com/s?id=1604074325918456186&wfr=spider&for=pc" target="_blank" rel="noopener"><strong>如何进行特征选择（理论篇）机器学习你会遇到的“坑”</strong></a></li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;内容涵盖&quot;&gt;&lt;a href=&quot;#内容涵盖&quot; class=&quot;headerlink&quot; title=&quot;内容涵盖&quot;&gt;&lt;/a&gt;内容涵盖&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;TF-IDF原理&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;文本矩阵化，使用词袋模型，
+      
+    
+    </summary>
+    
+    
+      <category term="NLP" scheme="http://yoursite.com/categories/NLP/"/>
+    
+    
+      <category term="TF-IDF" scheme="http://yoursite.com/tags/TF-IDF/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Welcome to NLP-2019-huanhuan-homework-6</title>
     <link href="http://yoursite.com/2019/04/13/NLP-homework-6/"/>
     <id>http://yoursite.com/2019/04/13/NLP-homework-6/</id>
@@ -418,34 +446,6 @@
     
     
       <category term="SVM" scheme="http://yoursite.com/tags/SVM/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Welcome to NLP-2019-huanhuan-homework-4</title>
-    <link href="http://yoursite.com/2019/04/13/NLP-homework-3/"/>
-    <id>http://yoursite.com/2019/04/13/NLP-homework-3/</id>
-    <published>2019-04-13T10:52:33.000Z</published>
-    <updated>2019-09-13T04:33:59.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="内容涵盖"><a href="#内容涵盖" class="headerlink" title="内容涵盖"></a>内容涵盖</h2><ul><li><strong>TF-IDF原理</strong></li><li><strong>文本矩阵化，使用词袋模型，以TF-IDF特征值为权重</strong>（可以使用Python中TfidfTransformer库）</li><li><strong>互信息的原理</strong></li><li><strong>使用第二步生成的特征矩阵，利用互信息进行特征筛选</strong></li></ul><h2 id="1-TF-IDF原理"><a href="#1-TF-IDF原理" class="headerlink" title="1.TF-IDF原理"></a>1.TF-IDF原理</h2><p><strong>(1) 定义</strong><br>&ensp;&ensp;&ensp; TF-IDF(Term Frequency - Inverse Document Frequency)，即“词频-逆文本频率”。是一种用于资讯检索与资讯探勘的常用加权技术。TF-IDF是一种统计方法，用以评估一字词对于一个文件集或一个语料库中的其中一份文件的重要程度。<strong>字词的重要性随着它在文件中出现的次数成正比增加，但同时会随着它在语料库中出现的频率成反比下降.</strong>  </p><p><strong>(2)思想</strong><br>&ensp;&ensp;&ensp;如果某个词或短语在一篇文章中出现的频率TF高，并且在其他文章中很少出现，则认为此词或者短语具有很好的类别区分能力，适合用来分类。<strong>TF-IDF实际上就是 TF X IDF，其中TF表示词条在文章Document 中出现的频率；IDF其主要思想就是，如果包含某个词 Word的文档越少，则这个词的区分度就越大，也就是 IDF 越大。</strong> 对于如何获取一篇文章的关键词，我们可以计算这边文章出现的所有名词的 TF-IDF，TF-IDF越大，则说明这个名词对这篇文章的区分度就越高，取 TF-IDF 值较大的几个词，就可以当做这篇文章的关键词。</p><p><strong>(3) 计算步骤</strong><br><strong>a. 计算词频(TF)</strong>  </p><p><strong><img src="http://latex.codecogs.com/gif.latex?tf_%7Bi,j%7D=%5Cfrac%7Bn_%7Bi,j%7D%7D%7B%5Csum_%7B0%7D%5E%7Bk%7Dn_%7Bk,j%7D%7D" alt></strong>    </p><p>分子是该词在文件 dj 中的出现次数，而分母  则是在文件 dj 中所有字词的出现次数之和。</p><p><strong>b. 计算逆文档频率（IDF）</strong>   </p><h2 id="参考博客"><a href="#参考博客" class="headerlink" title="参考博客"></a>参考博客</h2><ol><li><a href="https://www.cnblogs.com/pinard/p/6693230.html" target="_blank" rel="noopener"><strong>文本挖掘预处理之TF-IDF</strong></a></li><li><a href="https://blog.csdn.net/lionel_fengj/article/details/53699903" target="_blank" rel="noopener"><strong>自然语言处理系列之TF-IDF算法</strong></a></li><li><a href="http://www.cnblogs.com/biyeymyhjob/archive/2012/07/17/2595249.html" target="_blank" rel="noopener"><strong>TF-IDF及其算法</strong></a></li><li><a href="https://www.jianshu.com/p/f3b92124cd2b" target="_blank" rel="noopener"><strong>使用不同的方法计算TF-IDF值</strong></a></li><li><a href="https://blog.csdn.net/u013710265/article/details/72848755" target="_blank" rel="noopener"><strong>sklearn-点互信息和互信息</strong></a></li><li><a href="https://baijiahao.baidu.com/s?id=1604074325918456186&wfr=spider&for=pc" target="_blank" rel="noopener"><strong>如何进行特征选择（理论篇）机器学习你会遇到的“坑”</strong></a></li></ol>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;内容涵盖&quot;&gt;&lt;a href=&quot;#内容涵盖&quot; class=&quot;headerlink&quot; title=&quot;内容涵盖&quot;&gt;&lt;/a&gt;内容涵盖&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;TF-IDF原理&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;文本矩阵化，使用词袋模型，
-      
-    
-    </summary>
-    
-    
-      <category term="NLP" scheme="http://yoursite.com/categories/NLP/"/>
-    
-    
-      <category term="TF-IDF" scheme="http://yoursite.com/tags/TF-IDF/"/>
     
   </entry>
   
