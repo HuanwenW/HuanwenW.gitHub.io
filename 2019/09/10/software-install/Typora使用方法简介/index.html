@@ -25,7 +25,7 @@
   <link rel="stylesheet" type="text/css" href="/./style/main.css">
 	<link rel="shortcut icon" href="/favicon.ico" title="Favicon">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
-	<title>ubantu系统中的anaconda3下安装anaconda2</title>
+	<title>Typora（一款比Markdown更好用的软件编辑器）使用方法简介.md</title>
   
   <script>var _hmt=_hmt||[];(function(){var hm=document.createElement("script");hm.src="https://hm.baidu.com/hm.js?be13bf98b13bee6a1fc89b6ae36a8ffb";var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(hm,s);})();
   </script>
@@ -48,7 +48,7 @@
     
   
   <h1 class="title">
-    ubantu系统中的anaconda3下安装anaconda2
+    Typora（一款比Markdown更好用的软件编辑器）使用方法简介.md
   </h1>
   
 
@@ -56,11 +56,11 @@
     <ul class="article-info">
       <li>
         发布
-        <time datetime="2019-09-14T13:55:27.000Z" itemprop="datePublished">2019-09-14</time>
+        <time datetime="2019-09-10T13:55:27.000Z" itemprop="datePublished">2019-09-10</time>
       </li>
       <li>
         
-    更新 <time datetime="2019-09-14T13:23:43.154Z" itemprop="dateUpdated">2019-09-14</time>
+    更新 <time datetime="2019-09-19T12:18:11.918Z" itemprop="dateUpdated">2019-09-19</time>
 
       </li>
       <li id="busuanzi_container_page_pv">
@@ -76,36 +76,34 @@
           本文最后更新于$day天前，文中所描述的信息可能已发生改变。
         </div>
         
-        <h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>ubantu系统已经安装有anaconda3，但是要跑的实验使用的是python2.7，需要更换为anaconda2的环境</p>
-<p><strong>注意：anaconda3下对应python3以上的版本，且无法降级python版本！</strong></p>
-<h2 id="具体实现步骤"><a href="#具体实现步骤" class="headerlink" title="具体实现步骤"></a>具体实现步骤</h2><h2 id="1-下载anaconda2系列的安装包"><a href="#1-下载anaconda2系列的安装包" class="headerlink" title="1. 下载anaconda2系列的安装包"></a>1. 下载anaconda2系列的安装包</h2><p>​        <a href="https://repo.continuum.io/archive/" target="_blank" rel="noopener">下载地址</a> （我下载的：  Anaconda2-5.0.1-Linux-x86_64.sh）</p>
-<h2 id="2-在软件所在位置的文件夹内打开终端"><a href="#2-在软件所在位置的文件夹内打开终端" class="headerlink" title="2. 在软件所在位置的文件夹内打开终端"></a>2. <strong>在软件所在位置的文件夹内打开终端</strong></h2><p>Terminal窗口切换到刚刚下载好的（Anaconda2-5.0.1-Linux-x86_64.sh）所在位置</p>
-<h2 id="3-逐条执行以下9条命令-报错可能是权限问题，前面加sudo"><a href="#3-逐条执行以下9条命令-报错可能是权限问题，前面加sudo" class="headerlink" title="3. 逐条执行以下9条命令**(报错可能是权限问题，前面加sudo)**"></a>3. <strong>逐条执行以下9条命令**</strong>(报错可能是权限问题，前面加sudo)**</h2><table><tr><td bgcolor="black"> <font size="3" color="white">0. $ bash Anaconda2-5.0.1-Linux-x86_64.sh -b -p $ HOME / anaconda3 / envs / py2  (Anaconda2-5.0.1-Linux-x86_64.sh为所下载的anaconda2软件名，如果不一致需要替换；py2 为环境名称)
-</font></td></tr></table> 
+        <h3 id="Typora编辑器使用方法–参考博客链接"><a href="#Typora编辑器使用方法–参考博客链接" class="headerlink" title="Typora编辑器使用方法–参考博客链接"></a><a href="https://blog.csdn.net/wirelessqa/article/details/70432631" target="_blank" rel="noopener">Typora编辑器使用方法–参考博客链接</a></h3><p><a href="https://www.cnblogs.com/peizhe123/p/7994746.html" target="_blank" rel="noopener">Mac下使用Typora的一些简单操作</a></p>
+<ol>
+<li>三个 ~ (英文状态下的波浪线) 回车 就可以输入<strong>代码块</strong>,如果想让显示行数，需要开启，在Typora–&gt;偏好设置–&gt;Markdown 设置</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-<table><tr><td bgcolor="black"> <font size="3" color="white">1. $ rm -f $ HOME / anaconda3 / envs / py2 / bin / conda * 
- </font></td></tr></table>  
 
-<table><tr><td bgcolor="black"> <font size="3" color="white"> 2. $ rm -f $ HOME / anaconda3 / envs / py2 / conda-meta / conda- * </font></td></tr></table>  
 
-<table><tr><td bgcolor="black"> <font size="3" color="white">3. $ rm -f $ HOME / anaconda3 / envs / py2 / bin / activate</font></td></tr></table>  
-
-<table><tr><td bgcolor="black"> <font size="3" color="white"> 4. $ rm -f $ HOME / anaconda3 / envs / py2 / bin / deactivate
- </font></td></tr></table>  
-
-<table><tr><td bgcolor="black"> <font size="3" color="white">5. $ cd $ HOME / anaconda3 / envs / py2 / bin</font></td></tr></table>  
-
-<table><tr><td bgcolor="black"> <font size="3" color="white">6. $ ln -s ../../../bin/conda.</font></td></tr></table>  
-
-<table><tr><td bgcolor="black"> <font size="3" color="white">7. $ ln -s ../../../bin/activate.</font></td></tr></table>  
-
-<table><tr><td bgcolor="black"> <font size="3" color="white">8. $ ln -s ../../../bin/deactivate.</font></td></tr></table>  
-
-<h2 id="4-通过命令switch-python来查看当前Python的版本"><a href="#4-通过命令switch-python来查看当前Python的版本" class="headerlink" title="4. 通过命令switch python来查看当前Python的版本"></a>4. 通过命令switch python来查看当前Python的版本</h2><h2 id="5-通过命令source-activate-py2-来激活anaconda2的环境"><a href="#5-通过命令source-activate-py2-来激活anaconda2的环境" class="headerlink" title="5.通过命令source activate py2 来激活anaconda2的环境"></a>5.通过命令source activate py2 来激活anaconda2的环境</h2><table><tr><td bgcolor="black"> <font size="3" color="white">source activate py2</font></td></tr></table>  
-
-<h2 id="6-通过命令source-deactivate-py2来返回anaconda3的环境"><a href="#6-通过命令source-deactivate-py2来返回anaconda3的环境" class="headerlink" title="6. 通过命令source deactivate py2来返回anaconda3的环境"></a>6. 通过命令source deactivate py2来返回anaconda3的环境</h2><table><tr><td bgcolor="black"> <font size="3" color="white">source deactivate py2</font></td></tr></table>  
-
-<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><p><a href="[https://github.com/maquanyu/Sunflower-Collection/blob/master/anaconda2%E5%92%8Canaconda3%E5%85%B1%E5%AD%98](https://github.com/maquanyu/Sunflower-Collection/blob/master/anaconda2和anaconda3共存)">anaconda3下安装anaconda2</a></p>
+<p><strong>粗体</strong>、<em>斜体</em>、==高亮==、<del>删除线</del>、<u>下划线</u>、我是^上标^、我是 <del>下标</del>、<a href="http://www.baidu.com" target="_blank" rel="noopener">超链接</a></p>
+<p>  <img src="https://img3.doubanio.com/view/movie_poster_cover/lpst/public/p2411953504.jpg" alt="示例图片"><span class="img-alt">示例图片</span></p>
+<h2 id="无序列表"><a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h2><ul>
+<li><p>无序列表1</p>
+</li>
+<li><p>无序列表2</p>
+<h2 id="有序列表"><a href="#有序列表" class="headerlink" title="有序列表"></a>有序列表</h2></li>
+</ul>
+<ol>
+<li><p>有序列表</p>
+</li>
+<li><p>有序列表</p>
+<h2 id="任务列表"><a href="#任务列表" class="headerlink" title="任务列表"></a>任务列表</h2></li>
+</ol>
+<ul>
+<li><input disabled type="checkbox"> <p>看电影</p>
+</li>
+<li><input disabled type="checkbox"> <p>听音乐</p>
+</li>
+</ul>
 
       </div>
         <div class="support-author">
