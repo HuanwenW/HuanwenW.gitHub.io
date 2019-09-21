@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-09-20T03:01:10.566Z</updated>
+  <updated>2019-09-21T13:40:49.234Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,13 +17,91 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title></title>
+    <link href="http://yoursite.com/2019/09/21/English/English/"/>
+    <id>http://yoursite.com/2019/09/21/English/English/</id>
+    <published>2019-09-21T12:33:44.192Z</published>
+    <updated>2019-09-21T13:40:49.234Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="汇总"><a href="#汇总" class="headerlink" title="汇总"></a>汇总</h2><table><thead><tr><th align="center">主格</th><th align="center">宾格</th><th align="center">形容词性物主代词</th><th>名词性物主代词</th><th>反生代词</th></tr></thead><tbody><tr><td align="center">I</td><td align="center">me</td><td align="center">my</td><td>mine</td><td>myself</td></tr><tr><td align="center">you</td><td align="center"><strong>you</strong></td><td align="center">your</td><td>yours</td><td>yourself</td></tr><tr><td align="center">he</td><td align="center">him</td><td align="center">his</td><td>his</td><td>himself</td></tr><tr><td align="center">she</td><td align="center">her</td><td align="center">her</td><td>hers</td><td>herself</td></tr><tr><td align="center">It</td><td align="center">it</td><td align="center">its</td><td>its</td><td>itself</td></tr><tr><td align="center">We</td><td align="center">us</td><td align="center">our</td><td>ours</td><td>ourselves</td></tr><tr><td align="center">you</td><td align="center"><strong>you</strong></td><td align="center">your</td><td>yours</td><td>yourselves</td></tr><tr><td align="center">they</td><td align="center">them</td><td align="center">their</td><td>theirs</td><td>themselves</td></tr></tbody></table>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;汇总&quot;&gt;&lt;a href=&quot;#汇总&quot; class=&quot;headerlink&quot; title=&quot;汇总&quot;&gt;&lt;/a&gt;汇总&lt;/h2&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&quot;center&quot;&gt;主格&lt;/th&gt;
+&lt;th align=&quot;center&quot;&gt;宾格&lt;/th
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Ubantu下常用的文件操作命令</title>
+    <link href="http://yoursite.com/2019/09/21/software-install/ubantu-based/"/>
+    <id>http://yoursite.com/2019/09/21/software-install/ubantu-based/</id>
+    <published>2019-09-21T03:57:15.000Z</published>
+    <updated>2019-09-21T04:27:36.841Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="ubantu下的常用命令"><a href="#ubantu下的常用命令" class="headerlink" title="ubantu下的常用命令"></a>ubantu下的常用命令</h2><h3 id="相关命令"><a href="#相关命令" class="headerlink" title="相关命令"></a>相关命令</h3><p>　　cd 路径                   （进入一个路径，比如cd  /usr/local/lib）</p><p>　　cd ..　　  　　　　  （返回上一个文件夹）</p><p>　　ls　　　　　　　　 （显示当前文件夹下的所有文件，Linux独有哦，dir 也有相同功能）</p><p>　　sudo 命令　　　　 （获取超级管理权限，需要输入密码）</p><h3 id="常用新建、删除、拷贝命令"><a href="#常用新建、删除、拷贝命令" class="headerlink" title="常用新建、删除、拷贝命令"></a>常用新建、删除、拷贝命令</h3><p>　　mkdir 目录名        （新建一个文件夹，文件夹在Linux系统中叫做“目录”）</p><p>　　touch 文件名        （新建一个空文件）</p><p>　　rmdir 目录名        （删除一个空文件夹，文件夹里有内容则不可用）</p><p>　　rm -rf 非空目录名 （删除一个包含文件的文件夹）</p><p>　　rm 文件名 文件名 （删除多个文件）</p><p>　　cp 文件名 目标路径（拷贝一个文件到目标路径，如cp hserver /opt/hqueue）</p><p>　　cp -i　　　　　　  （拷贝，同名文件存在时，输出 [yes/no] 询问是否执行）</p><p>　　cp -f　　　　　　  （强制复制文件，如有同名不询问）</p><p>例如：将/home/wally/test中 test.c 的文件复制到/local/arm 中，命令为：</p><p>cd /wally/test</p><p> ls </p><p>sudo cp -i test.c /local/arm</p><h3 id="常用解压、安装程序、文件更新命令：deb格式双击即可安装"><a href="#常用解压、安装程序、文件更新命令：deb格式双击即可安装" class="headerlink" title="常用解压、安装程序、文件更新命令：deb格式双击即可安装"></a>常用解压、安装程序、文件更新命令：deb格式双击即可安装</h3><p>　　tar -zxvf *.tar.gz　     ( 解压 tar.gz格式的文件 )</p><p>　　source *.install　　　 （安装install格式的安装包）</p><p>　　sh 路径/×.sh　　    　 （安装sh格式的文件，如 sudo sh /home/hp/Downloads/*.sh）</p><p>　　sudo apt-get upgrade（更新已安装的包）</p><p>　　sudo apt-get update  （更新源）</p><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ol><li><a href="https://www.cnblogs.com/jackchiang/p/4065723.html" target="_blank" rel="noopener">Ubuntu系统下常用的新建、删除、拷贝文件命令</a></li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;ubantu下的常用命令&quot;&gt;&lt;a href=&quot;#ubantu下的常用命令&quot; class=&quot;headerlink&quot; title=&quot;ubantu下的常用命令&quot;&gt;&lt;/a&gt;ubantu下的常用命令&lt;/h2&gt;&lt;h3 id=&quot;相关命令&quot;&gt;&lt;a href=&quot;#相关命令&quot; cla
+      
+    
+    </summary>
+    
+    
+      <category term="software" scheme="http://yoursite.com/categories/software/"/>
+    
+    
+      <category term="Version" scheme="http://yoursite.com/tags/Version/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Ubantu下修改文件权限命令</title>
+    <link href="http://yoursite.com/2019/09/21/software-install/ubantu%20xiugaiquanxian/"/>
+    <id>http://yoursite.com/2019/09/21/software-install/ubantu xiugaiquanxian/</id>
+    <published>2019-09-21T03:57:15.000Z</published>
+    <updated>2019-09-21T04:30:07.290Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="问题背景"><a href="#问题背景" class="headerlink" title="问题背景"></a>问题背景</h2><p>安装某软件时报错，搜索解决方案说要把<strong>XX文件</strong>夹删除，带着忐忑，先备份到另一个文件夹，然后命令删除<strong>XX文件夹</strong>，然后此方案并没有解决之前问题，于是乎各种搜索还原已被删除的<strong>XX文件夹</strong></p><h2 id="整体思路"><a href="#整体思路" class="headerlink" title="整体思路"></a>整体思路</h2><p>方案一：用命令直接将备份的 <strong>XX文件夹</strong> 移动到原有位置，由于权限问题以失败告终</p><p>方案二：很笨，最后成功了</p><ol><li><p>原有目录下创建 <strong>XX文件夹</strong>  </p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo mkdir XX文件夹名称</span><br></pre></td></tr></table></figure></li><li><p>切换到 <strong>XX文件夹</strong>下，依次创建原有的  <strong>xxx文件</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd /XX文件夹名称</span><br><span class="line">sudo touch xxx文件</span><br></pre></td></tr></table></figure></li><li><p>依次将 备份的XX文件夹中的 <strong>xxx文件</strong>中的内容复制粘贴，此过程遇到问题如下：</p><ul><li><p>发现所创建的文件为 <strong>只读</strong>，无法 <strong>粘贴</strong></p><p>修改文件权限</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo chmod 666 ×××文件</span><br></pre></td></tr></table></figure><p>  此时 xxx文件具有写的权限，依次重复所有文件即可。</p></li><li><p>为了防止其他问题出现，我将所有我修改过权限的文件，在写入内容后，又恢复了只读</p> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo chmod 644 ×××文件</span><br></pre></td></tr></table></figure><p>依次修改所有写好内容的文件即可</p></li></ul></li></ol><h2 id="修改文件权限常用方法如下："><a href="#修改文件权限常用方法如下：" class="headerlink" title="修改文件权限常用方法如下："></a>修改文件权限常用方法如下：</h2><p>sudo chmod 600 ××× （只有所有者有读和写的权限）<br><strong>sudo chmod 644 ××× （所有者有读和写的权限，组用户只有读的权限）</strong><br>sudo chmod 700 ××× （只有所有者有读和写以及执行的权限）<br><strong>sudo chmod 666 ××× （每个人都有读和写的权限）</strong><br>sudo chmod 777 ××× （每个人都有读和写以及执行的权限）</p><p>其中×××指文件名（也可以是文件夹名，不过要在chmod后加-ld）。</p><p>解释一下，其实整个命令的形式是<br>sudo chmod -（代表类型）×××（所有者）×××（组用户）×××（其他用户）</p><p>三位数的每一位都表示一个用户类型的权限设置。取值是0～7，即二进制的[000]~[111]。</p><p>这个三位的二进制数的每一位分别表示读、写、执行权限。</p><p>如000表示三项权限均无，而100表示只读。这样，我们就有了下面的对应：<br>0 [000] 无任何权限<br>4 [100] 只读权限<br>6 [110] 读写权限<br>7 [111] 读写执行权限</p><p>现在看上面的几个常用用法就非常清楚了。试着自己来修改权限吧</p><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ol><li><a href="https://www.cnblogs.com/viviwind/archive/2012/08/02/2619451.html" target="_blank" rel="noopener">ubuntu下修改文件夹权限</a></li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;问题背景&quot;&gt;&lt;a href=&quot;#问题背景&quot; class=&quot;headerlink&quot; title=&quot;问题背景&quot;&gt;&lt;/a&gt;问题背景&lt;/h2&gt;&lt;p&gt;安装某软件时报错，搜索解决方案说要把&lt;strong&gt;XX文件&lt;/strong&gt;夹删除，带着忐忑，先备份到另一个文件夹，然后命
+      
+    
+    </summary>
+    
+    
+      <category term="software" scheme="http://yoursite.com/categories/software/"/>
+    
+    
+      <category term="Version" scheme="http://yoursite.com/tags/Version/"/>
+    
+  </entry>
+  
+  <entry>
     <title>重零开始安装Ubantu18.04+nvidia-410显卡驱+cuda10.0</title>
     <link href="http://yoursite.com/2019/09/20/software-install/ubantuSystem/"/>
     <id>http://yoursite.com/2019/09/20/software-install/ubantuSystem/</id>
     <published>2019-09-20T12:55:27.000Z</published>
-    <updated>2019-09-20T03:01:10.566Z</updated>
+    <updated>2019-09-20T08:58:57.396Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>为了paper实验，各种周折后，2019.09入手一台新电脑，显卡配置为<strong>华硕RTX2080Ti</strong>，于是乎小白开始为电脑安装ubantu18.0及系统内nvidia-410显卡驱、CUDA10.0、cuDNN v7.3.1、ananconda3、ananconda2、tensorflow之旅奔波</p><h2 id="友情提醒"><a href="#友情提醒" class="headerlink" title="友情提醒"></a>友情提醒</h2><p>安装过程中所下载好的软件包，备份到<strong>移动硬盘</strong>，防止系统重装，避免浪费不必要的软件下载时间</p><h2 id="相关工作"><a href="#相关工作" class="headerlink" title="相关工作"></a>相关工作</h2><p>在终端查看CUDNN版本：（附件1）</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat /usr/local/cuda/include/cudnn.h | grep CUDNN_MAJOR -A 2</span><br></pre></td></tr></table></figure><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ol><li><a href="https://blog.csdn.net/weixin_43820996/article/details/100677482" target="_blank" rel="noopener">Ubuntu18.04安装Cuda10.1/Cudnn</a></li></ol><h2 id="Ubantu-无法识别-（希捷）移动硬盘"><a href="#Ubantu-无法识别-（希捷）移动硬盘" class="headerlink" title="Ubantu 无法识别 （希捷）移动硬盘"></a>Ubantu 无法识别 （希捷）移动硬盘</h2><p>本人的为ubuntu18.04 (64位)，ubuntu14、ubuntu14解决办法应该一样，其他的未测试。</p><p>解决方式如下，运行命令:</p><p>sudo apt-get install exfat-fuse exfat-utils</p><h2 id="参考-1"><a href="#参考-1" class="headerlink" title="参考"></a>参考</h2><p><a href="https://blog.csdn.net/qq_18863573/article/details/54341460" target="_blank" rel="noopener"><strong>Ubuntu无法挂载移动硬盘</strong></a></p>]]></content>
+    <content type="html"><![CDATA[<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>为了paper实验，各种周折后，2019.09入手一台新电脑，显卡配置为<strong>华硕RTX2080Ti</strong>，于是乎小白开始为电脑安装ubantu18.0及系统内nvidia-410显卡驱、CUDA10.0、cuDNN v7.3.1、ananconda3、ananconda2、tensorflow之旅奔波</p><h2 id="友情提醒"><a href="#友情提醒" class="headerlink" title="友情提醒"></a>友情提醒</h2><p>安装过程中所下载好的软件包，备份到<strong>移动硬盘</strong>，防止系统重装，避免浪费不必要的软件下载时间</p><h2 id="相关工作"><a href="#相关工作" class="headerlink" title="相关工作"></a>相关工作</h2><p>在终端查看CUDNN版本：（附件1）</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat /usr/local/cuda/include/cudnn.h | grep CUDNN_MAJOR -A 2</span><br></pre></td></tr></table></figure><p>安装输入法报错，解决方案参考4</p><p>输入法靠谱详细教程讲解</p><p><a href="https://blog.csdn.net/fx_yzjy101/article/details/80243710" target="_blank" rel="noopener">解决Ubuntu 18.04中文输入法的问题，安装搜狗拼音</a></p><p>不用外网就能安装的google chrome教程</p><p><a href="https://blog.csdn.net/u012318074/article/details/74059005" target="_blank" rel="noopener">Ubuntu 安装 Google Chrome 浏览器</a></p><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ol><li><a href="https://blog.csdn.net/weixin_40859436/article/details/83152249" target="_blank" rel="noopener">Ubuntu18.04+RTX2080+cuda10+tensorflow</a></li><li><a href="https://blog.csdn.net/weixin_43820996/article/details/100677482" target="_blank" rel="noopener">Ubuntu18.04安装Cuda10.1/Cudnn</a></li><li><a href="https://blog.csdn.net/qq_15192373/article/details/81091278" target="_blank" rel="noopener">Ubuntu 18.04 安装 PyCharm</a></li><li><a href="https://www.cnblogs.com/aidenzdly/p/10563340.html" target="_blank" rel="noopener">E:Sub-process /usr/bin/dpkg returned an error code (1)错误解决</a></li></ol><h2 id="Ubantu-无法识别-（希捷）移动硬盘"><a href="#Ubantu-无法识别-（希捷）移动硬盘" class="headerlink" title="Ubantu 无法识别 （希捷）移动硬盘"></a>Ubantu 无法识别 （希捷）移动硬盘</h2><p>本人的为ubuntu18.04 (64位)，ubuntu14、ubuntu14解决办法应该一样，其他的未测试。</p><p>解决方式如下，运行命令:</p><p>sudo apt-get install exfat-fuse exfat-utils</p><h2 id="参考-1"><a href="#参考-1" class="headerlink" title="参考"></a>参考</h2><p><a href="https://blog.csdn.net/qq_18863573/article/details/54341460" target="_blank" rel="noopener"><strong>Ubuntu无法挂载移动硬盘</strong></a></p>]]></content>
     
     <summary type="html">
     
@@ -99,9 +177,9 @@
     <link href="http://yoursite.com/2019/09/14/software-install/Annaconda3withAnaconda2/"/>
     <id>http://yoursite.com/2019/09/14/software-install/Annaconda3withAnaconda2/</id>
     <published>2019-09-14T13:55:27.000Z</published>
-    <updated>2019-09-19T12:42:01.626Z</updated>
+    <updated>2019-09-20T03:23:55.150Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>ubantu系统已经安装有anaconda3，但是要跑的实验使用的是python2.7，需要更换为anaconda2的环境</p><p><strong>注意：anaconda3下对应python3以上的版本，且无法降级python版本！</strong></p><h2 id="具体实现步骤"><a href="#具体实现步骤" class="headerlink" title="具体实现步骤"></a>具体实现步骤</h2><h2 id="1-下载anaconda2系列的安装包"><a href="#1-下载anaconda2系列的安装包" class="headerlink" title="1. 下载anaconda2系列的安装包"></a>1. 下载anaconda2系列的安装包</h2><p>​        <a href="https://repo.continuum.io/archive/" target="_blank" rel="noopener">下载地址</a> （我下载的：  Anaconda2-5.0.1-Linux-x86_64.sh）</p><h2 id="2-在软件所在位置的文件夹内打开终端"><a href="#2-在软件所在位置的文件夹内打开终端" class="headerlink" title="2. 在软件所在位置的文件夹内打开终端"></a>2. <strong>在软件所在位置的文件夹内打开终端</strong></h2><p>Terminal窗口切换到刚刚下载好的（Anaconda2-5.0.1-Linux-x86_64.sh）所在位置</p><h2 id="3-逐条执行以下9条命令-报错可能是权限问题，前面加sudo"><a href="#3-逐条执行以下9条命令-报错可能是权限问题，前面加sudo" class="headerlink" title="3. 逐条执行以下9条命令(报错可能是权限问题，前面加sudo)**"></a>3. <strong>逐条执行以下9条命令</strong>(报错可能是权限问题，前面加sudo)**</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ bash Anaconda2-5.0.1-Linux-x86_64.sh -b -p $ HOME/anaconda3/envs/py2</span><br></pre></td></tr></table></figure><p>其中，Anaconda2-5.0.1-Linux-x86_64.sh为所下载的anaconda2软件名，如果不一致需要替换；py2 为环境名称) </p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$ rm -f $ HOME/anaconda3/envs/py2/bin/conda* </span><br><span class="line">$ rm -f $ HOME/anaconda3/envs/py2/conda-meta/conda-*</span><br><span class="line">$ rm -f $ HOME/anaconda3/envs/py2/bin/activate</span><br><span class="line">$ rm -f $ HOME/anaconda3/envs/py2/bin/deactivate</span><br><span class="line">$ cd $ HOME/anaconda3/envs/py2/bin</span><br><span class="line">$ ln -s ../../../bin/conda.</span><br><span class="line">$ ln -s ../../../bin/activate.</span><br><span class="line">$ ln -s ../../../bin/deactivate.</span><br></pre></td></tr></table></figure><h2 id="4-通过命令switch-python来查看当前Python的版本"><a href="#4-通过命令switch-python来查看当前Python的版本" class="headerlink" title="4. 通过命令switch python来查看当前Python的版本"></a>4. 通过命令switch python来查看当前Python的版本</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">switch python</span><br></pre></td></tr></table></figure><h2 id="5-通过命令source-activate-py2-来激活anaconda2的环境"><a href="#5-通过命令source-activate-py2-来激活anaconda2的环境" class="headerlink" title="5.通过命令source activate py2 来激活anaconda2的环境"></a>5.通过命令source activate py2 来激活anaconda2的环境</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">source activate py2</span><br></pre></td></tr></table></figure><h2 id="6-通过命令source-deactivate-py2来返回anaconda3的环境"><a href="#6-通过命令source-deactivate-py2来返回anaconda3的环境" class="headerlink" title="6. 通过命令source deactivate py2来返回anaconda3的环境"></a>6. 通过命令source deactivate py2来返回anaconda3的环境</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">source deactivate py2</span><br></pre></td></tr></table></figure><h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><p><a href="https://github.com/maquanyu/Sunflower-Collection/blob/master/anaconda2和anaconda3共存" target="_blank" rel="noopener">anaconda3下安装anaconda2</a></p>]]></content>
+    <content type="html"><![CDATA[<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>ubantu系统已经安装有anaconda3，但是要跑的实验使用的是python2.7，需要更换为anaconda2的环境</p><p><strong>注意：anaconda3下对应python3以上的版本，且无法降级python版本！</strong></p><h2 id="具体实现步骤"><a href="#具体实现步骤" class="headerlink" title="具体实现步骤"></a>具体实现步骤</h2><h2 id="1-下载anaconda2系列的安装包"><a href="#1-下载anaconda2系列的安装包" class="headerlink" title="1. 下载anaconda2系列的安装包"></a>1. 下载anaconda2系列的安装包</h2><p>​        <a href="https://repo.continuum.io/archive/" target="_blank" rel="noopener">下载地址</a> （我下载的：  Anaconda2-5.0.1-Linux-x86_64.sh）</p><h2 id="2-在软件所在位置的文件夹内打开终端"><a href="#2-在软件所在位置的文件夹内打开终端" class="headerlink" title="2. 在软件所在位置的文件夹内打开终端"></a>2. <strong>在软件所在位置的文件夹内打开终端</strong></h2><p>Terminal窗口切换到刚刚下载好的（Anaconda2-5.0.1-Linux-x86_64.sh）所在位置</p><h2 id="3-逐条执行以下9条命令-报错可能是权限问题，前面加sudo"><a href="#3-逐条执行以下9条命令-报错可能是权限问题，前面加sudo" class="headerlink" title="3. 逐条执行以下9条命令(报错可能是权限问题，前面加sudo)**"></a>3. <strong>逐条执行以下9条命令</strong>(报错可能是权限问题，前面加sudo)**</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ bash Anaconda2-5.0.1-Linux-x86_64.sh -b -p <span class="variable">$HOME</span>/anaconda3/envs/py2</span><br></pre></td></tr></table></figure><p>其中，Anaconda2-5.0.1-Linux-x86_64.sh为所下载的anaconda2软件名，如果不一致需要替换；py2 为环境名称) </p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$ rm -f $HOME/anaconda3/envs/py2/bin/conda* </span><br><span class="line">$ rm -f $HOME/anaconda3/envs/py2/conda-meta/conda-*</span><br><span class="line">$ rm -f $HOME/anaconda3/envs/py2/bin/activate</span><br><span class="line">$ rm -f $HOME/anaconda3/envs/py2/bin/deactivate</span><br><span class="line">$ cd $HOME/anaconda3/envs/py2/bin</span><br><span class="line">$ ln -s ../../../bin/conda.</span><br><span class="line">$ ln -s ../../../bin/activate.</span><br><span class="line">$ ln -s ../../../bin/deactivate.</span><br></pre></td></tr></table></figure><h2 id="4-通过命令switch-python来查看当前Python的版本"><a href="#4-通过命令switch-python来查看当前Python的版本" class="headerlink" title="4. 通过命令switch python来查看当前Python的版本"></a>4. 通过命令switch python来查看当前Python的版本</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">switch python</span><br></pre></td></tr></table></figure><h2 id="5-通过命令source-activate-py2-来激活anaconda2的环境"><a href="#5-通过命令source-activate-py2-来激活anaconda2的环境" class="headerlink" title="5.通过命令source activate py2 来激活anaconda2的环境"></a>5.通过命令source activate py2 来激活anaconda2的环境</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">source activate py2</span><br></pre></td></tr></table></figure><h2 id="6-通过命令source-deactivate-py2来返回anaconda3的环境"><a href="#6-通过命令source-deactivate-py2来返回anaconda3的环境" class="headerlink" title="6. 通过命令source deactivate py2来返回anaconda3的环境"></a>6. 通过命令source deactivate py2来返回anaconda3的环境</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">source deactivate py2</span><br></pre></td></tr></table></figure><h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><p><a href="https://github.com/maquanyu/Sunflower-Collection/blob/master/anaconda2和anaconda3共存" target="_blank" rel="noopener">anaconda3下安装anaconda2</a></p>]]></content>
     
     <summary type="html">
     
@@ -467,90 +545,6 @@
     
     
       <category term="朴素贝叶斯" scheme="http://yoursite.com/tags/%E6%9C%B4%E7%B4%A0%E8%B4%9D%E5%8F%B6%E6%96%AF/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Welcome to NLP-2019-huanhuan-homework-4</title>
-    <link href="http://yoursite.com/2019/04/13/NLP/NLP-homework-3/"/>
-    <id>http://yoursite.com/2019/04/13/NLP/NLP-homework-3/</id>
-    <published>2019-04-13T10:52:33.000Z</published>
-    <updated>2019-09-13T04:33:59.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="内容涵盖"><a href="#内容涵盖" class="headerlink" title="内容涵盖"></a>内容涵盖</h2><ul><li><strong>TF-IDF原理</strong></li><li><strong>文本矩阵化，使用词袋模型，以TF-IDF特征值为权重</strong>（可以使用Python中TfidfTransformer库）</li><li><strong>互信息的原理</strong></li><li><strong>使用第二步生成的特征矩阵，利用互信息进行特征筛选</strong></li></ul><h2 id="1-TF-IDF原理"><a href="#1-TF-IDF原理" class="headerlink" title="1.TF-IDF原理"></a>1.TF-IDF原理</h2><p><strong>(1) 定义</strong><br>&ensp;&ensp;&ensp; TF-IDF(Term Frequency - Inverse Document Frequency)，即“词频-逆文本频率”。是一种用于资讯检索与资讯探勘的常用加权技术。TF-IDF是一种统计方法，用以评估一字词对于一个文件集或一个语料库中的其中一份文件的重要程度。<strong>字词的重要性随着它在文件中出现的次数成正比增加，但同时会随着它在语料库中出现的频率成反比下降.</strong>  </p><p><strong>(2)思想</strong><br>&ensp;&ensp;&ensp;如果某个词或短语在一篇文章中出现的频率TF高，并且在其他文章中很少出现，则认为此词或者短语具有很好的类别区分能力，适合用来分类。<strong>TF-IDF实际上就是 TF X IDF，其中TF表示词条在文章Document 中出现的频率；IDF其主要思想就是，如果包含某个词 Word的文档越少，则这个词的区分度就越大，也就是 IDF 越大。</strong> 对于如何获取一篇文章的关键词，我们可以计算这边文章出现的所有名词的 TF-IDF，TF-IDF越大，则说明这个名词对这篇文章的区分度就越高，取 TF-IDF 值较大的几个词，就可以当做这篇文章的关键词。</p><p><strong>(3) 计算步骤</strong><br><strong>a. 计算词频(TF)</strong>  </p><p><strong><img src="http://latex.codecogs.com/gif.latex?tf_%7Bi,j%7D=%5Cfrac%7Bn_%7Bi,j%7D%7D%7B%5Csum_%7B0%7D%5E%7Bk%7Dn_%7Bk,j%7D%7D" alt></strong>    </p><p>分子是该词在文件 dj 中的出现次数，而分母  则是在文件 dj 中所有字词的出现次数之和。</p><p><strong>b. 计算逆文档频率（IDF）</strong>   </p><h2 id="参考博客"><a href="#参考博客" class="headerlink" title="参考博客"></a>参考博客</h2><ol><li><a href="https://www.cnblogs.com/pinard/p/6693230.html" target="_blank" rel="noopener"><strong>文本挖掘预处理之TF-IDF</strong></a></li><li><a href="https://blog.csdn.net/lionel_fengj/article/details/53699903" target="_blank" rel="noopener"><strong>自然语言处理系列之TF-IDF算法</strong></a></li><li><a href="http://www.cnblogs.com/biyeymyhjob/archive/2012/07/17/2595249.html" target="_blank" rel="noopener"><strong>TF-IDF及其算法</strong></a></li><li><a href="https://www.jianshu.com/p/f3b92124cd2b" target="_blank" rel="noopener"><strong>使用不同的方法计算TF-IDF值</strong></a></li><li><a href="https://blog.csdn.net/u013710265/article/details/72848755" target="_blank" rel="noopener"><strong>sklearn-点互信息和互信息</strong></a></li><li><a href="https://baijiahao.baidu.com/s?id=1604074325918456186&wfr=spider&for=pc" target="_blank" rel="noopener"><strong>如何进行特征选择（理论篇）机器学习你会遇到的“坑”</strong></a></li></ol>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;内容涵盖&quot;&gt;&lt;a href=&quot;#内容涵盖&quot; class=&quot;headerlink&quot; title=&quot;内容涵盖&quot;&gt;&lt;/a&gt;内容涵盖&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;TF-IDF原理&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;文本矩阵化，使用词袋模型，
-      
-    
-    </summary>
-    
-    
-      <category term="NLP" scheme="http://yoursite.com/categories/NLP/"/>
-    
-    
-      <category term="TF-IDF" scheme="http://yoursite.com/tags/TF-IDF/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Welcome to NLP-2019-huanhuan-homework-6</title>
-    <link href="http://yoursite.com/2019/04/13/NLP/NLP-homework-6/"/>
-    <id>http://yoursite.com/2019/04/13/NLP/NLP-homework-6/</id>
-    <published>2019-04-13T10:52:33.000Z</published>
-    <updated>2019-04-17T12:11:36.000Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="内容涵盖"><a href="#内容涵盖" class="headerlink" title="内容涵盖"></a>内容涵盖</h1><ul><li>SVM的原理</li><li>SVM应用场景 </li><li>SVM优缺点 </li><li>SVM sklearn 参数学习 </li><li>利用SVM模型结合 Tf-idf 算法进行文本分类  </li></ul><h2 id="SVM的原理"><a href="#SVM的原理" class="headerlink" title="SVM的原理"></a>SVM的原理</h2><p>支持向量机（SVM）算法基于结构风险最小化原理，将数据集合压缩到支持向量集合，学习得到分类决策函数。这种技术解决了以往需要无穷大样本数量的问题，它只需要将一定数量的文本通过计算抽象成向量化的训练文本数据，提高了分类的精确率。支持向量机（SVM）算法是根据有限的样本信息，在模型的复杂性与学习能力之间寻求最佳折中，以求获得最好的推广能力支持向量机算法.  </p><h2 id="SVM优缺点"><a href="#SVM优缺点" class="headerlink" title="SVM优缺点"></a>SVM优缺点</h2><ol><li>专门针对有限样本情况，其目标是得到现有信息下的最优解而不仅仅是样本数量趋于无穷大时的最优值；  </li><li>算法最终转化为一个二次型寻优问题，理论上得到的是全局最优点，解决了在神经网络方法中无法避免的局部极值问题；  </li><li>支持向量机算法能同时适用于稠密特征矢量与稀疏特征矢量两种情况，而其他一些文本分类算法不能同时满足两种情况；  </li><li>支持向量机算法能够找出包含重要分类信息的支持向量，是强有力的增量学习和主动学习工具，在文本分类中具有很大的应用潜力。  </li></ol><h2 id="参考博客"><a href="#参考博客" class="headerlink" title="参考博客"></a>参考博客</h2><ol><li><a href="https://blog.csdn.net/yyy430/article/details/88346920" target="_blank" rel="noopener">朴素贝叶斯 &amp; SVM &amp; LDA文本分类</a></li></ol>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;内容涵盖&quot;&gt;&lt;a href=&quot;#内容涵盖&quot; class=&quot;headerlink&quot; title=&quot;内容涵盖&quot;&gt;&lt;/a&gt;内容涵盖&lt;/h1&gt;&lt;ul&gt;
-&lt;li&gt;SVM的原理&lt;/li&gt;
-&lt;li&gt;SVM应用场景 &lt;/li&gt;
-&lt;li&gt;SVM优缺点 &lt;/li&gt;
-&lt;li&gt;SVM s
-      
-    
-    </summary>
-    
-    
-      <category term="NLP" scheme="http://yoursite.com/categories/NLP/"/>
-    
-    
-      <category term="SVM" scheme="http://yoursite.com/tags/SVM/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Welcome to NLP-2019-huanhuan-homework-3</title>
-    <link href="http://yoursite.com/2019/04/11/MachineLearning/tezhentiqu/"/>
-    <id>http://yoursite.com/2019/04/11/MachineLearning/tezhentiqu/</id>
-    <published>2019-04-11T12:44:17.000Z</published>
-    <updated>2019-04-12T08:02:42.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="内容涵盖"><a href="#内容涵盖" class="headerlink" title="内容涵盖"></a>内容涵盖</h2><ul><li>分词的正向最大、逆向最大、双向最大匹配法概念；</li><li>词、字符频率统计；（可以使用Python中的collections.Counter模块，也可以自己寻找其他好用的库）</li><li>语言模型中unigram、bigram、trigram的概念；</li><li>unigram、bigram频率统计；（可以使用Python中的collections.Counter模块，也可以自己寻找其他好用的库）</li><li>文本矩阵化：要求采用词袋模型且是词级别的矩阵化<br>步骤有：<br>3.1 分词（可采用结巴分词来进行分词操作，其他库也可以）；<br>3.2 去停用词；构造词表。<br>3.3 每篇文档的向量化。  </li></ul><h2 id="1-基本文本处理技能"><a href="#1-基本文本处理技能" class="headerlink" title="1. 基本文本处理技能"></a>1. 基本文本处理技能</h2><p>&ensp;&ensp;&ensp;Python中分分词工具很多，包括盘古分词、Yaha分词、Jieba分词、清华THULAC等。它们的基本用法都大同小异，本文以结巴分词 为例.  </p><p><strong>(1) 分词算法设计中的几个基本原则：</strong>  </p><p><strong>a.</strong>颗粒度越大越好：用于进行语义分析的文本分词，要求分词结果的颗粒度越大，即单词的字数越多，所能表示的含义越确切，如：“公安局长”可以分为“公安 局长”、“公安局 长”、“公安局长”都算对，但是要用于语义分析，则“公安局长”的分词结果最好（当然前提是所使用的词典中有这个词）</p><p><strong>b.</strong>切分结果中非词典词越少越好，单字字典词数越少越好，这里的“非词典词”就是不包含在词典中的单字，而“单字字典词”指的是可以独立运用的单字，如“的”、“了”、“和”、“你”、“我”、“他”。例如：“技术和服务”，可以分为“技术 和服 务”以及“技术 和 服务”，但“务”字无法独立成词（即词典中没有），但“和”字可以单独成词（词典中要包含），因此“技术 和服 务”有1个非词典词，而“技术 和 服务”有0个非词典词，因此选用后者。</p><p><strong>c.</strong>总体词数越少越好，在相同字数的情况下，总词数越少，说明语义单元越少，那么相对的单个语义单元的权重会越大，因此准确性会越高。</p><p><strong>(2) 匹配法：</strong><br>&ensp;&ensp;&ensp;最大匹配是指以词典为依据，取词典中最长单词为第一个次取字数量的扫描串，在词典中进行扫描（为提升扫描效率，还可以跟据字数多少设计多个字典，然后根据字数分别从不同字典中进行扫描）。例如：词典中最长词为“我爱北京天安门”共7个汉字，则最大匹配起始字数为7个汉字。然后逐字递减，在对应的词典中进行查找。<br><font color="#8A2BE2" size="3"><strong>&ensp;&ensp;下面以“我们在野生动物园玩”详细说明一下这几种匹配方法：</strong></font>       </p><p><strong>a. 正向最大匹配法</strong>  </p><p><strong>正向即从前往后取词，从7-&gt;1，每次减一个字，直到词典命中或剩下1个单字。</strong>   </p><p>第1次：“我们在野生动物”，扫描7字词典，无<br>第2次：“我们在野生动”，扫描6字词典，无<br><strong>……</strong><br>第6次：“我们”，扫描2字词典，有  </p><p><strong>扫描中止，输出第1个词为“我们”，去除第1个词后开始第2轮扫描，即：</strong>  </p><p>第1次：“在野生动物园玩”，扫描7字词典，无<br>第2次：“在野生动物园”，扫描6字词典，无<br><strong>……</strong><br>第6次：“在野”，扫描2字词典，有  </p><p><strong>扫描中止，输出第2个词为“在野”，去除第2个词后开始第3轮扫描，即：</strong>    </p><p>第1次：“生动物园玩”，扫描5字词典，无<br><strong>……</strong><br>第4次：“生动”，扫描2字词典，有</p><p><strong>扫描中止，输出第3个词为“生动”，第4轮扫描，即：</strong>    </p><p>第1次：“物园玩”，扫描3字词典，无<br>第2次：“物园”，扫描2字词典，无<br>第3次：“物”，扫描1字词典，无  </p><p><strong>扫描中止，输出第4个词为“物”，非字典词数加1，开始第5轮扫描，即：</strong>    </p><p>第1次：“园玩”，扫描2字词典，无<br>第2次：“园”，扫描1字词典，有  </p><p><strong>扫描中止，输出第5个词为“园”，单字字典词数加1，开始第6轮扫描，即：</strong>    </p><p>第1次：“玩”，扫描1字字典词，有</p><p><strong>扫描中止，输出第6个词为“玩”，单字字典词数加1，整体扫描结束。</strong>   </p><p><font color="#8A2BE2" size="3">*<em>正向最大匹配法，最终切分结果为：“我们/在野/生动/物/园/玩”，其中，单字字典词为2，非词典词为1。  *</em></font>   </p><p>*<em>b.逆向最大匹配法  *</em>  </p><p><strong>逆向即从后往前取词，其他逻辑和正向相同。即：</strong></p><p>第1轮扫描：“在野生动物园玩”<br>第1次：“在野生动物园玩”，扫描7字词典，无<br>第2次：“野生动物园玩”，扫描6字词典，无<br><strong>……</strong><br>第7次：“玩”，扫描1字词典，有  </p><p><strong>扫描中止，输出“玩”，单字字典词加1，开始第2轮扫描</strong>  </p><p>第2轮扫描：“们在野生动物园”<br>第1次：“们在野生动物园”，扫描7字词典，无<br>第2次：“在野生动物园”，扫描6字词典，无<br>第3次：“野生动物园”，扫描5字词典，有  </p><p><strong>扫描中止，输出“野生动物园”，开始第3轮扫描</strong></p><p>第3轮扫描：“我们在”<br>第1次：“我们在”，扫描3字词典，无<br>第2次：“们在”，扫描2字词典，无<br>第3次：“在”，扫描1字词典，有  </p><p><strong>扫描中止，输出“在”，单字字典词加1，开始第4轮扫描</strong></p><p>第4轮扫描：“我们”<br>第1次：“我们”，扫描2字词典，有  </p><p><strong>扫描中止，输出“我们”，整体扫描结束。</strong></p><p><font color="#8A2BE2" size="3"><strong>逆向最大匹配法，最终切分结果为：“我们/在/野生动物园/玩”，其中，单字字典词为2，非词典词为0。</strong></font>    </p><p><strong>c.双向最大匹配法</strong>     </p><p>&ensp;&ensp;&ensp;正向最大匹配法和逆向最大匹配法，都有其局限性，我举得例子是正向最大匹配法局限性的例子，逆向也同样存在（如：长春药店，逆向切分为“长/春药店”），因此有人又提出了双向最大匹配法，双向最大匹配法。即，两种算法都切一遍，然后根据大颗粒度词越多越好，非词典词和单字词越少越好的原则，选取其中一种分词结果输出。  </p><p>如：“我们在野生动物园玩”  </p><p>正向最大匹配法，最终切分结果为：“我们/在野/生动/物/园/玩”，其中，两字词3个，单字字典词为2，非词典词为1。  </p><p>逆向最大匹配法，最终切分结果为：“我们/在/野生动物园/玩”，其中，五字词1个，两字词1个，单字字典词为2，非词典词为0。  </p><p>非字典词：正向(1)&gt;逆向(0)（越少越好）  </p><p>单字字典词：正向(2)=逆向(2)（越少越好）  </p><p>总词数：正向(6)&gt;逆向(4)（越少越好）  </p><p>因此最终输出为逆向结果  </p><h2 id="参考博客"><a href="#参考博客" class="headerlink" title="参考博客"></a>参考博客</h2><ol><li><a href="https://github.com/fxsjy/jieba" target="_blank" rel="noopener">结巴中文分词理论+实践</a></li><li><a href="http://blog.sina.com.cn/s/blog_53daccf401011t74.html" target="_blank" rel="noopener">中文分词基础原则及正向最大匹配法、逆向最大匹配法、双向最大匹配法的分析</a></li></ol>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;内容涵盖&quot;&gt;&lt;a href=&quot;#内容涵盖&quot; class=&quot;headerlink&quot; title=&quot;内容涵盖&quot;&gt;&lt;/a&gt;内容涵盖&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;分词的正向最大、逆向最大、双向最大匹配法概念；&lt;/li&gt;
-&lt;li&gt;词、字符频率统计；（可以使用Python中的c
-      
-    
-    </summary>
-    
-    
-      <category term="NLP" scheme="http://yoursite.com/categories/NLP/"/>
-    
     
   </entry>
   

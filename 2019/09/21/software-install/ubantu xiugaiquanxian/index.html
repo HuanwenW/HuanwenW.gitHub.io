@@ -25,7 +25,7 @@
   <link rel="stylesheet" type="text/css" href="/./style/main.css">
 	<link rel="shortcut icon" href="/favicon.ico" title="Favicon">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
-	<title>ubantu系统中的anaconda3下安装anaconda2</title>
+	<title>Ubantu下修改文件权限命令</title>
   
   <script>var _hmt=_hmt||[];(function(){var hm=document.createElement("script");hm.src="https://hm.baidu.com/hm.js?be13bf98b13bee6a1fc89b6ae36a8ffb";var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(hm,s);})();
   </script>
@@ -48,7 +48,7 @@
     
   
   <h1 class="title">
-    ubantu系统中的anaconda3下安装anaconda2
+    Ubantu下修改文件权限命令
   </h1>
   
 
@@ -56,11 +56,11 @@
     <ul class="article-info">
       <li>
         发布
-        <time datetime="2019-09-14T13:55:27.000Z" itemprop="datePublished">2019-09-14</time>
+        <time datetime="2019-09-21T03:57:15.000Z" itemprop="datePublished">2019-09-21</time>
       </li>
       <li>
         
-    更新 <time datetime="2019-09-20T03:23:55.150Z" itemprop="dateUpdated">2019-09-20</time>
+    更新 <time datetime="2019-09-21T04:30:07.290Z" itemprop="dateUpdated">2019-09-21</time>
 
       </li>
       <li id="busuanzi_container_page_pv">
@@ -76,22 +76,42 @@
           本文最后更新于$day天前，文中所描述的信息可能已发生改变。
         </div>
         
-        <h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>ubantu系统已经安装有anaconda3，但是要跑的实验使用的是python2.7，需要更换为anaconda2的环境</p>
-<p><strong>注意：anaconda3下对应python3以上的版本，且无法降级python版本！</strong></p>
-<h2 id="具体实现步骤"><a href="#具体实现步骤" class="headerlink" title="具体实现步骤"></a>具体实现步骤</h2><h2 id="1-下载anaconda2系列的安装包"><a href="#1-下载anaconda2系列的安装包" class="headerlink" title="1. 下载anaconda2系列的安装包"></a>1. 下载anaconda2系列的安装包</h2><p>​        <a href="https://repo.continuum.io/archive/" target="_blank" rel="noopener">下载地址</a> （我下载的：  Anaconda2-5.0.1-Linux-x86_64.sh）</p>
-<h2 id="2-在软件所在位置的文件夹内打开终端"><a href="#2-在软件所在位置的文件夹内打开终端" class="headerlink" title="2. 在软件所在位置的文件夹内打开终端"></a>2. <strong>在软件所在位置的文件夹内打开终端</strong></h2><p>Terminal窗口切换到刚刚下载好的（Anaconda2-5.0.1-Linux-x86_64.sh）所在位置</p>
-<h2 id="3-逐条执行以下9条命令-报错可能是权限问题，前面加sudo"><a href="#3-逐条执行以下9条命令-报错可能是权限问题，前面加sudo" class="headerlink" title="3. 逐条执行以下9条命令(报错可能是权限问题，前面加sudo)**"></a>3. <strong>逐条执行以下9条命令</strong>(报错可能是权限问题，前面加sudo)**</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ bash Anaconda2-5.0.1-Linux-x86_64.sh -b -p <span class="variable">$HOME</span>/anaconda3/envs/py2</span><br></pre></td></tr></table></figure>
+        <h2 id="问题背景"><a href="#问题背景" class="headerlink" title="问题背景"></a>问题背景</h2><p>安装某软件时报错，搜索解决方案说要把<strong>XX文件</strong>夹删除，带着忐忑，先备份到另一个文件夹，然后命令删除<strong>XX文件夹</strong>，然后此方案并没有解决之前问题，于是乎各种搜索还原已被删除的<strong>XX文件夹</strong></p>
+<h2 id="整体思路"><a href="#整体思路" class="headerlink" title="整体思路"></a>整体思路</h2><p>方案一：用命令直接将备份的 <strong>XX文件夹</strong> 移动到原有位置，由于权限问题以失败告终</p>
+<p>方案二：很笨，最后成功了</p>
+<ol>
+<li><p>原有目录下创建 <strong>XX文件夹</strong>  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo mkdir XX文件夹名称</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>切换到 <strong>XX文件夹</strong>下，依次创建原有的  <strong>xxx文件</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd /XX文件夹名称</span><br><span class="line">sudo touch xxx文件</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>依次将 备份的XX文件夹中的 <strong>xxx文件</strong>中的内容复制粘贴，此过程遇到问题如下：</p>
+<ul>
+<li><p>发现所创建的文件为 <strong>只读</strong>，无法 <strong>粘贴</strong></p>
+<p>修改文件权限</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo chmod 666 ×××文件</span><br></pre></td></tr></table></figure>
 
-<p>其中，Anaconda2-5.0.1-Linux-x86_64.sh为所下载的anaconda2软件名，如果不一致需要替换；py2 为环境名称) </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$ rm -f $HOME/anaconda3/envs/py2/bin/conda* </span><br><span class="line">$ rm -f $HOME/anaconda3/envs/py2/conda-meta/conda-*</span><br><span class="line">$ rm -f $HOME/anaconda3/envs/py2/bin/activate</span><br><span class="line">$ rm -f $HOME/anaconda3/envs/py2/bin/deactivate</span><br><span class="line">$ cd $HOME/anaconda3/envs/py2/bin</span><br><span class="line">$ ln -s ../../../bin/conda.</span><br><span class="line">$ ln -s ../../../bin/activate.</span><br><span class="line">$ ln -s ../../../bin/deactivate.</span><br></pre></td></tr></table></figure>
+<p>  此时 xxx文件具有写的权限，依次重复所有文件即可。</p>
+</li>
+<li><p>为了防止其他问题出现，我将所有我修改过权限的文件，在写入内容后，又恢复了只读</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo chmod 644 ×××文件</span><br></pre></td></tr></table></figure>
 
-<h2 id="4-通过命令switch-python来查看当前Python的版本"><a href="#4-通过命令switch-python来查看当前Python的版本" class="headerlink" title="4. 通过命令switch python来查看当前Python的版本"></a>4. 通过命令switch python来查看当前Python的版本</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">switch python</span><br></pre></td></tr></table></figure>
-
-<h2 id="5-通过命令source-activate-py2-来激活anaconda2的环境"><a href="#5-通过命令source-activate-py2-来激活anaconda2的环境" class="headerlink" title="5.通过命令source activate py2 来激活anaconda2的环境"></a>5.通过命令source activate py2 来激活anaconda2的环境</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">source activate py2</span><br></pre></td></tr></table></figure>
-
-<h2 id="6-通过命令source-deactivate-py2来返回anaconda3的环境"><a href="#6-通过命令source-deactivate-py2来返回anaconda3的环境" class="headerlink" title="6. 通过命令source deactivate py2来返回anaconda3的环境"></a>6. 通过命令source deactivate py2来返回anaconda3的环境</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">source deactivate py2</span><br></pre></td></tr></table></figure>
-
-<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><p><a href="https://github.com/maquanyu/Sunflower-Collection/blob/master/anaconda2和anaconda3共存" target="_blank" rel="noopener">anaconda3下安装anaconda2</a></p>
+<p>依次修改所有写好内容的文件即可</p>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="修改文件权限常用方法如下："><a href="#修改文件权限常用方法如下：" class="headerlink" title="修改文件权限常用方法如下："></a>修改文件权限常用方法如下：</h2><p>sudo chmod 600 ××× （只有所有者有读和写的权限）<br><strong>sudo chmod 644 ××× （所有者有读和写的权限，组用户只有读的权限）</strong><br>sudo chmod 700 ××× （只有所有者有读和写以及执行的权限）<br><strong>sudo chmod 666 ××× （每个人都有读和写的权限）</strong><br>sudo chmod 777 ××× （每个人都有读和写以及执行的权限）</p>
+<p>其中×××指文件名（也可以是文件夹名，不过要在chmod后加-ld）。</p>
+<p>解释一下，其实整个命令的形式是<br>sudo chmod -（代表类型）×××（所有者）×××（组用户）×××（其他用户）</p>
+<p>三位数的每一位都表示一个用户类型的权限设置。取值是0～7，即二进制的[000]~[111]。</p>
+<p>这个三位的二进制数的每一位分别表示读、写、执行权限。</p>
+<p>如000表示三项权限均无，而100表示只读。这样，我们就有了下面的对应：<br>0 [000] 无任何权限<br>4 [100] 只读权限<br>6 [110] 读写权限<br>7 [111] 读写执行权限</p>
+<p>现在看上面的几个常用用法就非常清楚了。试着自己来修改权限吧</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ol>
+<li><a href="https://www.cnblogs.com/viviwind/archive/2012/08/02/2619451.html" target="_blank" rel="noopener">ubuntu下修改文件夹权限</a></li>
+</ol>
 
       </div>
         <div class="support-author">

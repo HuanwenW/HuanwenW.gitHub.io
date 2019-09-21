@@ -25,7 +25,7 @@
   <link rel="stylesheet" type="text/css" href="/./style/main.css">
 	<link rel="shortcut icon" href="/favicon.ico" title="Favicon">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
-	<title>ubantu系统中的anaconda3下安装anaconda2</title>
+	<title>Ubantu下常用的文件操作命令</title>
   
   <script>var _hmt=_hmt||[];(function(){var hm=document.createElement("script");hm.src="https://hm.baidu.com/hm.js?be13bf98b13bee6a1fc89b6ae36a8ffb";var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(hm,s);})();
   </script>
@@ -48,7 +48,7 @@
     
   
   <h1 class="title">
-    ubantu系统中的anaconda3下安装anaconda2
+    Ubantu下常用的文件操作命令
   </h1>
   
 
@@ -56,11 +56,11 @@
     <ul class="article-info">
       <li>
         发布
-        <time datetime="2019-09-14T13:55:27.000Z" itemprop="datePublished">2019-09-14</time>
+        <time datetime="2019-09-21T03:57:15.000Z" itemprop="datePublished">2019-09-21</time>
       </li>
       <li>
         
-    更新 <time datetime="2019-09-20T03:23:55.150Z" itemprop="dateUpdated">2019-09-20</time>
+    更新 <time datetime="2019-09-21T04:27:36.841Z" itemprop="dateUpdated">2019-09-21</time>
 
       </li>
       <li id="busuanzi_container_page_pv">
@@ -76,22 +76,30 @@
           本文最后更新于$day天前，文中所描述的信息可能已发生改变。
         </div>
         
-        <h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>ubantu系统已经安装有anaconda3，但是要跑的实验使用的是python2.7，需要更换为anaconda2的环境</p>
-<p><strong>注意：anaconda3下对应python3以上的版本，且无法降级python版本！</strong></p>
-<h2 id="具体实现步骤"><a href="#具体实现步骤" class="headerlink" title="具体实现步骤"></a>具体实现步骤</h2><h2 id="1-下载anaconda2系列的安装包"><a href="#1-下载anaconda2系列的安装包" class="headerlink" title="1. 下载anaconda2系列的安装包"></a>1. 下载anaconda2系列的安装包</h2><p>​        <a href="https://repo.continuum.io/archive/" target="_blank" rel="noopener">下载地址</a> （我下载的：  Anaconda2-5.0.1-Linux-x86_64.sh）</p>
-<h2 id="2-在软件所在位置的文件夹内打开终端"><a href="#2-在软件所在位置的文件夹内打开终端" class="headerlink" title="2. 在软件所在位置的文件夹内打开终端"></a>2. <strong>在软件所在位置的文件夹内打开终端</strong></h2><p>Terminal窗口切换到刚刚下载好的（Anaconda2-5.0.1-Linux-x86_64.sh）所在位置</p>
-<h2 id="3-逐条执行以下9条命令-报错可能是权限问题，前面加sudo"><a href="#3-逐条执行以下9条命令-报错可能是权限问题，前面加sudo" class="headerlink" title="3. 逐条执行以下9条命令(报错可能是权限问题，前面加sudo)**"></a>3. <strong>逐条执行以下9条命令</strong>(报错可能是权限问题，前面加sudo)**</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ bash Anaconda2-5.0.1-Linux-x86_64.sh -b -p <span class="variable">$HOME</span>/anaconda3/envs/py2</span><br></pre></td></tr></table></figure>
-
-<p>其中，Anaconda2-5.0.1-Linux-x86_64.sh为所下载的anaconda2软件名，如果不一致需要替换；py2 为环境名称) </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$ rm -f $HOME/anaconda3/envs/py2/bin/conda* </span><br><span class="line">$ rm -f $HOME/anaconda3/envs/py2/conda-meta/conda-*</span><br><span class="line">$ rm -f $HOME/anaconda3/envs/py2/bin/activate</span><br><span class="line">$ rm -f $HOME/anaconda3/envs/py2/bin/deactivate</span><br><span class="line">$ cd $HOME/anaconda3/envs/py2/bin</span><br><span class="line">$ ln -s ../../../bin/conda.</span><br><span class="line">$ ln -s ../../../bin/activate.</span><br><span class="line">$ ln -s ../../../bin/deactivate.</span><br></pre></td></tr></table></figure>
-
-<h2 id="4-通过命令switch-python来查看当前Python的版本"><a href="#4-通过命令switch-python来查看当前Python的版本" class="headerlink" title="4. 通过命令switch python来查看当前Python的版本"></a>4. 通过命令switch python来查看当前Python的版本</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">switch python</span><br></pre></td></tr></table></figure>
-
-<h2 id="5-通过命令source-activate-py2-来激活anaconda2的环境"><a href="#5-通过命令source-activate-py2-来激活anaconda2的环境" class="headerlink" title="5.通过命令source activate py2 来激活anaconda2的环境"></a>5.通过命令source activate py2 来激活anaconda2的环境</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">source activate py2</span><br></pre></td></tr></table></figure>
-
-<h2 id="6-通过命令source-deactivate-py2来返回anaconda3的环境"><a href="#6-通过命令source-deactivate-py2来返回anaconda3的环境" class="headerlink" title="6. 通过命令source deactivate py2来返回anaconda3的环境"></a>6. 通过命令source deactivate py2来返回anaconda3的环境</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">source deactivate py2</span><br></pre></td></tr></table></figure>
-
-<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><p><a href="https://github.com/maquanyu/Sunflower-Collection/blob/master/anaconda2和anaconda3共存" target="_blank" rel="noopener">anaconda3下安装anaconda2</a></p>
+        <h2 id="ubantu下的常用命令"><a href="#ubantu下的常用命令" class="headerlink" title="ubantu下的常用命令"></a>ubantu下的常用命令</h2><h3 id="相关命令"><a href="#相关命令" class="headerlink" title="相关命令"></a>相关命令</h3><p>　　cd 路径                   （进入一个路径，比如cd  /usr/local/lib）</p>
+<p>　　cd ..　　  　　　　  （返回上一个文件夹）</p>
+<p>　　ls　　　　　　　　 （显示当前文件夹下的所有文件，Linux独有哦，dir 也有相同功能）</p>
+<p>　　sudo 命令　　　　 （获取超级管理权限，需要输入密码）</p>
+<h3 id="常用新建、删除、拷贝命令"><a href="#常用新建、删除、拷贝命令" class="headerlink" title="常用新建、删除、拷贝命令"></a>常用新建、删除、拷贝命令</h3><p>　　mkdir 目录名        （新建一个文件夹，文件夹在Linux系统中叫做“目录”）</p>
+<p>　　touch 文件名        （新建一个空文件）</p>
+<p>　　rmdir 目录名        （删除一个空文件夹，文件夹里有内容则不可用）</p>
+<p>　　rm -rf 非空目录名 （删除一个包含文件的文件夹）</p>
+<p>　　rm 文件名 文件名 （删除多个文件）</p>
+<p>　　cp 文件名 目标路径（拷贝一个文件到目标路径，如cp hserver /opt/hqueue）</p>
+<p>　　cp -i　　　　　　  （拷贝，同名文件存在时，输出 [yes/no] 询问是否执行）</p>
+<p>　　cp -f　　　　　　  （强制复制文件，如有同名不询问）</p>
+<p>例如：将/home/wally/test中 test.c 的文件复制到/local/arm 中，命令为：</p>
+<p>cd /wally/test</p>
+<p> ls </p>
+<p>sudo cp -i test.c /local/arm</p>
+<h3 id="常用解压、安装程序、文件更新命令：deb格式双击即可安装"><a href="#常用解压、安装程序、文件更新命令：deb格式双击即可安装" class="headerlink" title="常用解压、安装程序、文件更新命令：deb格式双击即可安装"></a>常用解压、安装程序、文件更新命令：deb格式双击即可安装</h3><p>　　tar -zxvf *.tar.gz　     ( 解压 tar.gz格式的文件 )</p>
+<p>　　source *.install　　　 （安装install格式的安装包）</p>
+<p>　　sh 路径/×.sh　　    　 （安装sh格式的文件，如 sudo sh /home/hp/Downloads/*.sh）</p>
+<p>　　sudo apt-get upgrade（更新已安装的包）</p>
+<p>　　sudo apt-get update  （更新源）</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ol>
+<li><a href="https://www.cnblogs.com/jackchiang/p/4065723.html" target="_blank" rel="noopener">Ubuntu系统下常用的新建、删除、拷贝文件命令</a></li>
+</ol>
 
       </div>
         <div class="support-author">
