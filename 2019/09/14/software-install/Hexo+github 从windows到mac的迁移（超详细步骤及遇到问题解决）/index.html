@@ -38,7 +38,7 @@
 <body>
   <canvas id="pattern-placeholder" height="230"></canvas>
 <div class="navbar-header">
-  <a class="blog-title" href="/">焕小妹的博客</a>
+  <a class="blog-title" href="/">焕小妹</a>
   <a class="face-img" href="/">
     <img src="https://github.com/HuanwenW/MyPostImag/blob/master/190410-boke/touxiang-1.jpg?raw=true">
   </a>
@@ -60,7 +60,7 @@
       </li>
       <li>
         
-    更新 <time datetime="2019-09-14T12:19:50.953Z" itemprop="dateUpdated">2019-09-14</time>
+    更新 <time datetime="2020-06-06T04:02:02.349Z" itemprop="dateUpdated">2020-06-06</time>
 
       </li>
       <li id="busuanzi_container_page_pv">
@@ -90,70 +90,75 @@
 
 <p>查看安装是否成功命令：</p>
 <table><tr><td bgcolor="black"> <font size="3" color="white"> brew --version </font></td></tr></table>  
+安装成功提示版本号，如下图
 
-<p>安装成功提示版本号，如下图</p>
-<p><img src="https://github.com/HuanwenW/MyPostImag/blob/master/190912-mac/Homebrewsuccessful.jpg?raw=true" alt="Homebrew安装成功！"><span class="img-alt">Homebrew安装成功！</span></p>
+<p><img src="https://github.com/HuanwenW/MyPostImag/blob/master/190912-mac/Homebrewsuccessful.jpg?raw=true" alt="Homebrew安装成功！"></p>
 <h3 id="2-安装git"><a href="#2-安装git" class="headerlink" title="2. 安装git"></a>2. 安装git</h3><p>先检查下电脑是否已存在Git，若mac自带git，此步可以跳过，查看命令如下</p>
 <table><tr><td bgcolor="black"> <font size="3" color="white"> git --version </font></td></tr></table>  
+若不存在，使用brew安装Git，安装命令如下
 
-<p>若不存在，使用brew安装Git，安装命令如下</p>
 <table><tr><td bgcolor="black"> <font size="3" color="white"> brew install git </font></td></tr></table>  
+同样，输入**git --version** 验证是否安装成功
 
-<p>同样，输入<strong>git –version</strong> 验证是否安装成功</p>
 <p>安装成功提示版本号，如下图</p>
-<p><img src="https://github.com/HuanwenW/MyPostImag/blob/master/190912-mac/gitSuccessful.jpg?raw=true" alt="git安装成功！"><span class="img-alt">git安装成功！</span></p>
+<p><img src="https://github.com/HuanwenW/MyPostImag/blob/master/190912-mac/gitSuccessful.jpg?raw=true" alt="git安装成功！"></p>
 <h3 id="3-安装node"><a href="#3-安装node" class="headerlink" title="3. 安装node"></a>3. 安装node</h3><p>输入命令如下</p>
 <table><tr><td bgcolor="black"> <font size="3" color="white"> brew install node </font></td></tr></table> 
+检查安装是否成功，一定要安装成功，否者否许操作中会报错
 
-<p>检查安装是否成功，一定要安装成功，否者否许操作中会报错</p>
 <table><tr><td bgcolor="black"> <font size="3" color="white"> node --version </font></td></tr></table> 
+安装成功提示版本号，如下图
 
-<p>安装成功提示版本号，如下图</p>
-<p><img src="https://github.com/HuanwenW/MyPostImag/blob/master/190912-mac/nodeSuccessful.jpg?raw=true" alt="node安装成功！"><span class="img-alt">node安装成功！</span></p>
+<p><img src="https://github.com/HuanwenW/MyPostImag/blob/master/190912-mac/nodeSuccessful.jpg?raw=true" alt="node安装成功！"></p>
 <h2 id="二-Hexo的安装及初始化"><a href="#二-Hexo的安装及初始化" class="headerlink" title="二. Hexo的安装及初始化"></a>二. Hexo的安装及初始化</h2><h3 id="1-用-node-的-npm-安装-hexo，命令如下（下载速度有点慢，耐心-）"><a href="#1-用-node-的-npm-安装-hexo，命令如下（下载速度有点慢，耐心-）" class="headerlink" title="1. 用 node 的 npm 安装 hexo，命令如下（下载速度有点慢，耐心~~）"></a>1. 用 node 的 npm 安装 hexo，命令如下（下载速度有点慢，耐心~~）</h3><table><tr><td bgcolor="black"> <font size="3" color="white"> sudo npm install --unsafe-perm=true -g hexo-cli </font></td></tr></table> 
+### 2. 初始化hexo
 
-<h3 id="2-初始化hexo"><a href="#2-初始化hexo" class="headerlink" title="2. 初始化hexo"></a>2. 初始化hexo</h3><p>创建HexoBlog（名字根据个人喜好自取）文件夹,输入下面命令：    </p>
+<p>创建HexoBlog（名字根据个人喜好自取）文件夹,输入下面命令：    </p>
 <table><tr><td bgcolor="black"> <font size="3" color="white"> hexo init HexoBlog
   </font></td></tr></table>  
 
 <p><strong>！！！报错提示及解决方案</strong></p>
-<p><img src="https://github.com/HuanwenW/MyPostImag/blob/master/190912-mac/hexo%20erro.jpg?raw=true" alt="创建HexoBlog报错"><span class="img-alt">创建HexoBlog报错</span></p>
-<p><img src="https://github.com/HuanwenW/MyPostImag/blob/master/190912-mac/hexo%20ok.jpg?raw=true" alt="npm权限问题解决方案"><span class="img-alt">npm权限问题解决方案</span></p>
+<p><img src="https://github.com/HuanwenW/MyPostImag/blob/master/190912-mac/hexo%20erro.jpg?raw=true" alt="创建HexoBlog报错"></p>
+<p><img src="https://github.com/HuanwenW/MyPostImag/blob/master/190912-mac/hexo%20ok.jpg?raw=true" alt="npm权限问题解决方案"></p>
 <h3 id="3-体验hexo魅力"><a href="#3-体验hexo魅力" class="headerlink" title="3. 体验hexo魅力"></a>3. 体验hexo魅力</h3><p>​       由于初始化hexo 之后source目录下自带一篇hello world文章, 所以依次执行下方两个命令：<br><font color="#DC143C" size="3">&ensp;注意：执行下面命令前要先进入blog文件夹中重新打开git命令窗口！！！</font>  </p>
 <table><tr><td bgcolor="black"> <font size="3" color="white">$ hexo generate </font></td></tr></table>  
+ 命令含义： 生成静态文件，等价于(可简写为)： `hexo  g`    
 
-<p> 命令含义： 生成静态文件，等价于(可简写为)： <code>hexo  g</code>    </p>
 <table><tr><td bgcolor="black"> <font size="3" color="white">$ hexo server  </font></td></tr></table>  
+ 命令含义： 启动本地服务器，等价于(可简写为)： `hexo  s`
 
-<p> 命令含义： 启动本地服务器，等价于(可简写为)： <code>hexo  s</code></p>
-<p>打开浏览器，输入网址： <a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a> ，即可看到网站初步的模样。<br><img src="https://github.com/HuanwenW/MyPostImag/blob/master/190410-boke/github-2.png?raw=true" alt="bendibokeliulan"><span class="img-alt">bendibokeliulan</span></p>
+<p>打开浏览器，输入网址： <a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a> ，即可看到网站初步的模样。<br><img src="https://github.com/HuanwenW/MyPostImag/blob/master/190410-boke/github-2.png?raw=true" alt="bendibokeliulan"></p>
 <h2 id="三-mac生成SSH及配置"><a href="#三-mac生成SSH及配置" class="headerlink" title="三. mac生成SSH及配置"></a>三. mac生成SSH及配置</h2><h3 id="1-先检查一下本机的-SSH-key是否已存在"><a href="#1-先检查一下本机的-SSH-key是否已存在" class="headerlink" title="1. 先检查一下本机的 SSH key是否已存在"></a>1. 先检查一下本机的 SSH key是否已存在</h3><table><tr><td bgcolor="black"> <font size="3" color="white">ls -a ~/.ssh  </font></td></tr></table>
+如果输出以下内容（xxx和xxx.pub成对存在）说明ssh key存在(输入这个命令也行：ls ~/.ssh)
 
-<h3 id="2-若不存在，输入以下命令，生成ssh"><a href="#2-若不存在，输入以下命令，生成ssh" class="headerlink" title="2. 若不存在，输入以下命令，生成ssh"></a>2. 若不存在，输入以下命令，生成ssh</h3><table><tr><td bgcolor="black"> <font size="3" color="white">ssh -T git@github.com  </font></td></tr></table>
+<h3 id="2-若不存在，输入以下命令，生成ssh-Key"><a href="#2-若不存在，输入以下命令，生成ssh-Key" class="headerlink" title="2. 若不存在，输入以下命令，生成ssh Key"></a>2. 若不存在，输入以下命令，生成ssh Key</h3><table><tr><td bgcolor="black"> <font size="3" color="white">ssh -T git@github.com   //git@github.com为邮箱地址？ </font></td></tr></table>
 
-<p><img src="https://github.com/HuanwenW/MyPostImag/blob/master/190912-mac/ssh%20open%202.jpg?raw=true" alt="生成ssh"><span class="img-alt">生成ssh</span></p>
+<p><img src="https://github.com/HuanwenW/MyPostImag/blob/master/190912-mac/ssh%20open%202.jpg?raw=true" alt="生成ssh"></p>
 <h3 id="3-你可能找不命令窗口提示所生成的ssh在哪里，此时可直接用命令打开-ssh文件"><a href="#3-你可能找不命令窗口提示所生成的ssh在哪里，此时可直接用命令打开-ssh文件" class="headerlink" title="3. 你可能找不命令窗口提示所生成的ssh在哪里，此时可直接用命令打开.ssh文件"></a>3. 你可能找不命令窗口提示所生成的ssh在哪里，此时可直接用命令打开.ssh文件</h3><table><tr><td bgcolor="black"> <font size="3" color="white">open ~/.ssh </font></td></tr></table>
+### 4. 复制id_rsa.pub里面的所有内容
 
-<h3 id="4-复制id-rsa-pub里面的所有内容"><a href="#4-复制id-rsa-pub里面的所有内容" class="headerlink" title="4. 复制id_rsa.pub里面的所有内容"></a>4. 复制id_rsa.pub里面的所有内容</h3><ul>
+<ul>
 <li><p>手动打开id_rsa.pub文件，复制里面的所有内容</p>
 </li>
 <li><p>直接在终端打开文件，复制生成内容，打开文件命令如下</p>
 </li>
 </ul>
 <table><tr><td bgcolor="black"> <font size="3" color="white">cat ~/.ssh/id_rsa.pub </font></td></tr></table>
+### 5. 进入github配置ssh
 
-<h3 id="5-进入github配置ssh"><a href="#5-进入github配置ssh" class="headerlink" title="5. 进入github配置ssh"></a>5. 进入github配置ssh</h3><p>然后进入进入自己的github页面，找到setting下的SSH：<a href="https://github.com/settings/ssh" target="_blank" rel="noopener">链接</a>  </p>
+<p>然后进入进入自己的github页面，找到setting下的SSH：<a href="https://github.com/settings/ssh" target="_blank" rel="noopener">链接</a>  </p>
 <p>依次执行下面步骤：点击 New SSH key —— Title：blog —— Key：输入刚才复制的内容 —— Add SSH key  </p>
-<p><img src="https://github.com/HuanwenW/MyPostImag/blob/master/190912-mac/addSSH.jpg?raw=true" alt="添加ssh的配置"><span class="img-alt">添加ssh的配置</span></p>
+<p><img src="https://github.com/HuanwenW/MyPostImag/blob/master/190912-mac/addSSH.jpg?raw=true" alt="添加ssh的配置"></p>
 <p><strong>d.</strong> 测试一下是否成功,输入下方命令：  </p>
 <table><tr><td bgcolor="black"> <font size="3" color="white">$ ssh -T git@github.com   //Github的注册邮箱地址 </font></td></tr></table>  
+![](https://github.com/HuanwenW/MyPostImag/blob/master/190410-boke/github-3.png?raw=true) 
+&ensp;&ensp;&ensp;看到上面信息说明SSH已配置成功！  
 
-<p><img src="https://github.com/HuanwenW/MyPostImag/blob/master/190410-boke/github-3.png?raw=true" alt><br>&ensp;&ensp;&ensp;看到上面信息说明SSH已配置成功！  </p>
 <h2 id="四-替换-config-yml-、thems、source-文件"><a href="#四-替换-config-yml-、thems、source-文件" class="headerlink" title="四. 替换_config.yml 、thems、source 文件"></a>四. 替换_config.yml 、thems、source 文件</h2><p>从<strong>windows</strong>电脑中复制_config.yml 、thems、source三个文件 ，替换<strong>mac</strong>下的_config.yml 、thems、source 三个文件，即可完成原主题的迁移</p>
 <h2 id="五-主题相关设置专题"><a href="#五-主题相关设置专题" class="headerlink" title="五. 主题相关设置专题"></a>五. 主题相关设置专题</h2><p>此处不在啰嗦，完全参照<a href="https://github.com/Youthink/hexo-themes-yearn/wiki/主题使用教程-📖" target="_blank" rel="noopener">hexo搭建模版参照教程</a>的讲解</p>
 <p>也可以参考我的<a href="https://huanwenw.github.io/2019/04/10/hexo-gitHub/" target="_blank" rel="noopener">window版本搭建hexo</a>中第四部分<strong>如何将github和hexo联系起来？</strong>的详细说明</p>
 <h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><ol>
-<li><a href="[http://gjincai.github.io/2017/01/13/hexo-%E4%BB%8E-windows-%E8%BD%AC%E7%A7%BB%E8%87%B3-Mac/](http://gjincai.github.io/2017/01/13/hexo-从-windows-转移至-Mac/)">hexo从windows转移至Mac</a></li>
+<li><a href="http://gjincai.github.io/2017/01/13/hexo-从-windows-转移至-Mac/" target="_blank" rel="noopener">hexo从windows转移至Mac</a></li>
 <li><a href="https://hankliu62.github.io/2017/09/09/hexo-github-blog-guide/" target="_blank" rel="noopener">MAC搭建个人博客hexo+github详细完整步骤</a></li>
 <li><a href="https://blog.csdn.net/xy371661665/article/details/77528132" target="_blank" rel="noopener">Mac系统下安装和卸载HomeBrew的方法</a></li>
 <li><a href="https://blog.csdn.net/qq_41234116/article/details/79366454" target="_blank" rel="noopener">Mac安装，简单使用，卸载homebrew详细教程</a></li>
